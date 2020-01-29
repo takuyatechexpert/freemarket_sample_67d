@@ -11,23 +11,29 @@
 |family_name_kana       |string|null: false|
 |first_name_kana        |string|null: false|
 |birth_day              |integer|null: false|
+### Association
+- has_many :items
+- has_many :cards
+
+## address テーブル
+|Column|Type|Options|
+|------|----|-------|
 <!-- 送付先の名前 -->
 |destination_first_name |integer|null: false|
 |destination_family_name|integer|null: false|
 <!-- postの方がいいか? -->
-|Postal_code            |integer|null: false| 
+|postal_code            |integer|null: false| 
 <!-- 都道府県 -->
-|Prefectures            |string|null: false|
+|prefectures            |string|null: false|
 <!-- 市町村 -->
-|Municipalities         |string|null: false|
+|municipalities         |string|null: false|
 <!-- 番地 -->
 |address                |string|null: false|
 <!-- マンション名など -->
 |home_type              |string|null: false|
 |tel                    |integer|null: false|
 ### Association
-- has_many :items
-- has_many :cards
+- belongs_to :user
 
 ## cards テーブル
 <!-- gem payjp使用 -->
@@ -43,7 +49,7 @@
 ## items テーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_name     |string|null: false|
+|name     |string|null: false|
 |price         |integer|null: false|
 |size          |string|null: false, unipue: true|
 <!-- 配送料 チェックボックスを使用して数字を入れる -->
@@ -60,9 +66,9 @@
 |buyer         |references|foreign_key: true|
 |seller        |references|foreign_key: true|
 ### Association
+- has_many :comments
+- has_many :image
 - belongs_to :user
-- belongs_to :comment
-- belongs_to :image
 - belongs_to :brand
 - belongs_to :category
 
@@ -78,9 +84,7 @@
 ## brands テーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_name|string|null: false|
-<!-- 外部キー -->
-|item      |references|foreign_key: true|
+|name|string|null: false|
 ### Association
 - has_many :items
 
@@ -88,16 +92,14 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|string|null: false|
-<!-- 外部キー -->
-|item      |references|foreign_key: true|
+|item_id  |integer|null: false|
 ### Association
-- has_many :items
+- belongs_to :items
 
 ## images テーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-<!-- 外部キー -->
-|item      |references|foreign_key: true|
+|item_id  |integer|null: false|
 ### Association
-- has_many :items
+- belongs_to :items
