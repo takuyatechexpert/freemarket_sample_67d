@@ -32,6 +32,8 @@
 <!-- マンション名など -->
 |home_type              |string|null: false|
 |tel                    |integer|null: false|
+<!-- 外部キー -->
+|user        |references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -58,25 +60,23 @@
 |shipment      |integer|null: false, unipue: true|
 <!-- 外部キー -->
 |user          |references|foreign_key: true|
-|comment       |references|foreign_key: true|
-|brand         |references|foreign_key: true|
-|category      |references|foreign_key: true|
-|image         |references|foreign_key: true|
 <!-- 購入者と出品者のid -->
 |buyer         |references|foreign_key: true|
 |seller        |references|foreign_key: true|
 ### Association
 - has_many :comments
-- has_many :image
+- has_many :images
 - belongs_to :user
-- belongs_to :brand
-- belongs_to :category
+- belongs_to :brand, dependent: :delete
+- belongs_to :category, dependent: :delete
 
 ## categorys テーブル
 |Column|Type|Options|
 |------|----|-------|
 |category_name|string|null: false|
 |ancestry     |string|null: false|
+<!-- 外部キー -->
+|item   |references|null: false, foreign_key: true
 <!-- gem ancestry使用 -->
 ### Association
 - has_many :items
@@ -85,6 +85,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+<!-- 外部キー -->
+|item   |references|null: false, foreign_key: true
 ### Association
 - has_many :items
 
@@ -92,7 +94,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|string|null: false|
-|item_id  |integer|null: false|
+<!-- 外部キー -->
+|item   |references|null: false, foreign_key: true|
 ### Association
 - belongs_to :items
 
@@ -100,6 +103,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item_id  |integer|null: false|
+<!-- 外部キー -->
+|item   |references|null: false, foreign_key: true|
 ### Association
 - belongs_to :items
