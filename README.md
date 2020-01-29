@@ -3,7 +3,7 @@
 ## users テーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname               |string|null: false, null:false, unique: true|
+|nickname               |string|null:false, unique: true|
 |email                  |string|null: false|
 |password               |string|null: false|
 |family_name            |string|null: false|
@@ -26,8 +26,19 @@
 |home_type              |string|null: false|
 |tel                    |integer|null: false|
 ### Association
-- has_many :orders
 - has_many :items
+- has_many :cards
+
+## cards テーブル
+<!-- gem payjp使用 -->
+|Column|Type|Options|
+|------|----|-------|
+|coustomer_id|string|null: false|
+|card_id     |string|null: false|
+<!-- 外部キー -->
+|user        |references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
 
 ## items テーブル
 |Column|Type|Options|
@@ -54,33 +65,6 @@
 - belongs_to :image
 - belongs_to :brand
 - belongs_to :category
-- has_many :orders
-- has_many :orders, through: :order_items
-
-
-## orders テーブル
-|Column|Type|Options|
-|------|----|-------|
-|total_fee     |integer|null: false|
-<!-- 外部キー -->
-|user          |references|foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :items
-- has_many :items, through: :order_items
-
-## order_items テーブル
-|Column|Type|Options|
-|------|----|-------|
-<!-- 商品の数 -->
-|quantity|integer|null: false|
-<!-- 外部キー -->
-|user    |references|foreign_key: true|
-|item    |references|foreign_key: true|
-|order   |references|foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :comment
 
 ## categorys テーブル
 |Column|Type|Options|
