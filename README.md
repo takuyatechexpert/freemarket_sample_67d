@@ -14,6 +14,7 @@
 ### Association
 - has_many :items
 - has_many :cards
+- has_many :addresses
 
 ## address テーブル
 |Column|Type|Options|
@@ -51,18 +52,20 @@
 ## items テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name     |string|null: false|
-|price         |integer|null: false|
-|size          |string|null: false, unipue: true|
+|name    |string|null: false|
+|price   |integer|null: false|
+|size    |string|null: false, unipue: true|
 <!-- 配送料 チェックボックスを使用して数字を入れる -->
 |delivery_charg|integer|null: false, unipue: true|
 <!-- 発送日 チェックボックスを使用して数字を入れる -->
-|shipment      |integer|null: false, unipue: true|
+|shipment|integer|null: false, unipue: true|
 <!-- 外部キー -->
-|user          |references|foreign_key: true|
+|user    |references|null: false, foreign_key: true|
+|brand   |references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
 <!-- 購入者と出品者のid -->
-|buyer         |references|foreign_key: true|
-|seller        |references|foreign_key: true|
+|buyer   |references|foreign_key: true|
+|seller  |references|foreign_key: true|
 ### Association
 - has_many :comments
 - has_many :images
@@ -73,10 +76,8 @@
 ## categorys テーブル
 |Column|Type|Options|
 |------|----|-------|
-|category_name|string|null: false|
+|name|string|null: false|
 |ancestry     |string|null: false|
-<!-- 外部キー -->
-|item   |references|null: false, foreign_key: true
 <!-- gem ancestry使用 -->
 ### Association
 - has_many :items
@@ -85,8 +86,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-<!-- 外部キー -->
-|item   |references|null: false, foreign_key: true
 ### Association
 - has_many :items
 
