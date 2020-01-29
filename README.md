@@ -3,15 +3,13 @@
 ## users テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name                   |string|null: false, null:false, unique: true|
+|nickname               |string|null: false, null:false, unique: true|
 |email                  |string|null: false|
 |password               |string|null: false|
 |family_name            |string|null: false|
 |first_name             |string|null: false|
 |family_name_kana       |string|null: false|
 |first_name_kana        |string|null: false|
-|birth_year             |integer|null: false|
-|birth_month            |integer|null: false|
 |birth_day              |integer|null: false|
 <!-- 送付先の名前 -->
 |destination_first_name |integer|null: false|
