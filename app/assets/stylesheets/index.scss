@@ -1,0 +1,121 @@
+.pcContent-contentInner{
+  &_mainContent{
+    .comment{
+      height: 50px;
+      width: 100vw;
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+      padding: 30px 0 ;
+    }
+    .line{
+      height:40px;
+      width: 100px;
+      border-bottom: solid 5px aqua;
+      margin: 20px 580px;
+    }
+  }
+  &_image{
+    width:1100px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin:0 auto;
+    text-align: center;
+    .image1{
+      height: 300px;
+      width: 300px;
+    }
+    .image2{
+      height: 300px;
+      width: 300px;
+    }
+    .image3{
+      height: 300px;
+      width: 300px;
+    }
+    .box1{
+      height:40px;
+      width: 40px;
+      background-color: aqua;
+      position: absolute;
+      color:white;
+      font-size: 30px;
+      text-align: center;
+    }
+    .box2{
+      height:40px;
+      width: 40px;
+      background-color: aqua;
+      position: absolute;
+      color:white;
+      left:400px;
+      font-size: 30px;
+      text-align: center;
+    }
+    .box3{
+      height:40px;
+      width: 40px;
+      background-color: aqua;
+      position: absolute;
+      right:260px;
+      color:white;
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+  &_text{
+    width:1100px;
+    display: flex;
+    margin:0 auto;
+    
+    .image-text1{
+      color: aqua;
+      font-weight: bold;
+      font-size: 25px;
+      padding: 30px 0px 0px 40px; 
+    }
+    .image-text1-2{
+      font-weight: bold;
+      font-size: 25px;
+      padding: 30px 160px 0px 10px;
+    }
+    .image-text2{
+      color: aqua;
+      font-weight: bold;
+      font-size: 25px;
+      padding: 30px 0px 0px 25px; 
+    }
+    .image-text2-2{
+        font-weight: bold;
+        font-size: 25px; 
+        padding: 30px 160px 0px 10px;
+   }
+   
+    .image-text3{
+      color: aqua;
+      font-weight: bold;
+      font-size: 25px;
+      padding:30px 10px 0 10px ;
+    }
+    .image-text3-2{
+        font-weight: bold;
+        font-size: 25px;
+        padding: 30px 0px 0px 10px;
+    } 
+  }
+  &_comment{
+    height: 50px;
+    width:100vw;
+    text-align: center;
+    .image-comment1{
+      padding: 0px 30px 40px 0px;
+    }
+    .image-comment2{
+      padding: 0px 90px 40px 0px;
+    }
+    .image-comment3{
+      padding: 0px 40px 40px 0px;
+    }
+  }
+}
