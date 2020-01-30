@@ -16,7 +16,7 @@
 - has_many :cards
 - has_many :addresses
 
-## address テーブル
+## addresses テーブル
 |Column|Type|Options|
 |------|----|-------|
 |destination_first_name |integer|null: false|
