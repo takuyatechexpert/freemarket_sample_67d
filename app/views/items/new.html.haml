@@ -14,7 +14,7 @@
           %li
             必須
         = f.label :image,"ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
-        = f.file_field :image, class: "imageFieldLabel"
+        = f.file_field :image, class: "imageField"
         
       .main__exhibitionContents__itemDescription
         .main__exhibitionContents__itemDescription__name
@@ -23,7 +23,7 @@
               商品名
             %li
               必須
-          = f.text_field :name
+          = f.text_field :name, class: "main__exhibitionContents__itemDescription__name__field"
         .main__exhibitionContents____itemDescription__description
           %ul.main__exhibitionContents__information
             %li
@@ -93,3 +93,11 @@
               販売利益
             %li
               ー
+      .main__exhibitionContents__text
+        禁止されている出品、行為を必ずご確認ください。
+        またブランド品でシリアルナンバー等がある場合はご記載ください。 偽ブランドの販売は犯罪であ
+        り処罰される可能性があります。
+        また、出品をもちまして加盟店規約に同意したことになります。
+      .main__exhibitionContents__submit
+        = f.submit "出品する"
+        = link_to "もどる"
