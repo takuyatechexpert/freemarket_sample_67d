@@ -1,0 +1,57 @@
+.pcHeader
+  .pcHeader-headerInner
+    .pcHeader-headerInner_mainHeader
+      = image_tag "/assets/logo1.png", class:"image", alt:"ほげ"
+      %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
+      .pcHeader-headerInner_mainHeader_submit
+        %input.submit{:type => "image", :src => "/assets/search1.png"}
+    .pcHeader-headerInner_text
+      .pcHeader-headerInner_text_content
+        %p.text カテゴリー
+        %p.text2 ブランド
+      .pcHeader-headerInner_text_login
+        %p.text3 ログイン
+        %p.text4 新規会員登録
+    .pcHeader-headerInner_image
+      .pcHeader-headerInner_image_main
+        = image_tag "/assets/bg-mainVisual-pict_pc.jpg", class:"main", alt:"ほげ"
+      .pcHeader-headerInner_image_text
+        %p.text 人生を変えるフリマアプリ
+        %b.text2 FURIMAは誰でもかんたんに出品できる・購入できる 
+        %b.text3 FURIMAアプリです
+      .pcHeader-headerInner_image_link
+        %i.button1
+        %i.button2
+  .pcContent-contentInner
+    .pcContent-contentInner_mainContent
+      %p.comment FURIMAが選ばれる三つの理由
+      %p.line
+    .pcContent-contentInner_image
+      %p.image
+        = image_tag "/assets/pict-reason-01.jpg", class:"image1", alt:"ほげ"
+      %p.box1 1
+
+      %p.image2
+        = image_tag "/assets/pict-reason-02.jpg", class:"image2", alt:"ほげ"
+      %p.box2 2
+
+      %p.image3
+        = image_tag "/assets/pict-reason-03.jpg", class:"image3", alt:"ほげ"
+      %p.box3 3
+    .pcContent-contentInner_text
+
+      %span.image-text1> ３分
+      %span.image-text1-2>ですぐに出品
+      
+
+      %span.image-text2> シンプル
+      %span.image-text2-2>で使いやすい
+      
+      %span.image-text3> 手数料
+      %span.image-text3-2>業界最安
+      
+    .pcContent-contentInner_comment
+      %span.image-comment1>スマホで入力するだけでかんたんに出品できる！
+      %span.image-comment2>めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %span.image-comment3>最大３％でお得に出品＆購入！
+  
