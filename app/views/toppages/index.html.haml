@@ -12,6 +12,7 @@
       .pcHeader-headerInner_text_login
         %p.text3 ログイン
         %p.text4 新規会員登録
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
     .pcHeader-headerInner_image
       .pcHeader-headerInner_image_main
         = image_tag "/assets/bg-mainVisual-pict_pc.jpg", class:"main", alt:"ほげ"
