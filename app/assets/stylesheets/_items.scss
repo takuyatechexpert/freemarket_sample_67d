@@ -1,0 +1,30 @@
+.exhibitionHeader{
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .exhibitionHeader__logo{
+    width: 220px;
+
+  }
+}
+.main{
+  width: 100%;
+  .main__exhibitionContents{
+    background: rgb(238, 238, 238);
+    width: 700px;
+    margin: 0 auto;
+
+    .main__exhibitionContents__title{
+      height: 90px;
+      text-align: center;
+      line-height: 90px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.main__exhibitionContents__information{
+  display: flex;
+}
