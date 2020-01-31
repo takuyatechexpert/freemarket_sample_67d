@@ -26,6 +26,14 @@
               必須
           = f.text_field :name, placeholder: "商品名(必須40文字まで)", class: "main__exhibitionContents__itemDescription__details__field"
 
+        .main__exhibitionContents__itemDescription__size
+          %ul.main__exhibitionContents__information
+            %li
+              商品のサイズ
+            %li
+              必須
+          = f.text_field :name, class: "main__exhibitionContents__itemDescription__details__field"
+          
         .main__exhibitionContents__details__category
           %ul.main__exhibitionContents__information
             %li
@@ -33,6 +41,7 @@
             %li
               必須
           = f.select :category, [["--", 0],["レディース", 1],["メンズ", 2],["ベビー・キッズ",3],["本・音楽・ゲーム",4]], class: "fieldPulldown"
+
         .main__exhibitionContents__details__brand
           %ul.main__exhibitionContents__information
             %li
@@ -40,6 +49,7 @@
             %li
               必須
           = f.select :category, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
+
 
         .main__exhibitionContents__details__itemStatus
           %ul.main__exhibitionContents__information
@@ -63,8 +73,8 @@
               配送元の地域
             %li
               必須
-          = f.select :details_area, [["--", 0],["北海道県", 1],["青森県", 2],["岩手県",3],["宮城県",4],["秋田県",5]]
-        .main__exhibitionContents__details__date
+          = f.text_field :delivery_area, class: "main__exhibitionContents__itemDescription__details__field"
+          .main__exhibitionContents__details__date
           %ul.main__exhibitionContents__information
             %li
               発送までの日数
@@ -104,7 +114,7 @@
         .main__exhibitionContents__submit
           = f.submit "出品する", class: "main__exhibitionContents__submit__btn"
           = link_to "もどる", "#", class: "main__exhibitionContents__back__btn"
-.footer
+.exhibitionFooter
   %ul
     %li
       %small プライバシーポリシー
@@ -113,6 +123,6 @@
     %li
       %small 特定商取引に関する表記
   = image_tag "logo-white.png", alt: "furima icon", id: "pic1", class: "exhibitionFooter__logo"
-  .copyright
+  .exhibitionFooter__copyright
     %small
       &copy FURIMA, inc.

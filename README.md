@@ -51,16 +51,18 @@
 |------|----|-------|
 |name          |string|null: false|
 |price         |integer|null: false|
-|size          |string|null: false, unipue: true|
-|delivery_charg|integer|null: false, unipue: true|
-|shipment      |integer|null: false, unipue: true|
+|size          |string|null: false|
+|delivery_charg|integer|null: false|
+|delivery_area |string|null: false|
+|shipment      |integer|null: false|
 |user          |references|null: false, foreign_key: true|
 |brand         |references|null: false, foreign_key: true|
 |category      |references|null: false, foreign_key: true|
-|buyer         |integer|foreign_key: true|
-|seller        |integer|foreign_key: true|
-- 配送料 チェックボックスを使用して数字を入れる
-- 発送日 shipmentチェックボックスを使用して数字を入れる
+|buyer         |references|foreign_key: true|
+|seller        |references|foreign_key: true|
+- delivery_charg 配送料 チェックボックスを使用して数字を入れる
+- delivery_area 配送エリア
+- shipment 発送日 チェックボックスを使用して数字を入れる
 - 購入者と出品者のid buyer, seller
 ### Association
 - has_many :comments
