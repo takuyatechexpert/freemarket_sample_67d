@@ -57,8 +57,8 @@
 |user          |references|null: false, foreign_key: true|
 |brand         |references|null: false, foreign_key: true|
 |category      |references|null: false, foreign_key: true|
-|buyer         |references|foreign_key: true|
-|seller        |references|foreign_key: true|
+|buyer         |integer|foreign_key: true|
+|seller        |integer|foreign_key: true|
 - 配送料 チェックボックスを使用して数字を入れる
 - 発送日 shipmentチェックボックスを使用して数字を入れる
 - 購入者と出品者のid buyer, seller
