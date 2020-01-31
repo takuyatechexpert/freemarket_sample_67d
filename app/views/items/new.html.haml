@@ -26,6 +26,14 @@
               必須
           = f.text_field :name, placeholder: "商品名(必須40文字まで)", class: "main__exhibitionContents__itemDescription__details__field"
 
+        .main__exhibitionContents__itemDescription__size
+          %ul.main__exhibitionContents__information
+            %li
+              商品のサイズ
+            %li
+              必須
+          = f.text_field :name, class: "main__exhibitionContents__itemDescription__details__field"
+          
         .main__exhibitionContents__details__category
           %ul.main__exhibitionContents__information
             %li
@@ -33,6 +41,7 @@
             %li
               必須
           = f.select :category, [["--", 0],["レディース", 1],["メンズ", 2],["ベビー・キッズ",3],["本・音楽・ゲーム",4]], class: "fieldPulldown"
+
         .main__exhibitionContents__details__brand
           %ul.main__exhibitionContents__information
             %li
@@ -40,6 +49,7 @@
             %li
               必須
           = f.select :category, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
+
 
         .main__exhibitionContents__details__itemStatus
           %ul.main__exhibitionContents__information
