@@ -9,12 +9,12 @@ class User < ApplicationRecord
          has_many :cards
          has_many :addresses
 
-         validates :nickname,              presence: true, length: {maximum: 20}
+         validates :nick_name,              presence: true, length: {maximum: 20}
          validates :email,                 presence: true, uniqueness: { case_sensitive: false }
          validates :password,              presence: true, length: {minimum: 7, maximum: 128}
          validates :family_name,           presence: true, length: {maximum: 35}
          validates :first_name,             presence: true, length: {maximum: 35}
          validates :family_name_kana,      presence: true, length: {maximum: 35}
          validates :first_name_kana,       presence: true, length: {maximum: 35}
-         validates :birthday,              presence: true
+        #  validates :birthday,              presence: true
 end
