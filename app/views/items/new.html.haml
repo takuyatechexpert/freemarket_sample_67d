@@ -17,30 +17,30 @@
         = f.file_field :image, class: "imageField"
         
       .main__exhibitionContents__itemDescription
-        .main__exhibitionContents__itemDescription__name
+        .main__exhibitionContents__itemDescription__details
+          商品の詳細
           %ul.main__exhibitionContents__information
             %li
               商品名
             %li
               必須
-          = f.text_field :name, class: "main__exhibitionContents__itemDescription__name__field"
-        .main__exhibitionContents____itemDescription__description
-          %ul.main__exhibitionContents__information
-            %li
-              商品の説明
-            %li
-              必須
-          = f.text_area :item_description
+          = f.text_field :name, placeholder: "商品名(必須40文字まで)", class: "main__exhibitionContents__itemDescription__details__field"
 
-      .main__exhibitionContents__details
         .main__exhibitionContents__details__category
-          商品の詳細
           %ul.main__exhibitionContents__information
             %li
               カテゴリー
             %li
               必須
-          = f.select :category, [["--", 0],["レディース", 1],["メンズ", 2],["ベビー・キッズ",3],["本・音楽・ゲーム",4]]
+          = f.select :category, [["--", 0],["レディース", 1],["メンズ", 2],["ベビー・キッズ",3],["本・音楽・ゲーム",4]], class: "fieldPulldown"
+        .main__exhibitionContents__details__brand
+          %ul.main__exhibitionContents__information
+            %li
+              ブランド
+            %li
+              必須
+          = f.select :category, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
+
         .main__exhibitionContents__details__itemStatus
           %ul.main__exhibitionContents__information
             %li
@@ -72,9 +72,9 @@
               必須
           = f.select :date, [["--", 0],["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送",3]]
 
-      .main__exhibitionContents__sellingPrice
-        .main__exhibitionContents__sellingPrice
-          販売価格
+      .main__exhibitionContents__result
+        販売価格
+        .main__exhibitionContents__result__sellingPrice
           %ul.main__exhibitionContents__information
             %li
               価格
@@ -83,21 +83,36 @@
           %ul.main__exhibitionContents__information
             %li
               ¥
-            %li
+            %li.main__exhibitionContents__result__totalPrice
               = f.number_field :price
-        .main__exhibitionContents__details__commission
+        .main__exhibitionContents__result__commission
           販売手数料(10%)
-        .main__exhibitionContents__details__date
-          %ul.main__exhibitionContents__information
+        .main__exhibitionContents__result__profit
+          販売利益
+          %ul
             %li
-              販売利益
+              ここに手数料抜きの金額を表示させるjquery使用予定
             %li
-              ー
+              &ndash;
       .main__exhibitionContents__text
         禁止されている出品、行為を必ずご確認ください。
-        またブランド品でシリアルナンバー等がある場合はご記載ください。 偽ブランドの販売は犯罪であ
-        り処罰される可能性があります。
+        %br
+        またブランド品でシリアルナンバー等がある場合はご記載ください。 偽ブランドの販売は犯罪であり
+        処罰される可能性があります。
+        %br
         また、出品をもちまして加盟店規約に同意したことになります。
-      .main__exhibitionContents__submit
-        = f.submit "出品する"
-        = link_to "もどる"
+        .main__exhibitionContents__submit
+          = f.submit "出品する", class: "main__exhibitionContents__submit__btn"
+          = link_to "もどる", "#", class: "main__exhibitionContents__back__btn"
+.footer
+  %ul
+    %li
+      %small プライバシーポリシー
+    %li
+      %small フリマ利用規約
+    %li
+      %small 特定商取引に関する表記
+  = image_tag "logo-white.png", alt: "furima icon", id: "pic1", class: "exhibitionFooter__logo"
+  .copyright
+    %small
+      &copy FURIMA, inc.
