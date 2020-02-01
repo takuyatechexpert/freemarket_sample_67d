@@ -31,11 +31,12 @@ ActiveRecord::Schema.define(version: 2020_01_31_074800) do
     t.string "name", null: false
     t.integer "price", null: false
     t.string "size", null: false
+    t.string "item_status", null: false
     t.integer "delivery_charge", null: false
     t.string "delivery_area", null: false
     t.integer "shipment", null: false
-    t.integer "buyer"
-    t.integer "seller"
+    t.integer "buyer_id"
+    t.integer "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
