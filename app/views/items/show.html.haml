@@ -26,38 +26,32 @@
     .pcHeader-headerInner_item
       .pcHeader-headerInner_item-content
         %p.box-item-name  
-          - @items.each do |item|
-            = item.name 
-          %br        
-          =image_tag "/assets/figure_maintenance.png",alt: "hoge" ,class: "images"
-          %br 
-          =image_tag "/assets/figure_maintenance.png",alt: "hoge" ,class: "images2"
-          =image_tag "/assets/figure_maintenance.png",alt: "hoge" ,class: "images2"
-          =image_tag "/assets/figure_maintenance.png",alt: "hoge" ,class: "images2" 
+          = @items.name 
+          %br
+            - @items.images.each do |i|
+              = image_tag i.image.url ,class: "images"
+          - @items.images.each do |i| 
+            = image_tag i.image.url ,class: "images2" 
+            = image_tag i.image.url ,class: "images2" 
+            = image_tag i.image.url ,class: "images2"  
           %p.box-item-name-price 
             %span.price_tag>
-              - @items.each do |item|
-                = item.price
+              = @items.price
             %span.tax> 
-              - @items.each do |item|
-                = item.delivery_charge
-
-          
+              = @items.delivery_charge 
             %table.box-item-name-price-2
               %tr 
               %th 商品名
               %td 
-                - @items.each do |item|
-                  = item.name 
+                = @items.name 
               %tr 
               %th 商品説明
               %td 
-                
+                = @items.description
               %tr 
               %th 出品者名
               %td 
-                - @items.each do |item|
-                  = item.buyer
+                = @items.buyer_id
               %tr 
               %th カテゴリー名
               %td 
@@ -69,22 +63,20 @@
               %tr
               %th 商品サイズ
               %td 
-                - @items.each do |item|
-                  = item.size
+                = @items.size
               %tr 
               %th 商品の状態
               %td 
+                = @items.item_status 
 
               %tr 
               %th 配送料の負担
               %td 
-                - @items.each do |item|
-                  = item.delivery_charge
+                = @items.delivery_charge
               %tr 
               %th 発送元の地域
               %td 
-                - @items.each do |item|
-                  = item.delivery_area
+                = @items.delivery_area
               %tr 
               %th 発送日の目安
               %td 
