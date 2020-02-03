@@ -69,11 +69,11 @@
       
       &-content{
         background-color: gray;
-        height:2000px;
+        height:1850px;
         width:100vw;
         position: relative;
         .box-item-name{
-          height:1370px;
+          height:1270px;
           width:700px;
           background-color: antiquewhite;
           position: absolute;
@@ -118,7 +118,6 @@
               padding:20px 40px;
               width:500px;
               background-color: white;
-
             }
             .tr,th{
               border: solid 1px;
@@ -127,16 +126,6 @@
             }
           }
           &-3{
-            .submit-2{
-              font-size: 20px;
-              color: aqua;
-              border:solid orange;
-              border-radius: 30px;
-              position: absolute;
-              top:1400px;
-              left:450px;
-              
-            }
             .submit-2:hover{
               opacity: 0.6;
             }
@@ -146,11 +135,23 @@
               border:solid darkgray;
               border-radius: 30px;
               position: absolute;
-              top:1400px;
+              top:1300px;
               left:850px;
-              
             }
             .submit-3:hover{
+              opacity: 0.6;
+            }
+            .submit-4{
+              font-size: 20px;
+              color:orange;
+              border:solid orange;
+              border-radius: 30px;
+              position: absolute;
+              top:1300px;
+              left:500px;
+              text-decoration: none;
+            }
+            .submit-4:hover{
               opacity: 0.6;
             }
           }
@@ -159,7 +160,7 @@
             width:700px;
             background-color: antiquewhite;
             position: absolute;
-            top: 1500px;
+            top: 1400px;
             left: 390px;
             .text-items{
               height:200px;
@@ -203,7 +204,7 @@
               font-size: 30px;
               color: aqua;
               position: absolute;
-              top: 1900px;
+              top: 1800px;
               left: 660px;
               font-weight: bold;
             }
