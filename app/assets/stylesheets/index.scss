@@ -332,7 +332,7 @@
         font-weight: bold;
         font-size: 30px;
         top:100px;
-        left:400px;
+        left:500px;
       }
       .text2-1{
         position: absolute;
@@ -340,7 +340,7 @@
         font-weight: bold;
         font-size: 30px;
         top:150px;
-        left:450px;
+        left:550px;
       }
     }
     &_link3{
@@ -350,7 +350,7 @@
         background-color: aqua;
         position: absolute;
         top:250px;
-        left: 650px; 
+        left: 780px; 
       }
       .button2-1{
         height: 80px;
@@ -358,7 +358,7 @@
         background-color: aqua;
         position: absolute;
         top:250px;
-        left: 450px; 
+        left: 520px; 
       }
     }
     &_footer{
@@ -376,7 +376,7 @@
           color: #fff;
           display: flex;
           justify-content: space-evenly;
-          padding: 100px 200px 0 300px;
+          padding: 100px 200px 0 250px;
           .p{
             height:250px;
             width: 500px;
@@ -384,16 +384,16 @@
           }
         
           &-icon{
-            margin: 0  560px;
+            margin: 0  620px;
             .image5{
-              height:100px;
+              height:80px;
               width: 180px;
             }
           }
           &-corp{
             .c{
               color:white;
-              margin: 0  630px;
+              margin: 0  700px;
             }
           }
         }
