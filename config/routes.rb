@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   root 'toppages#index'
   
 
-  resources :items, only: [:index,:new, :create]
+  resources :items, only: [:index,:new, :create, :show]
   resources :home 
   resources :users
-  resources :items, only: :new
-
+  
   get 'cards' => 'cards#index'
   post 'cards/pay' => 'cards#pay'  
   resources :buyers
