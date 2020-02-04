@@ -12,6 +12,7 @@
       .pcHeader-headerInner_text_login
         %p.text3 ログイン
         %p.text4 新規会員登録
+        %p.text5 ユーザーページ
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
     .pcHeader-headerInner_image
       .pcHeader-headerInner_image_main
@@ -21,8 +22,10 @@
         %b.text2 FURIMAは誰でもかんたんに出品できる・購入できる 
         %b.text3 FURIMAアプリです
       .pcHeader-headerInner_image_link
-        %i.button1
-        %i.button2
+        %i
+        = image_tag "/assets/apple.svg", class:"button1"
+        %i
+        = image_tag "/assets/google-play-badge.png", class:"button2"
   .pcContent-contentInner
     .pcContent-contentInner_mainContent
       %p.comment FURIMAが選ばれる三つの理由
@@ -65,8 +68,10 @@
         %p.text3-1 出品・購入回数も業界最多です！
         %p.text4-1 ほしかったあの商品に出会えるかもしれません。
       .pcContent-contentInner_image2_link2
-        %i.button1-1
-        %i.button2-1
+        %i
+        = image_tag "/assets/apple.svg", class:"button1-1"
+        %i
+        = image_tag "/assets/google-play-badge.png", class:"button2-1"
     .pcContent-contentInner_style
       .pcContent-contentInner_style-main2
         %p.comment1-1 FURIMAの特徴
@@ -126,8 +131,10 @@
           %p.text1-1 誰でも簡単、人生を変えるアプリ
           %p.text2-1 今すぐ無料ダウンロード！
         .pcContent-contentInner_image3_link3
-          %i.button1-1
-          %i.button2-1
+          %i
+          = image_tag "/assets/google-play-badge.png", class:"button1-1"
+          %i
+          = image_tag "/assets/apple.svg", class:"button2-1"
     .pcContent-contentInner_image3_footer
       .pcContent-contentInner_image3_footer-color
         .pcContent-contentInner_image3_footer-color_block

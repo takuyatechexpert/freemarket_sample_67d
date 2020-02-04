@@ -4,7 +4,7 @@
   
   &-headerInner{
     &_mainHeader{
-      padding: 20px 0;
+      padding: 20px 20px;
       display: flex;
       justify-content: center;
       .image{
@@ -15,8 +15,8 @@
         width: 800px;
       }
       &_submit{
-        height: 38px;
-        width: 45px;
+        height: 40px;
+        width: 40px;
         background-color: aqua;
         .submit{
           height: 40px;
@@ -35,7 +35,7 @@
         margin: 0 20px;
         .text{
           float: left;
-          padding: 0 30px 0 100px;
+          padding: 0 30px 0 180px;
         }
         .text2{
           float: right;
@@ -46,66 +46,12 @@
         float: right;
         .text3{
           float: left;
-          padding: 0 40px;
+          padding: 0 10px;
         } 
         .text4{
           float: right;
         }
       }
-    } 
-    &_image{
-      height: 600px;
-      width: 100vw;
-      position: relative;
-      &_main{
-        .main{
-          height: 600px;
-          width: 100vw;
-        }
-      }
-      &_text{
-        .text{
-          position: absolute;
-          top:250px;
-          font-size: 50px;
-          color: white;
-          left:60px;
-          text-shadow: 2px 2px #fff, 5px 5px rgba(0, 188, 212, 0.4);
-        }
-        .text2{
-          position: absolute;
-          top:330px;
-          font-size: 20px;
-          color: white;
-          left:60px;
-        }
-        .text3{
-          position: absolute;
-          top:360px;
-          font-size: 20px;
-          color: white;
-          left:60px;
-        }
-      }
-   
-    &_link{
-      .button1{
-      height: 80px;
-      width: 150px;
-      background-color: aqua;
-      position: absolute;
-      bottom:80px;
-      left: 60px;
-      }
-      .button2{
-        height: 80px;
-        width: 150px;
-        background-color: aqua;
-        position: absolute;
-        bottom:80px;
-        left: 300px;
-      }
     }
-   }
   }
-}
+}  
