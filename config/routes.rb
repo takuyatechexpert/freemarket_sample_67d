@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'toppages#index'
   
 
-  resources :items, only: [:index,:new, :create, :show]
+  resources :items, only: [:index,:new, :create, :show, :edit]
   resources :home 
   resources :users
   
