@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   end
   
   def create
-    # binding.pry
+    binding.pry
     # @user = User.find(current_user.id)
     @item = Item.new(item_params)
     if @item.save
