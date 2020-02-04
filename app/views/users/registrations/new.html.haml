@@ -39,6 +39,26 @@
  
         -# = f.label :password_confirmation
         = f.password_field :password_confirmation, class:"form-control", placeholder: "パスワード再度入力"
-      
+
+      .form-group
+        = f.fields_for :addresses do |i|
+        
+          = i.text_field :postal_code, class: "form-control", placeholder: "郵便番号"
+          = i.text_field :municipalities, class: "form-control", placeholder: "住所"
+          = i.text_field :address, class: "form-control", placeholder: "番地"
+          = i.text_field :home_type, class: "form-control", placeholder: "マンション、アパート名 null ok"
+
+      .form-group
+        = f.fields_for :addresses do |i|
+          = i.text_field :tel, class: "form-control", placeholder: "電話番号" ,autocomplete: "email"
+
+      .form-group
+        = f.label :birthday
+        = f.text_field :birthday, placeholder: "null ok"
+        -# %input{:max => "9999-12-31", :name => "birthday", :type => "date"}/
+
+        .form-group
+        カード情報入力画面予定
+
       .text-center
         = f.submit "アカウントを作成", class: "btn submitBtn"
