@@ -173,11 +173,11 @@
 }
 
 #item_category,
-#item_item_status,
-#item_delivery_charge,
-#item_details_area,
-#item_brand,
-#item_shipment{
+#item_status_id,
+#item_postage_id,
+#item_region_id,
+#item_shipping_date_id,
+#item_brand{
   background: white;
   width: 100%;
   height: 45px;

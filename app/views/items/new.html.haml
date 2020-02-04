@@ -11,6 +11,7 @@
         %ul.main__exhibitionContents__information
           %li
             出品画像
+
           %li
             必須
         = f.fields_for :images do |i|
@@ -65,7 +66,7 @@
               商品の状態
             %li
               必須
-          = f.select :item_status, [["--", 0],["新品、未使用", 1],["未使用に近い", 2],["目立った傷や汚れなし",3],["やや傷や汚れあり",4],["傷や汚れあり",5],["全体的に状態が悪い",5]]
+          = f.collection_select :status_id, Status.all, :id, :name, prompt: "--"
       .main__exhibitionContents__delivery
         .main__exhibitionContents__details__deliveryCharge
           配送について
@@ -74,21 +75,21 @@
               配送料の負担
             %li
               必須
-          = f.select :delivery_charge, [["--", 0],["送料込み(出品者負担)", 1],["着払い(購入者負担)", 2]]
+          = f.collection_select :postage_id, Postage.all, :id, :name, prompt: "--"
         .main__exhibitionContents__details__area
           %ul.main__exhibitionContents__information
             %li
               配送元の地域
             %li
               必須
-          = f.text_field :delivery_area, class: "main__exhibitionContents__itemDescription__details__field"
+          = f.collection_select :region_id, Region.all, :id, :name, prompt: "--"
           .main__exhibitionContents__details__date
           %ul.main__exhibitionContents__information
             %li
               発送までの日数
             %li
               必須
-          = f.select :shipment, [["--", 0],["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送",3]]
+          = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name, prompt: "--"
 
       .main__exhibitionContents__result
         販売価格
