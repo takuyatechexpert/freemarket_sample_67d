@@ -14,10 +14,27 @@
 
           %li
             必須
-        = f.fields_for :images do |i|
-          = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
-          = i.file_field :image, class: "imageField"
-        
+        #image-box
+          #previews
+            - if @item.persisted?
+              - @item.images.each_with_index do |image, i|
+                = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+          = f.fields_for :images do |i|
+            .js-file_group(data-index="#{i.index}")
+              -# = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
+              = i.file_field :image, class: "js-file"
+              .js-remove
+                削除
+            - if @item.persisted?
+              .hidden-destroy
+                = image.check_box :_destroy, data:{ index: image.index }
+          - if @item.persisted?
+            .js-file_group(data-index="#{ @item.images.count}")
+              .js-file
+                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]"
+                .js-remove
+                  削除
+
       .main__exhibitionContents__itemDescription
         .main__exhibitionContents__itemDescription__details
           商品の詳細

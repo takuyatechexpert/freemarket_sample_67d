@@ -27,7 +27,7 @@
 
     &__pictures{
       padding: 40px;
-      height: 280px;
+      height: 30%px;
       @include border;
 
       .imageFieldLabel{
@@ -38,8 +38,19 @@
         height: 159px;
         border: dashed 1px #c7c5c5;
       }
-      .imageField{
-        display: none;
+      .js-file{
+        // display: none;
+      }
+      #image-box{
+        // display: inline;
+      }
+      #previews{
+        // background: #d6d3d3a1;
+        // width: 100px;
+        padding: 30px;
+      }
+      .js-file_group{
+        display: flex;
       }
     }
     

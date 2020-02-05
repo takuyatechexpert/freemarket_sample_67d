@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   end
   
   def create
-    binding.pry
+    # binding.pry
     # @user = User.find(current_user.id)
     @item = Item.new(item_params)
     if @item.save
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :size, :status_id, :postage_id, :region_id, :shipping_date_id, images_attributes: [:image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :description, :price, :size, :status_id, :postage_id, :region_id, :shipping_date_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
 end
