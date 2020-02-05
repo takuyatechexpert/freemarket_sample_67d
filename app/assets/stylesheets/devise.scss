@@ -51,9 +51,10 @@
   width: 700px;
   margin: 0 auto;
   margin-top: 10vh;
-  .title {
+  .h10 {
     margin: 0;
     text-align: center;
+      color: red;
   }
   .new_user {
     .form-group {
@@ -86,3 +87,26 @@
     }
   }
 }
+
+.pon{
+font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background: orange;
+    height: 20px;
+    border-radius: 3px;
+    padding: 0 7px;
+    width:40px;
+}
+
+.don{
+  font-size: 12px;
+      font-weight: bold;
+      color: white;
+      background: red;
+      height: 20px;
+      border-radius: 3px;
+      padding: 0 7px;
+      width:40px;
+  }
+

@@ -12,12 +12,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    # binding.pry
     @user = User.new(user_params)
     if @user.save
       redirect_to root_path
     else
-      @user.addresses.new
       render :new
     end
   end
@@ -25,7 +23,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def user_params
-    params.require(:user).permit(:nick_name, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday, address_attributes: [:postal_code, :municipalities, :address, :home_type, :tel])
+    params.require(:user).permit(:nick_name, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday, :password, addresses_attributes: [:postal_code, :municipalities, :address, :home_type, :tel])
   end
 
   # GET /resource/edit
