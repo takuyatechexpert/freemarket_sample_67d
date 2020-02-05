@@ -2,6 +2,7 @@
   .left_user__action
     %h.tag ユーザー情報
     .list 
+      -# = link_to new_item_path do
       %il 
         出品する
         %ul
@@ -21,7 +22,7 @@
             .fas.fa-chevron-right
     .list
       %il 
-        出品中
+        購入履歴
         %ul
           %li
             .fas.fa-chevron-right

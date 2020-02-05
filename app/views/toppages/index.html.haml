@@ -1,10 +1,10 @@
 .pcHeader
   .pcHeader-headerInner
     .pcHeader-headerInner_mainHeader
-      = image_tag "/assets/logo1.png", class:"image", alt:"ほげ"
+      = image_tag "logo.png", class:"image", alt:"ほげ"
       %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
       .pcHeader-headerInner_mainHeader_submit
-        %input.submit{:type => "image", :src => "/assets/search1.png"}
+        %input.submit{:type => "image", :src => "search1.png"}
     .pcHeader-headerInner_text
       .pcHeader-headerInner_text_content
         %p.text カテゴリー
@@ -12,32 +12,35 @@
       .pcHeader-headerInner_text_login
         %p.text3 ログイン
         %p.text4 新規会員登録
+        %p.text5 ユーザーページ
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
     .pcHeader-headerInner_image
       .pcHeader-headerInner_image_main
-        = image_tag "/assets/bg-mainVisual-pict_pc.jpg", class:"main", alt:"ほげ"
+        = image_tag "bg-mainVisual-pict_pc.jpg", class:"main", alt:"ほげ"
       .pcHeader-headerInner_image_text
         %p.text 人生を変えるフリマアプリ
         %b.text2 FURIMAは誰でもかんたんに出品できる・購入できる 
         %b.text3 FURIMAアプリです
       .pcHeader-headerInner_image_link
-        %i.button1
-        %i.button2
+        %i
+        = image_tag "apple.svg", class:"button1"
+        %i
+        = image_tag "google-play-badge.png", class:"button2"
   .pcContent-contentInner
     .pcContent-contentInner_mainContent
       %p.comment FURIMAが選ばれる三つの理由
       %p.line
     .pcContent-contentInner_image
       %p.image
-        = image_tag "/assets/pict-reason-01.jpg", class:"image1", alt:"ほげ"
+        = image_tag "pict-reason-01.jpg", class:"image1", alt:"ほげ"
       %p.box1 1
 
       %p.image2
-        = image_tag "/assets/pict-reason-02.jpg", class:"image2", alt:"ほげ"
+        = image_tag "pict-reason-02.jpg", class:"image2", alt:"ほげ"
       %p.box2 2
 
       %p.image3
-        = image_tag "/assets/pict-reason-03.jpg", class:"image3", alt:"ほげ"
+        = image_tag "pict-reason-03.jpg", class:"image3", alt:"ほげ"
       %p.box3 3
     .pcContent-contentInner_text
 
@@ -58,28 +61,30 @@
 
     .pcContent-contentInner_image2
       .pcContent-contentInner_image2_main2
-        = image_tag "/assets/bg-topMiddleDl-pict.jpg", class:"main2", alt:"ほげ"
+        = image_tag "bg-topMiddleDl-pict.jpg", class:"main2", alt:"ほげ"
       .pcContent-contentInner_image2_text2
         %p.text1-1 会員数日本一位
         %p.text2-1 FURIMAは、フリマアプリで最も人気。
         %p.text3-1 出品・購入回数も業界最多です！
         %p.text4-1 ほしかったあの商品に出会えるかもしれません。
       .pcContent-contentInner_image2_link2
-        %i.button1-1
-        %i.button2-1
+        %i
+        = image_tag "apple.svg", class:"button1-1"
+        %i
+        = image_tag "google-play-badge.png", class:"button2-1"
     .pcContent-contentInner_style
       .pcContent-contentInner_style-main2
         %p.comment1-1 FURIMAの特徴
         %p.line
       .pcContent-contentInner_image2
         %p.image1-1
-          = image_tag "/assets/icon-01.png", class:"image1", alt:"ほげ"
+          = image_tag "icon-01.png", class:"image1", alt:"ほげ"
 
         %p.image2-1
-          = image_tag "/assets/icon-03.png", class:"image2", alt:"ほげ"
+          = image_tag "icon-03.png", class:"image2", alt:"ほげ"
 
         %p.image3-1
-          = image_tag "/assets/icon-04.png", class:"image3", alt:"ほげ"
+          = image_tag "icon-04.png", class:"image3", alt:"ほげ"
       .pcContent-contentInner_text2
         %span.image-text1> 
           簡単に売り買いできる
@@ -107,9 +112,9 @@
         .pcContent-contentInner_items-contents 
           %p.new-items 新規投稿商品
         .pcContent-contentInner_items-lists
-          %p.items hoge 
-          %p.items hoge
-          %p.items hoge
+          = link_to '購入詳細へ', "", method: :get, class:"items"
+          = link_to '購入詳細へ', "", method: :get, class:"items"
+          = link_to '購入詳細へ', "", method: :get, class:"items"
       .pcContent-contentInner_items2
         .pcContent-contentInner_items2-header2 
           %p.head2 ピックブランド 
@@ -121,13 +126,15 @@
           %p.items2 hoge
       .pcContent-contentInner_image3
         .pcContent-contentInner_image3_main3
-          = image_tag "/assets/bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
+          = image_tag "bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
         .pcContent-contentInner_image3_text3
           %p.text1-1 誰でも簡単、人生を変えるアプリ
           %p.text2-1 今すぐ無料ダウンロード！
         .pcContent-contentInner_image3_link3
-          %i.button1-1
-          %i.button2-1
+          %i
+          = image_tag "google-play-badge.png", class:"button1-1"
+          %i
+          = image_tag "apple.svg", class:"button2-1"
     .pcContent-contentInner_image3_footer
       .pcContent-contentInner_image3_footer-color
         .pcContent-contentInner_image3_footer-color_block
@@ -156,6 +163,6 @@
             %br
             お知らせ
         .pcContent-contentInner_image3_footer-color_block-icon
-          = image_tag "/assets/logo-white.png", class:"image5", alt:"ほげ"
+          = image_tag "logo-white.png", class:"image5", alt:"ほげ"
         .pcContent-contentInner_image3_footer-color_block-corp
           %small.c ©FURIMA

@@ -4,7 +4,7 @@
   = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
 .main  
   .main__exhibitionContents
-    = form_with local: true, method: :get do |f|
+    = form_with model: @item, local: true do |f|
       .main__exhibitionContents__title
         商品の情報を入力
       .main__exhibitionContents__pictures
@@ -13,8 +13,9 @@
             出品画像
           %li
             必須
-        = f.label :image,"ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
-        = f.file_field :image, class: "imageField"
+        = f.fields_for :images do |i|
+          = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
+          = i.file_field :image, class: "imageField"
         
       .main__exhibitionContents__itemDescription
         .main__exhibitionContents__itemDescription__details
@@ -25,6 +26,13 @@
             %li
               必須
           = f.text_field :name, placeholder: "商品名(必須40文字まで)", class: "main__exhibitionContents__itemDescription__details__field"
+        .main__exhibitionContents____itemDescription__description
+          %ul.main__exhibitionContents__information
+            %li
+              商品の説明
+            %li
+              必須
+          = f.text_area :description, rows: 7, class: "tablearea"
 
         .main__exhibitionContents__itemDescription__size
           %ul.main__exhibitionContents__information
@@ -32,7 +40,7 @@
               商品のサイズ
             %li
               必須
-          = f.text_field :name, class: "main__exhibitionContents__itemDescription__details__field"
+          = f.text_field :size, class: "main__exhibitionContents__itemDescription__details__field"
           
         .main__exhibitionContents__details__category
           %ul.main__exhibitionContents__information
@@ -48,7 +56,7 @@
               ブランド
             %li
               必須
-          = f.select :category, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
+          = f.select :brand, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
 
 
         .main__exhibitionContents__details__itemStatus
@@ -80,7 +88,7 @@
               発送までの日数
             %li
               必須
-          = f.select :date, [["--", 0],["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送",3]]
+          = f.select :shipment, [["--", 0],["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送",3]]
 
       .main__exhibitionContents__result
         販売価格
@@ -113,7 +121,8 @@
         また、出品をもちまして加盟店規約に同意したことになります。
         .main__exhibitionContents__submit
           = f.submit "出品する", class: "main__exhibitionContents__submit__btn"
-          = link_to "もどる", "#", class: "main__exhibitionContents__back__btn"
+          = link_to "もどる", :back, class: "main__exhibitionContents__back__btn"
+        
 .exhibitionFooter
   %ul
     %li

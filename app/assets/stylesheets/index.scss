@@ -1,3 +1,115 @@
+.pcHeader{
+  width: 100vw;
+  height: 200px;
+  &-headerInner{
+    &_mainHeader{
+      padding: 30px 0;
+      display: flex;
+      justify-content: center;
+      .image{
+        height: 40px;
+        padding: 0 20px 0 0;
+      }
+      .text{
+        width: 800px;
+      }
+      &_submit{
+        height: 40px;
+        width: 45px;
+        background-color: aqua;
+        .submit{
+          height: 40px;
+          width: 40px;
+          padding: 10px 10px; 
+        }
+      }
+    }
+    &_text{
+      display: flex;
+      margin: 10px 60px 0px 0;
+      width: 100vw;
+      height: 30px;
+      &_content{
+        float: right;
+        .text{
+          float: left;
+          padding: 0 30px 0 300px;
+        }
+        .text2{
+          float: right;
+          padding: 0 500px 0 0px;
+        }
+      }
+      &_login{
+        float: right;
+        .text3{
+          float: left;
+          padding: 0 70px;
+        } 
+        .text4{
+          float: right;
+          padding: 0 20px;
+        }
+        .text5{
+          float:right;
+          padding: 0 10px;
+        }
+      }
+    } 
+    &_image{
+      height: 600px;
+      width: 100vw;
+      position: relative;
+      &_main{
+        .main{
+          height: 600px;
+          width: 100vw;
+        }
+      }
+      &_text{
+        .text{
+          position: absolute;
+          top:250px;
+          font-size: 50px;
+          color: white;
+          left:60px;
+          text-shadow: 2px 2px #fff, 5px 5px rgba(0, 188, 212, 0.4);
+        }
+        .text2{
+          position: absolute;
+          top:330px;
+          font-size: 20px;
+          color: white;
+          left:60px;
+        }
+        .text3{
+          position: absolute;
+          top:360px;
+          font-size: 20px;
+          color: white;
+          left:60px;
+        }
+      }
+   
+    &_link{
+      .button1{
+      height: 80px;
+      width: 200px;
+      position: absolute;
+      bottom:80px;
+      left: 60px;
+      }
+      .button2{
+        height: 110px;
+        width: 225px;
+        position: absolute;
+        bottom:65px;
+        left: 300px;
+      }
+    }
+   }
+  }
+}
 .pcContent-contentInner{
   &_mainContent{
     .comment{
@@ -12,7 +124,7 @@
       height:40px;
       width: 100px;
       border-bottom: solid 5px aqua;
-      margin: 20px 580px;
+      margin: 20px 670px;
     }
   }
   &_image{
@@ -171,18 +283,16 @@
     &_link2{
       .button1-1{
         height: 80px;
-        width: 150px;
-        background-color: aqua;
+        width: 200px;
         position: absolute;
         top:250px;
         left: 110px; 
       }
       .button2-1{
-        height: 80px;
-        width: 150px;
-        background-color: aqua;
+        height: 105px;
+        width: 220px;
         position: absolute;
-        top:250px;
+        top:237px;
         left: 320px; 
       }
     } 
@@ -201,7 +311,7 @@
         height:40px;
         width: 100px;
         border-bottom: solid 5px aqua;
-        margin: 20px 580px;
+        margin: 20px 630px;
       }
     }
   }
@@ -214,7 +324,7 @@
     .image1{
       height:300px;
       width: 300px;
-      padding: 0 0 0 70px;
+      padding: 0 0 0 100px;
     }
     .image2{
       height:300px;
@@ -223,7 +333,7 @@
     .image3{
       height:300px;
       width: 300px;
-      padding: 0 70px 0 0px;
+      padding: 0 100px 0 0px;
     }
   }
   &_text2{
@@ -234,7 +344,7 @@
       font-weight: bold;
       font-size: 20px;
       float: left;
-      padding: 0px 100px 0px 30px;
+      padding: 0px 150px 0px 30px;
     }
     .image-text2{
       font-weight: bold;
@@ -245,7 +355,7 @@
       font-weight: bold;
       font-size: 20px;
       float: right;
-      padding: 0px 40px 0px 0px;
+      padding: 0px 80px 0px 0px;
     }
   }
   &_items{
@@ -332,7 +442,7 @@
         font-weight: bold;
         font-size: 30px;
         top:100px;
-        left:400px;
+        left:500px;
       }
       .text2-1{
         position: absolute;
@@ -340,25 +450,23 @@
         font-weight: bold;
         font-size: 30px;
         top:150px;
-        left:450px;
+        left:550px;
       }
     }
     &_link3{
       .button1-1{
-        height: 80px;
-        width: 150px;
-        background-color: aqua;
+        height: 105px;
+        width: 220px;
         position: absolute;
-        top:250px;
-        left: 650px; 
+        top:235px;
+        left: 750px; 
       }
       .button2-1{
         height: 80px;
-        width: 150px;
-        background-color: aqua;
+        width: 200px;
         position: absolute;
         top:250px;
-        left: 450px; 
+        left: 460px; 
       }
     }
     &_footer{
@@ -376,7 +484,7 @@
           color: #fff;
           display: flex;
           justify-content: space-evenly;
-          padding: 100px 200px 0 300px;
+          padding: 100px 70px 0 115px;
           .p{
             height:250px;
             width: 500px;
@@ -384,16 +492,17 @@
           }
         
           &-icon{
-            margin: 0  560px;
+            margin: 0  620px;
             .image5{
-              height:100px;
+              height:80px;
               width: 180px;
             }
-          }
+          } 
           &-corp{
+            text-align: center;
             .c{
               color:white;
-              margin: 0  630px;
+              
             }
           }
         }
