@@ -9,6 +9,16 @@ class Item < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
 
+  validates :images, presence: true
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :size, presence: true
+  # categoryテーブル未実装の為現在コメントアウト 
+  # validates :category, presence: true
+  validates :status_id, presence: true
+  validates :postage_id, presence: true
+  validates :region_id, presence: true
+  validates :shipping_date_id, presence: true
   validates :price, presence: true
 
 end

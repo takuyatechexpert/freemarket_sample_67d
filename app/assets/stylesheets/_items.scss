@@ -40,23 +40,26 @@
       }
       .js-file{
         // display: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
       }
-      #image-box{
-        // display: inline;
-      }
+
       #previews{
-        // background: #d6d3d3a1;
         // width: 100px;
         padding: 30px;
       }
       .js-file_group{
+ 
+        border-top: solid 1px #d6d6d6;
         display: flex;
       }
     }
     
     &__itemDescription{
       padding: 40px;
-      height: 730px;
+      height: 810px;
       @include border;
       
       &__details__field{
@@ -179,7 +182,11 @@
     border-radius: 3px;
     padding: 0 5px;
     margin-left: 10px;
-
+    
+  }
+  
+  .main__exhibitionContents__information--any{
+    background: #b3b3b3;
   }
 }
 
@@ -194,7 +201,9 @@
   height: 45px;
   // #priceは別枠で指定している
 }
-
+#item_category{
+  margin-bottom: 20px;
+}
 .tablearea{
   width:100%;
   border:solid 1px gainsboro;

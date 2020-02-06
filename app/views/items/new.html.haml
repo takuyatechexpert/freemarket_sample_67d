@@ -15,10 +15,6 @@
           %li
             必須
         #image-box
-          #previews
-            - if @item.persisted?
-              - @item.images.each_with_index do |image, i|
-                = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
           = f.fields_for :images do |i|
             .js-file_group(data-index="#{i.index}")
               -# = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
@@ -34,7 +30,11 @@
                 = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]"
                 .js-remove
                   削除
+          - if @item.persisted?
+            - @item.images.each_with_index do |image, i|
+              = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
 
+        
       .main__exhibitionContents__itemDescription
         .main__exhibitionContents__itemDescription__details
           商品の詳細
@@ -60,20 +60,22 @@
               必須
           = f.text_field :size, class: "main__exhibitionContents__itemDescription__details__field"
           
-        .main__exhibitionContents__details__category
+        .main__exhibitionContents__itemDescription__category
           %ul.main__exhibitionContents__information
             %li
               カテゴリー
             %li
               必須
           = f.select :category, [["--", 0],["レディース", 1],["メンズ", 2],["ベビー・キッズ",3],["本・音楽・ゲーム",4]], class: "fieldPulldown"
+          -# gem ancestry 導入時に使用
+          -# = f.select :category, [["--", 0],["アウター", 1],["ジャケット", 2],["トップス",3],["ボトムス",4]], class: "fieldPulldown"
 
-        .main__exhibitionContents__details__brand
+        .main__exhibitionContents__itemDescription__brand
           %ul.main__exhibitionContents__information
             %li
               ブランド
-            %li
-              必須
+            %li.main__exhibitionContents__information--any
+              任意
           = f.select :brand, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
 
 
