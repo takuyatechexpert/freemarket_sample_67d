@@ -42,11 +42,14 @@
     display: flex;
     padding-left: 10px;
     width: 90%;
+    a{
+      width: 100%;
+    }
     ul{
       float: right;
       margin-left: auto;
       li{
-        .fas{
+        .fa-chevron-right{
           top: 35%;
           color:rgb(129, 126, 126);
           
@@ -75,10 +78,9 @@
       float: right;
       margin-left: auto;
       li{
-        .fas{
-          top: 35%;
-          color:rgb(41, 36, 36);
-          
+        .fa-chevron-right{
+          // top: 35%;
+          color: rgb(41, 36, 36);
         }
       }
     }
