@@ -1,3 +1,12 @@
+$mainColorBlue: #3CCACE;
+$menuBackground: #f7f6f6;
+
 @mixin border {
   border-bottom: solid 1px #d6d6d6;
+}
+
+@mixin flexbox($justify-content: center) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify-content;
 }
