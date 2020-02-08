@@ -1,10 +1,22 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+.show__card--main
+  .show__card--main--body
+    %label.show__cards__title 支払い一覧
+    .show__card--body
+      .show__card--body__tab
+        .show__card--body__tab__list
+          .show__card--body__tab__list__title クレジットカード一覧
+          .show__card--body__tab__list__body
+            = icon 'fab', 'cc-visa', class:'show__card--body__tab__list__body--icon'
+            %br.show__card--body__tab__list__body__main
+              = "**** **** **** " + @default_card_information.last4
+            %br.show__card--body__tab__list__body__card
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+              = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+                %input{ type: "hidden", name: "card_id", value: "" }
+                %button.show__card__delete 削除する
+      .show__card--body__bottom 
+        = link_to "#", class:"show__card--body__bottom__link" do
+          支払い方法について
+          = icon 'fas', 'chevron-right', class:'list--icon'
