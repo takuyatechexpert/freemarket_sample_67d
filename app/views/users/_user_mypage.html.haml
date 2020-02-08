@@ -1,18 +1,16 @@
 .wapper
-  .header_user //川崎さんから
+  = render 'toppages/toppage_header'
 
   .user_main_contents
     = render 'side_user'
     .right_user
       .user_top 
-        = image_tag "/assets/pic_user.jpg", class:"image_user", alt: "test"
+        %ul 商品一覧
       .side_tab
-        .tag_right 履歴
-        .tag_left 出品中
-      .tab_contents
-      .tab_contents1
+        .tab_contents
 
-  .footer
+  = render 'toppages/toppage_footer'
+
 
 
 

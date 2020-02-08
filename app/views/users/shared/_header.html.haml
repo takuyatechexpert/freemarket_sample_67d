@@ -1,0 +1,24 @@
+.pcHeader
+  .pcHeader-headerInner
+    .pcHeader-headerInner_mainHeader
+      = image_tag "/assets/logo1.png", class:"image", alt:"ほげ"
+      %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
+      .pcHeader-headerInner_mainHeader_submit
+        %input.submit{:type => "image", :src => "/assets/search1.png"}
+    .pcHeader-headerInner_text
+      .pcHeader-headerInner_text_content
+        %p.text カテゴリー
+        %p.text2 ブランド
+      .pcHeader-headerInner_text_login
+        %p.text3 ログイン
+        %p.text4 新規会員登録
+    .pcHeader-headerInner_image
+      .pcHeader-headerInner_image_main
+        = image_tag "/assets/bg-mainVisual-pict_pc.jpg", class:"main", alt:"ほげ"
+      .pcHeader-headerInner_image_text
+        %p.text 人生を変えるフリマアプリ
+        %b.text2 FURIMAは誰でもかんたんに出品できる・購入できる 
+        %b.text3 FURIMAアプリです
+      .pcHeader-headerInner_image_link
+        %i.button1
+        %i.button2

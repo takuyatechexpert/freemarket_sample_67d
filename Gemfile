@@ -44,6 +44,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -70,16 +72,19 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem"devise"
+gem "devise"
 
 gem 'toastr-rails'
-gem"haml-rails"
-gem"font-awesome-sass"
-gem"pry-rails"
+gem "haml-rails"
+gem "font-awesome-sass"
+gem "pry-rails"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'active_hash'
+gem 'jquery-rails'
 gem 'fog-aws'
 gem 'payjp'
 gem 'ancestry'
 gem 'rails-i18n'
 gem 'jquery-rails'
+

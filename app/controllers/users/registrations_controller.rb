@@ -27,15 +27,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @user = User.find(params[:id])
+    @address = Address.find(params[:id])
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
-
+  def update
+    if current_user.update(user_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+  
   # DELETE /resource
   # def destroy
   #   super

@@ -1,8 +1,6 @@
 .exhibitionHeader{
   height: 128px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox($justify-content: center);
 
   &__logo{
     width: 220px;
@@ -13,7 +11,7 @@
   width: 100%;
 
   &__exhibitionContents{
-    background: rgb(247, 246, 246);
+    background: $menuBackground;
     width: 700px;
     margin: 0 auto;
 
@@ -27,27 +25,27 @@
 
     &__pictures{
       padding: 40px;
-      height: 280px;
+      height: 30%px;
       @include border;
 
       .imageFieldLabel{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexbox($justify-content: center);
         background: #f1f0f0;
         height: 159px;
         border: dashed 1px #c7c5c5;
       }
-      .imageField{
-        display: none;
+
+      .js-file_group{
+        border-top: solid 1px #d6d6d6;
+        display: flex;
       }
     }
-    
+
     &__itemDescription{
       padding: 40px;
-      height: 730px;
+      height: 810px;
       @include border;
-      
+
       &__details__field{
         width: 100%;
         height: 45px;
@@ -73,7 +71,7 @@
       }
 
         .main__exhibitionContents__result__totalPrice{
-          background: rgb(247, 246, 246);
+          background: $menuBackground;
           width: 100%;
           height: 45px;
 
@@ -85,9 +83,7 @@
           }
         }
         &__profit{
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          @include flexbox($justify-content: space-between);
           padding: 20px 0;
           ul{
             display: flex;
@@ -100,18 +96,21 @@
           }
         }
     }
+
     &__text{
       padding: 40px;
       height: 340px;
+
       .main__exhibitionContents__submit__btn{
-        background: #3CCACE;
+        background: $mainColorBlue;
         height: 50px;
         width: 100%;
         margin-top: 50px;
       }
+
       .main__exhibitionContents__back__btn{
         color: black;
-        background: rgb(207, 206, 206);
+        background: #cfcece;
         display: block;
         height: 50px;
         width: 50%;
@@ -133,15 +132,15 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    
+
     li{
       padding: 40px 10px 0;
 
     }
-  } 
+  }
 
   &__logo{
-    background: rgb(247, 247, 247);
+    background: #f7f7f7;
     border-radius: 10px;
     width: 200px;
     margin: 30px 0 0;
@@ -170,13 +169,19 @@
     margin-left: 10px;
 
   }
+
+  .main__exhibitionContents__information--any{
+    background: #b3b3b3;
+  }
 }
 
+
 #item_category_id,
-#item_item_status,
-#item_delivery_charge,
-#item_details_area,
-#item_shipment{
+#item_status_id,
+#item_postage_id,
+#item_region_id,
+#item_shipping_date_id,
+#item_brand{
   background: white;
   width: 100%;
   height: 45px;
@@ -189,7 +194,9 @@
     height: 45px;
 
 }
-
+#item_category{
+  margin-bottom: 20px;
+}
 .tablearea{
   width:100%;
   border:solid 1px gainsboro;
