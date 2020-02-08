@@ -1,5 +1,3 @@
--# データの送り先は暫定で適当な値
-
 .exhibitionHeader
   = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
 .main  
@@ -11,11 +9,28 @@
         %ul.main__exhibitionContents__information
           %li
             出品画像
+
           %li
             必須
-        = f.fields_for :images do |i|
-          = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
-          = i.file_field :image, class: "imageField"
+        #image-box
+          = f.fields_for :images do |i|
+            .js-file_group(data-index="#{i.index}")
+              = i.file_field :image, class: "js-file"
+              .js-remove
+                削除
+            - if @item.persisted?
+              .hidden-destroy
+                = image.check_box :_destroy, data:{ index: image.index }
+          - if @item.persisted?
+            .js-file_group(data-index="#{ @item.images.count}")
+              .js-file
+                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]"
+                .js-remove
+                  削除
+          - if @item.persisted?
+            - @item.images.each_with_index do |image, i|
+              = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+
         
       .main__exhibitionContents__itemDescription
         .main__exhibitionContents__itemDescription__details
@@ -42,20 +57,22 @@
               必須
           = f.text_field :size, class: "main__exhibitionContents__itemDescription__details__field"
           
-        .main__exhibitionContents__details__category
+        .main__exhibitionContents__itemDescription__category
           %ul.main__exhibitionContents__information
             %li
               カテゴリー
             %li
               必須
           = f.select :category, [["--", 0],["レディース", 1],["メンズ", 2],["ベビー・キッズ",3],["本・音楽・ゲーム",4]], class: "fieldPulldown"
+          -# gem ancestry 導入時に使用
+          -# = f.select :category, [["--", 0],["アウター", 1],["ジャケット", 2],["トップス",3],["ボトムス",4]], class: "fieldPulldown"
 
-        .main__exhibitionContents__details__brand
+        .main__exhibitionContents__itemDescription__brand
           %ul.main__exhibitionContents__information
             %li
               ブランド
-            %li
-              必須
+            %li.main__exhibitionContents__information--any
+              任意
           = f.select :brand, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
 
 
@@ -65,7 +82,7 @@
               商品の状態
             %li
               必須
-          = f.select :item_status, [["--", 0],["新品、未使用", 1],["未使用に近い", 2],["目立った傷や汚れなし",3],["やや傷や汚れあり",4],["傷や汚れあり",5],["全体的に状態が悪い",5]]
+          = f.collection_select :status_id, Status.all, :id, :name, prompt: "--"
       .main__exhibitionContents__delivery
         .main__exhibitionContents__details__deliveryCharge
           配送について
@@ -74,21 +91,21 @@
               配送料の負担
             %li
               必須
-          = f.select :delivery_charge, [["--", 0],["送料込み(出品者負担)", 1],["着払い(購入者負担)", 2]]
+          = f.collection_select :postage_id, Postage.all, :id, :name, prompt: "--"
         .main__exhibitionContents__details__area
           %ul.main__exhibitionContents__information
             %li
               配送元の地域
             %li
               必須
-          = f.text_field :delivery_area, class: "main__exhibitionContents__itemDescription__details__field"
+          = f.collection_select :region_id, Region.all, :id, :name, prompt: "--"
           .main__exhibitionContents__details__date
           %ul.main__exhibitionContents__information
             %li
               発送までの日数
             %li
               必須
-          = f.select :shipment, [["--", 0],["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送",3]]
+          = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name, prompt: "--"
 
       .main__exhibitionContents__result
         販売価格

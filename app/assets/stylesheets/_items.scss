@@ -27,7 +27,7 @@
 
     &__pictures{
       padding: 40px;
-      height: 280px;
+      height: 30%px;
       @include border;
 
       .imageFieldLabel{
@@ -38,14 +38,16 @@
         height: 159px;
         border: dashed 1px #c7c5c5;
       }
-      .imageField{
-        display: none;
+ 
+      .js-file_group{
+        border-top: solid 1px #d6d6d6;
+        display: flex;
       }
     }
     
     &__itemDescription{
       padding: 40px;
-      height: 730px;
+      height: 810px;
       @include border;
       
       &__details__field{
@@ -168,22 +170,28 @@
     border-radius: 3px;
     padding: 0 5px;
     margin-left: 10px;
-
+    
+  }
+  
+  .main__exhibitionContents__information--any{
+    background: #b3b3b3;
   }
 }
 
 #item_category,
-#item_item_status,
-#item_delivery_charge,
-#item_details_area,
-#item_brand,
-#item_shipment{
+#item_status_id,
+#item_postage_id,
+#item_region_id,
+#item_shipping_date_id,
+#item_brand{
   background: white;
   width: 100%;
   height: 45px;
   // #priceは別枠で指定している
 }
-
+#item_category{
+  margin-bottom: 20px;
+}
 .tablearea{
   width:100%;
   border:solid 1px gainsboro;
