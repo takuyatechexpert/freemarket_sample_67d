@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
    
   def index
-  
+    
+    @items = Item.all
   end
 
   def new
@@ -20,12 +21,16 @@ class ItemsController < ApplicationController
   end
 
   def show
+    # binding.pry
+    @items = Item.find(params[:id])
+  end 
+
   
-  end
   
   private
   def item_params
     params.require(:item).permit(:name, :description, :price, :size, :status_id, :postage_id, :region_id, :shipping_date_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
   end
+
 
 end

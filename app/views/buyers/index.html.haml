@@ -1,0 +1,14 @@
+//購入履歴
+.wapper
+  = link_to new_item_path do
+    .fas.fa-ghost.fa-8x
+  = render 'toppages/toppage_header'
+  .bought_main_content
+    = render 'users/side_user'
+    .right_bought
+      .right_bought__content
+        .bought.history_list
+          %li pic1
+          %li pic2
+          %li pic3
+  = render 'toppages/toppage_footer'

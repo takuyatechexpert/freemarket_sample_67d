@@ -1,0 +1,137 @@
+.pcHeader
+  .pcHeader-headerInner
+    .pcHeader-headerInner_mainHeader
+      = image_tag "/assets/logo1.png", class:"image", alt:"ほげ"
+      %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
+      .pcHeader-headerInner_mainHeader_submit
+        %input.submit{:type => "image", :src => "/assets/search1.png"}
+    .pcHeader-headerInner_text
+      .pcHeader-headerInner_text_content
+        %p.text カテゴリー
+        %p.text2 ブランド
+      .pcHeader-headerInner_text_login
+        %p.text3 ログイン
+        %p.text4 新規会員登録
+    .pcHeader-headerInner_bar
+      .pcHeader-headerInner_bar_contents
+        %p FURIMA
+        %p.kigou >
+        %p ベビーキッズ
+        %p.kigou >
+        %p ベビー服（男女兼用）~95センチ
+        %p.kigou >
+        %p アウター
+        %p.kigou >
+        %p product3
+    .pcHeader-headerInner_item
+      .pcHeader-headerInner_item-content
+        %p.box-item-name  
+          = @items.name 
+          %br
+            - @items.images.each do |i|
+              = image_tag i.image.url ,class: "images"
+          - @items.images.each do |i| 
+            = image_tag i.image.url ,class: "images2" 
+            = image_tag i.image.url ,class: "images2" 
+            = image_tag i.image.url ,class: "images2"  
+          %p.box-item-name-price 
+            %span.price_tag>
+              = @items.price
+            %span.tax> 
+              = @items.delivery_charge 
+            %table.box-item-name-price-2
+              %tr 
+              %th 商品名
+              %td 
+                = @items.name 
+              %tr 
+              %th 商品説明
+              %td 
+                = @items.description
+              %tr 
+              %th 出品者名
+              %td 
+                = @items.buyer_id
+              %tr 
+              %th カテゴリー名
+              %td 
+                
+              %tr 
+              %th ブランド              
+              %td 
+
+              %tr
+              %th 商品サイズ
+              %td 
+                = @items.size
+              %tr 
+              %th 商品の状態
+              %td 
+                = @items.item_status 
+
+              %tr 
+              %th 配送料の負担
+              %td 
+                = @items.delivery_charge
+              %tr 
+              %th 発送元の地域
+              %td 
+                = @items.delivery_area
+              %tr 
+              %th 発送日の目安
+              %td 
+               
+        %p.box-item-name-price-3
+          %a.submit-3 不適切な商品の通報
+          %a 
+          = link_to '☆購入画面へ', "buyers#show", method: :get, class:"submit-4"
+        %p.box-item-name-price-comment
+          %input.text-items{:type => "text", :maxlength => "150" , :size => "30"}           
+          ※相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+          ※不快な言葉遣いなどは利用制限や退会処分となろことがあります。
+          %input.submit{:type => "submit", :value => "コメントする"}
+          %a.previous-page ＜ 前の商品
+          %a.next-page 次の商品 ＞
+        %p.box-item-name-price-list
+          %a.list_link 商品一覧へ
+      .pcContent-contentInner_image3
+        .pcContent-contentInner_image3_main3
+          = image_tag "/assets/bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
+        .pcContent-contentInner_image3_text3
+          %p.text1-1 誰でも簡単、人生を変えるアプリ
+          %p.text2-1 今すぐ無料ダウンロード！
+        .pcContent-contentInner_image3_link3
+          %i.button1-1
+          %i.button2-1
+    .pcContent-contentInner_image3_footer
+      .pcContent-contentInner_image3_footer-color
+        .pcContent-contentInner_image3_footer-color_block
+          %p.text 
+            フリマについて
+            %br
+            会社概要（運営会社）
+            %br
+            プライバシーポリシー
+            %br
+            　フリマ利用規約
+            %br
+            ポイントに関する規約
+          %p.text1-1
+            furimaを見る
+            %br
+            カテゴリー一覧
+            %br
+            ブランド一覧
+          %p.text1-2
+            ヘルプ＆ガイド
+            %br
+            フリマガイド
+            %br
+            フリマロゴ利用ガイドライン
+            %br
+            お知らせ
+        .pcContent-contentInner_image3_footer-color_block-icon
+          = image_tag "/assets/logo-white.png", class:"image5", alt:"ほげ"
+        .pcContent-contentInner_image3_footer-color_block-corp
+          %small.c ©FURIMA

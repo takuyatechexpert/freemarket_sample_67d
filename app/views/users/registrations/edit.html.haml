@@ -1,25 +1,26 @@
+.exhibitionHeader
+  = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
+
+
 #signupPage
   .titleArea
     %h1 アカウント編集
     %h4 変更部分のみ記述
 
     %p= link_to "マイページへ戻る", new_session_path(resource_name)
-     
-     
+    
   .container
-    = form_with scope: resource, as: resource_name, url: registration_path(resource_name), html: { class: "mt-5, signupForm" }, local: true do |f|
+    = form_with scope: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|
       = devise_error_messages!
       .form-group
         -# = f.label :family_name_kana
         = f.text_field :family_name_kana, class: "form-control", placeholder: "(名字カナ)"
-
         -# %i= f.label :first_name_kana
         %i= f.text_field :first_name_kana, class: "form-control input-lg", placeholder: "(名前カナ)"
 
         .form-group
         -# = f.label :family_name
         = f.text_field :family_name, class: "form-control", placeholder: "名字(漢字)"
-
         -# %i= f.label :first_name
         %i= f.text_field :first_name, class: "form-control", placeholder: "名前(漢字)"
 
@@ -38,9 +39,24 @@
       .form-group 
         -# = f.label :password
         = f.password_field :password, class: "form-control", placeholder:"パスワード"
- 
         -# = f.label :password_confirmation
         = f.password_field :password_confirmation, class:"form-control", placeholder: "パスワード再度入力"
-      
+
+      .form-group
+        = f.fields_for :addresses do |i|
+          = i.text_field :tel, class: "form-control", placeholder: "電話番号" ,autocomplete: "email"
+          = i.text_field :postal_code, class: "form-control", placeholder: "郵便番号"
+          = i.text_field :municipalities, class: "form-control", placeholder: "住所"
+          = i.text_field :address, class: "form-control", placeholder: "番地"
+          = i.text_field :home_type, class: "form-control", placeholder: "マンション、アパート名"
+          
+
+      .form-group
+        %p= f.text_field :birthday, placeholder: "誕生日(任意)"
+        -# = f.%input{:max => "9999-12-31", :name => "birthday", :type => "date"}
+
+        .form-group
+        カード情報入力画面予定
+
       .text-center
-        = f.submit "アカウントを作成", class: "btn submitBtn"
+        = f.submit "アカウントを編集", class: "btn submitBtn"

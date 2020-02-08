@@ -1,7 +1,11 @@
+.exhibitionHeader
+  = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
+
+
 #div.signinPage
   .div.container
-    .h2.title
-      %h2 ログイン
+    .h10.title.text
+      %h10 ログイン
       .div.text-center-m-3
         %h5 
         .text-center
@@ -10,10 +14,12 @@
           .form-page
             = form_with scope: resource, as: resource_name, url: session_path(resource_name), html: { class: "mt-5, new_user" }, local: true do |f|
               .form-group
+                .don 必須
                 -# = f.label :email
                 = f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email", placeholder: "email"
                 
               .form-group
+                .don 必須
                 -# = f.label :password
                 = f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "パスワード"
             
