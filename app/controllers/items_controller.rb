@@ -7,12 +7,9 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    # @prefecture = Prefecture.all
   end
   
   def create
-    # binding.pry
-    # @user = User.find(current_user.id)
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path

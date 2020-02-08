@@ -9,7 +9,6 @@ class Item < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  validates :images, presence: true
   validates :name, presence: true
   validates :description, presence: true
   validates :size, presence: true
