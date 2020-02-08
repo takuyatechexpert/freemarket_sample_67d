@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+  sessions:      'users/sessions',
+  passwords:     'users/passwords',
+  registrations: 'users/registrations'
+}
   root 'toppages#index'
   
-  resources :items, only: [:new, :create]
+
+  resources :items, only: [:index,:new, :create, :show]
   resources :home 
-  resources :items, only: :new
+  resources :users
+  
+  get 'cards' => 'cards#index'
+  post 'cards/pay' => 'cards#pay'  
   resources :buyers
 end

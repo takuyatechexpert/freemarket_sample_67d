@@ -1,0 +1,17 @@
+
+.pcHeader-headerInner
+  .pcHeader-headerInner_mainHeader
+    = link_to root_path do
+      = image_tag "/assets/logo1.png", class:"image", alt:"ほげ"
+    %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
+    .pcHeader-headerInner_mainHeader_submit
+      %input.submit{:type => "image", :src => "/assets/search1.png"}
+  .pcHeader-headerInner_text
+    .pcHeader-headerInner_text_content
+      %p.text カテゴリー
+      %p.text2 ブランド
+    .pcHeader-headerInner_text_login
+      %p.text3 ログイン
+      %p.text4 新規会員登録
+      -# = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+      = link_to "ユーザーページ", '/users', class:"txet"
