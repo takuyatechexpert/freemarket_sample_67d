@@ -86,5 +86,4 @@ gem 'fog-aws'
 gem 'payjp'
 gem 'ancestry'
 gem 'rails-i18n'
-gem 'jquery-rails'
 
