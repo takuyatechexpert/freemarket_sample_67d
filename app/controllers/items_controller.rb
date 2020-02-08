@@ -1,41 +1,50 @@
 class ItemsController < ApplicationController
-   
-  def index
 
+
+  def index
     @items = Item.all
   end
 
+ 
   def new
     @item = Item.new
     @item.images.new
+    
+    @category = Category.all.order("id ASC").limit(9)
   end
+
+  def category_children  
+    @category_children = Category.find(params[:productcategory]).children
+  end
+ 
+  # def category_grandchildren
+  #   @category_grandchildren = Category.find(params[:productcategory]).children
+  # end
   
   def create
-    # binding.pry
-    # @user = User.find(current_user.id)
+    @user = User.find(current_user.id)
     @item = Item.new(item_params)
+  
     if @item.save
       redirect_to root_path
     else
       @item.images.new
-      render :new
+      redirect_to new_item_path
     end
   end
 
   def show
-    # binding.pry
     @items = Item.find(params[:id])
+    @user = User.find_by(id: @item.user_id)
   end 
 
   def edit 
   end
-
-  
   
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :size, :item_status, :delivery_charge, :delivery_area, :shipment, images_attributes: [:image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :description, :price, :size, :item_status, :delivery_charge, :delivery_area, :shipment, :category_id, images_attributes: [:image]).merge(seller_id: current_user.id)
   end
-
+ 
 
 end

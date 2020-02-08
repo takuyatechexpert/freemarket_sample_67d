@@ -172,16 +172,22 @@
   }
 }
 
-#item_category,
+#item_category_id,
 #item_item_status,
 #item_delivery_charge,
 #item_details_area,
-#item_brand,
 #item_shipment{
   background: white;
   width: 100%;
   height: 45px;
-  // #priceは別枠で指定している
+  // #price,brandは別枠で指定している
+}
+
+#item_brand{
+    background: white;
+    width: 100%;
+    height: 45px;
+
 }
 
 .tablearea{
