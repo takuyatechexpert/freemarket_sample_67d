@@ -1,5 +1,3 @@
--# データの送り先は暫定で適当な値
-
 .exhibitionHeader
   = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
 .main  
@@ -17,7 +15,6 @@
         #image-box
           = f.fields_for :images do |i|
             .js-file_group(data-index="#{i.index}")
-              -# = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
               = i.file_field :image, class: "js-file"
               .js-remove
                 削除
