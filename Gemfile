@@ -84,3 +84,6 @@ gem 'active_hash'
 gem 'jquery-rails'
 gem 'fog-aws'
 gem 'payjp'
+gem 'ancestry'
+gem 'rails-i18n'
+
