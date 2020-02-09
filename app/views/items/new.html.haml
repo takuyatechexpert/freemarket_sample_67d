@@ -63,7 +63,7 @@
               カテゴリー
             %li
               必須
-          = f.collection_select :category_id, @category, :id, :name, {id: 'parent_category'}, class: "fieldPulldown"
+          = f.collection_select :category_id, @category, :id, :name, prompt: "--"
 
         .main__exhibitionContents__itemDescription__brand
           %ul.main__exhibitionContents__information
