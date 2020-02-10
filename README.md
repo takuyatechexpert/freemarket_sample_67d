@@ -31,7 +31,7 @@
 - municipalities 市町村
 - destination_first_name, destination_family_name 送付先の名前 
 - prefectures 都道府県
-- 番地 address 番地 \
+- 番地 address
 - home_type マンション名など
 ### Association
 - belongs_to :user
@@ -49,20 +49,19 @@
 ## items テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name          |string|null: false|
-|price         |integer|null: false|
-|size          |string|null: false|
-|delivery_charg|integer|null: false|
-|delivery_area |string|null: false|
-|shipment      |integer|null: false|
-|user          |references|null: false, foreign_key: true|
-|brand         |references|null: false, foreign_key: true|
-|category      |references|null: false, foreign_key: true|
-|buyer         |references|foreign_key: true|
-|seller        |references|foreign_key: true|
-- delivery_charg 配送料 チェックボックスを使用して数字を入れる
-- delivery_area 配送エリア
-- shipment 発送日 チェックボックスを使用して数字を入れる
+|name            |string|null: false|
+|price           |integer|null: false|
+|size            |string|null: false|
+|postage_id      |integer|null: false|
+|region_id       |integer|null: false|
+|shipping_date_id|integer|null: false|
+|brand           |integer|foreign_key: true|
+|category        |references|null: false, foreign_key: true|
+|buyer           |references|foreign_key: true|
+|seller          |references|foreign_key: true|
+- postage_id 配送料 チェックボックスを使用して数字を入れる
+- region_id 配送エリア
+- shipping_date_id 発送日 チェックボックスを使用して数字を入れる
 - 購入者と出品者のid buyer, seller
 ### Association
 - has_many :comments
@@ -74,8 +73,8 @@
 ## categorys テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|ancestry     |string|null: false|
+|name    |string|null: false|
+|ancestry|string|null: false|
 - gem ancestry使用
 ### Association
 - has_many :items
