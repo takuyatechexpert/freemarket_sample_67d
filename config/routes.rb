@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :home 
   resources :users
 
-  resources :card, only: [:new, :show] do
+  resources :card do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: [:index] do
+  resources :purchase do
     collection do
       get 'index', to: 'purchase#index'
       post 'pay', to: 'purchase#pay'
