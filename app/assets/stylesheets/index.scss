@@ -13,7 +13,7 @@
   }
 
   .pcHeader{
-    width: 100vw;
+    width: 100%;
     height: 200px;
     &-headerInner{
       &_mainHeader{
@@ -30,7 +30,7 @@
         &_submit{
           height: 40px;
           width: 45px;
-          background-color: aqua;
+          background-color: $mainColorBlue;
           .submit{
             height: 40px;
             width: 40px;
@@ -38,35 +38,125 @@
           }
         }
       }
+
       &_text{
         display: flex;
-        margin: 10px 60px 0px 0;
-        width: 100vw;
+        width: 100%;
         height: 30px;
         &_content{
-          float: right;
-          .text{
-            float: left;
-            padding: 0 30px 0 200px;
+          float: left;
+          width: 50%;
+          display: flex;
+          // text-align: center;
+          justify-content: space-around;
+          position: relative;
+          .dropdown-btn1{
+            display:inline-block;
+            cursor:pointer;
+            font-weight: bold;
+            // margin: 0 auto;
+            position: relative;
+            margin-left: 40%;
+            .dropdown1{
+              display: none;
+              position: absolute;
+            }
+
+            &:hover { 
+              color: $mainColorBlue;
+              
+              .fa-list{
+                color: cornflowerblue;
+              }
+              .dropdown1 {
+                z-index:1005;
+                width:200px;
+                display:inherit;
+                li {
+                  display:inline-block;
+                  z-index: 30;
+                  background-color: $mainColorBlue;
+                  color: #666;
+                  padding: 8px;
+                }
+              }
+            }
           }
-          .text2{
-            float: right;
-            padding: 0 500px 0 0px;
+            .dropdown-btn2{
+              position: absolute;
+              display:inline-block;
+              // margin-left: 70px;
+              cursor:pointer;
+              font-weight: bold;
+              // margin: 0 auto;
+              position: relative;
+              margin-right: 30%;
+  
+              .dropdown2{
+                display: none;
+                position: absolute;
+              }
+  
+              &:hover { 
+                color: $mainColorBlue;
+                // margin-left: 70px;
+                .fa-list{
+                  color: cornflowerblue;
+                }
+                .dropdown2 {
+                  z-index:1005;
+                  width:200px;
+                  display:inherit;
+                  li {
+                    display:inline-block;
+                    z-index: 30;
+                    background-color: $mainColorBlue;
+                    color: #666;
+                    padding: 8px;
+                  }
+                }
+              }
           }
+
+
+          // .text2{
+          //   margin-left: 50px;
+          //   position: absolute;
+          //   // float: right;
+          //   // padding: 0 500px 0 0px;
+          // }
         }
         &_login{
+          width: 40%;
           float: right;
+          display: flex;
+          justify-content: space-around;
+          position: relative;
+          font-weight: bold;
           .text3{
-            float: left;
-            padding: 0 70px;
+            margin-left: 30%;
+            // float: left;
+            // padding: 0 70px;
+            // margin-left: auto;
+            &:hover{
+              color: $mainColorBlue;
+            }
           } 
           .text4{
-            float: right;
-            padding: 0 20px;
+            // float: right;
+            // padding: 0 20px;
+            &:hover{
+              color: $mainColorBlue;
+            }
           }
           .text5{
-            float:right;
-            padding: 0 10px;
+            // float:right;
+            // padding: 0 10px;
+            padding-right: 0px;
+            color: black;
+            &:hover{
+              color: $mainColorBlue;
+            }
           }
         }
       } 
@@ -74,10 +164,14 @@
         height: 600px;
         width: 100vw;
         position: relative;
+        
         &_main{
+          position: relative;
           .main{
+            position: absolute;
             height: 600px;
             width: 100vw;
+            // z-index: 5;
           }
         }
         &_text{
@@ -86,7 +180,7 @@
             top:250px;
             font-size: 50px;
             color: white;
-            left:60px;
+            margin-left: 50%;
             text-shadow: 2px 2px #fff, 5px 5px rgba(0, 188, 212, 0.4);
           }
           .text2{
@@ -222,7 +316,7 @@
         color: aqua;
         font-weight: bold;
         font-size: 25px;
-        padding:30px 10px 0 10px ;
+        // padding:30px 10px 0 10px ;
       }
       .image-text3-2{
           font-weight: bold;

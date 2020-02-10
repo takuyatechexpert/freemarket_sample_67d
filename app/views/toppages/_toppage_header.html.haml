@@ -8,10 +8,33 @@
       %input.submit{:type => "image", :src => "search1.png"}
   .pcHeader-headerInner_text
     .pcHeader-headerInner_text_content
-      %p.text カテゴリー
-      %p.text2 ブランド
+      .dropdown-btn1
+        .fas.fa-list
+        カテゴリ-
+        %ul.dropdown1
+          %li
+            - @category.each do |category|
+              %ul
+                %li
+                  = category.name
+      .dropdown-btn2
+
+        .fas.fa-list
+        ブランド
+        %ul.dropdown2
+          %li ドロップダウンメニュー
+          %li ドロップダウンメニュー
+          %li ドロップダウンメニュー
+          %li ドロップダウンメニュー
+
     .pcHeader-headerInner_text_login
-      %p.text3 ログイン
-      %p.text4 新規会員登録
-      -# = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-      = link_to "ユーザーページ", '/users', class:"txet"
+      .text3
+        .fas.fa-sign-in-alt
+        ログイン
+      .text4
+        .far.fa-address-card
+        新規会員登録
+      .text5
+        .far.fa-user
+        = link_to "ユーザーページ", '/users'
+
