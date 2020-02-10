@@ -1,42 +1,14 @@
-.exhibitionHeader
-  = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
-.main-content
-  %main.pay-main
-    %section.pay-item-content
-      %h2.pay-head 購入内容確認
-      %section.pay-item
-        .pay-content-info
-          %h2.pay-item__image
-            購入画像
-            -# = image_tag @product.image_url, alt: "画像はあくまでもイメージです", class: "item-gyazo"
-          %p.item-text 
-          %form.pay-form
-            %p.pay-price 
-              ¥1,500
-              %span.mop
-                着払い
-              %button.buyBtn 購入する
-
-            %ul.price-table
-              %li.price-breakdown
-                .breakdown お買い上げ金額
-                .breakdown
-                  %span{"value":"15000"} ¥15,000
-           
-      %section.pay-user-info
-        .pay-content-info
-          %h3.deli お届け先
-          %address.user-info-text
-            %br 〒533-0041
-            東京
-          %p.user-info-text
-          = link_to "変更する >", root_path, class: "user-info-fix"
-          .dammy
-      %section.pay-user-info
-        .pay-content-info
-          %h3.deli クレジット
-          %p.user-info-text
-          %figure
-            = image_tag ""
-          %p.change
-          = link_to "変更する >", root_path, class: "user-info-fix"
+//購入履歴
+.wapper
+  = link_to new_item_path do
+    .fas.fa-ghost.fa-8x
+  = render 'toppages/toppage_header'
+  .bought_main_content
+    = render 'users/side_user'
+    .right_bought
+      .right_bought__content
+        .bought.history_list
+          %li pic1
+          %li pic2
+          %li pic3
+  = render 'toppages/toppage_footer'

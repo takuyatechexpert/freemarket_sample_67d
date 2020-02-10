@@ -4,7 +4,7 @@
     .list 
       -# = link_to new_item_path do
       %il 
-        出品する
+        = link_to '出品する', '/items/new'
         %ul
           %li
             .fas.fa-chevron-right
@@ -16,13 +16,13 @@
             .fas.fa-chevron-right
     .list
       %il 
-        出品履歴
+        = link_to '出品履歴', '/items/index'
         %ul
           %li
             .fas.fa-chevron-right
     .list
       %il 
-        購入履歴
+        = link_to '購入履歴', '/buyers'
         %ul
           %li
             .fas.fa-chevron-right
@@ -30,7 +30,7 @@
     %h.tag ユーザー設定
     .list
       %il 
-        プロフィール
+        プロフィール//川崎さんdoing
         %ul
           %li
             .fas.fa-chevron-right
@@ -46,3 +46,11 @@
         %ul
           %li
             .fas.fa-chevron-right
+            
+    .list
+      %il 
+        = link_to 'ログアウト', '/users/show'
+        %ul
+          %li
+            .fas.fa-chevron-right
+            

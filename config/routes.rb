@@ -7,7 +7,15 @@ Rails.application.routes.draw do
   root 'toppages#index'
   
 
-  resources :items, only: [:index,:new, :create, :show]
+  resources :items do 
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
+  end
+  
+  resources :categories, only: [:index, :show, :new, :edit, :destroy]
+  
   resources :home 
   resources :users
 
@@ -28,3 +36,4 @@ Rails.application.routes.draw do
   end
 
 end
+
