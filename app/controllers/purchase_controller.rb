@@ -1,9 +1,8 @@
 class PurchaseController < ApplicationController
   require 'payjp'
-  before_action :set_card
+  before_action :set_card, only: [:index, :pay]
 
   def index
-    card = Card.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -18,7 +17,6 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => 13500, #支払金額を入力（itemテーブル等に紐づけても良い）
@@ -31,7 +29,7 @@ class PurchaseController < ApplicationController
   private
 
   def set_card
-    @card = Card.where(user_id: current_user).first
+    @card = Card.find_by(user_id: current_user.id)
   end
 
 end
