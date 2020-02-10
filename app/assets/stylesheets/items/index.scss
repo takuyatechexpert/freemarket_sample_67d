@@ -68,7 +68,7 @@
     &_item{
       
       &-content{
-        background-color: gray;
+        background-color: lightslategrey;
         height:1850px;
         width:100vw;
         position: relative;
@@ -84,20 +84,8 @@
           font-weight: bold;
           line-height: 100px;
           .images{
-            height: 300px;
-            width: 600px;
-          }
-          .images2{
-            height:100px;
-            width: 150px; 
-          }
-          .images3{
-            height:100px;
-            width: 150px; 
-          }
-          .images4{
-            height:100px;
-            width: 150px; 
+            height: 150px;
+            width: 300px;
           }
         }
         .box-item-name-price{
@@ -265,7 +253,7 @@
       &_link3{
         .button1-1{
           position:absolute;
-          top:280px;
+          top:295px;
           left:500px;
         }
         .button2-1{

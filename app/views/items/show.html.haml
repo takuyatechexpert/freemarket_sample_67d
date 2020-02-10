@@ -1,7 +1,7 @@
 .pcHeader
   .pcHeader-headerInner
     .pcHeader-headerInner_mainHeader
-      = image_tag "/assets/logo1.png", class:"image", alt:"ほげ"
+      = image_tag "/assets/logo.png", class:"image", alt:"ほげ"
       %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
       .pcHeader-headerInner_mainHeader_submit
         %input.submit{:type => "image", :src => "/assets/search1.png"}
@@ -30,15 +30,10 @@
           %br
           - @item.images.each do |i|
             = image_tag i.image.url ,class: "images"
-          - @item.images.each do |i| 
-            = image_tag i.image.url ,class: "images2" 
-            = image_tag i.image.url ,class: "images3" 
-            = image_tag i.image.url ,class: "images4"  
           %p.box-item-name-price 
             %span.price_tag>
               = @item.price
             %span.tax> 
-              = @item.delivery_charge 
             %table.box-item-name-price-2
               %tr 
               %th 商品名
@@ -67,16 +62,16 @@
               %tr 
               %th 商品の状態
               %td 
-                = @item.item_status 
+                
 
               %tr 
               %th 配送料の負担
               %td 
-                = @item.delivery_charge
+                
               %tr 
               %th 発送元の地域
               %td 
-                = @item.delivery_area
+                
               %tr 
               %th 発送日の目安
               %td 
@@ -104,9 +99,9 @@
           %p.text2-1 今すぐ無料ダウンロード！
         .pcContent-contentInner_image3_link3
           %i.button1-1
-            = image_tag "google-play-badge.png",size: "230x150"
+            = image_tag "google-play-badge.png",size: "250x120"
           %i.button2-1
-            = image_tag "google-play-badge.png",size: "230x150"
+            = image_tag "apple.svg",size: "230x150"
     .pcContent-contentInner_image3_footer
       .pcContent-contentInner_image3_footer-color
         .pcContent-contentInner_image3_footer-color_block

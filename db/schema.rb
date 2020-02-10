@@ -13,13 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_02_08_103550) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "destination_first_name", null: false
-    t.integer "destination_family_name", null: false
     t.integer "postal_code", null: false
-    t.string "prefectures", null: false
     t.string "municipalities", null: false
     t.string "address", null: false
-    t.string "home_type", null: false
+    t.string "home_type"
     t.bigint "tel", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -30,9 +27,10 @@ ActiveRecord::Schema.define(version: 2020_02_08_103550) do
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "coustomer_id", null: false
     t.string "card_id", null: false
-    t.string "references", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,13 +51,13 @@ ActiveRecord::Schema.define(version: 2020_02_08_103550) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "price", null: false
     t.text "description", null: false
+    t.integer "price", null: false
     t.string "size", null: false
-    t.integer "item_status", null: false
-    t.integer "delivery_charge", null: false
-    t.string "delivery_area", null: false
-    t.integer "shipment", null: false
+    t.integer "status_id", null: false
+    t.integer "postage_id", null: false
+    t.integer "region_id", null: false
+    t.integer "shipping_date_id", null: false
     t.integer "buyer_id"
     t.integer "seller_id"
     t.datetime "created_at", null: false
@@ -87,5 +85,6 @@ ActiveRecord::Schema.define(version: 2020_02_08_103550) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
 end
