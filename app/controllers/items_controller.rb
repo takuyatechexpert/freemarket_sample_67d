@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def category_children
-    @category_children = Category.find(params[:productcategory]).children
+    @category_children = Category.find(params[:productCategory]).children
   end
 
   # def category_grandchildren
