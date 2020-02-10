@@ -60,6 +60,13 @@ $(function(){
     
         // 画像入力欄が0個にならないようにしておく
         if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-    });
+      });
+
+      $("#item_price").on("keyup", function() {
+        console.log("#item_price");
+        var input = $("#item_price").val();
+        profit = Math.round(input * 0.9)
+        $(".main__exhibitionContents__result__profit--js").html(profit);
+      });
   });
 });
