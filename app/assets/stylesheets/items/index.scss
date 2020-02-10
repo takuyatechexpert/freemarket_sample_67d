@@ -91,6 +91,14 @@
             height:100px;
             width: 150px; 
           }
+          .images3{
+            height:100px;
+            width: 150px; 
+          }
+          .images4{
+            height:100px;
+            width: 150px; 
+          }
         }
         .box-item-name-price{
           position: absolute;
@@ -154,6 +162,19 @@
             .submit-4:hover{
               opacity: 0.6;
             }
+            .submit-5{
+              font-size: 20px;
+              color:rgb(127, 210, 255);
+              border:solid rgb(127, 253, 255);
+              border-radius: 30px;
+              position: absolute;
+              top:1300px;
+              left:650px;
+              text-decoration: none;
+            }
+            .submit-5:hover{
+              opacity: 0.6;
+            }
           }
           &-comment{
             height:450px;
@@ -181,6 +202,7 @@
               opacity       : 1;           /* 透明度     */
               transition    : .3s;         /* なめらか変化 */
               box-shadow    : 9px 9px 10px #666666;  /* 影の設定 */
+              outline:none;
             }
             .submit:hover {
               box-shadow    : none;        /* カーソル時の影消去 */

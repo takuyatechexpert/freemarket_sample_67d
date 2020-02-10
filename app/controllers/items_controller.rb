@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
    
   def index
-
     @items = Item.all
   end
 
@@ -23,18 +22,29 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # binding.pry
-    @items = Item.find(params[:id])
+    
+    @item = Item.find(params[:id])
+    
   end 
 
   def edit 
-    @items = Item.find(params[:id])
+
+    @item = Item.find(params[:id])
+    
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params) 
+       redirect_to item_path
+    else
+       render action: :edit
+    end
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :size, :item_status, :delivery_charge, :delivery_area, :shipment, images_attributes: [:image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :description, :price, :size, :item_status, :delivery_charge, :delivery_area, :shipment, images_attributes: [:id, :image]).merge(seller_id: current_user.id)
   end
-
 
 end

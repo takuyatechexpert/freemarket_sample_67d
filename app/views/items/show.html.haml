@@ -28,12 +28,12 @@
         %p.box-item-name  
           = @items.name 
           %br
-            - @items.images.each do |i|
-              = image_tag i.image.url ,class: "images"
+          - @items.images.each do |i|
+            = image_tag i.image.url ,class: "images"
           - @items.images.each do |i| 
             = image_tag i.image.url ,class: "images2" 
-            = image_tag i.image.url ,class: "images2" 
-            = image_tag i.image.url ,class: "images2"  
+            = image_tag i.image.url ,class: "images3" 
+            = image_tag i.image.url ,class: "images4"  
           %p.box-item-name-price 
             %span.price_tag>
               = @items.price
@@ -83,8 +83,9 @@
                
         %p.box-item-name-price-3
           %a.submit-3 不適切な商品の通報
+          %a.submit-4 商品購入画面
           %a 
-          = link_to '☆購入画面へ', "buyers#show", method: :get, class:"submit-4"
+          = link_to '商品編集', "#{@items.id}/edit", class:"submit-5"
         %p.box-item-name-price-comment
           %input.text-items{:type => "text", :maxlength => "150" , :size => "30"}           
           ※相手のことを考え丁寧なコメントを心がけましょう。
@@ -114,7 +115,7 @@
             %br
             プライバシーポリシー
             %br
-            　フリマ利用規約
+            フリマ利用規約
             %br
             ポイントに関する規約
           %p.text1-1
