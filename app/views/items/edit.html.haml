@@ -1,24 +1,20 @@
--# データの送り先は暫定で適当な値
-- if @item.errors.any? 
-  %p.error：入力内容に空白が見つかりました
 .exhibitionHeader
   = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
-.main
+.main  
   .main__exhibitionContents
-    = form_with model: @item, class: "update_form", local: true do |f| 
+    = form_with model: @item, local: true do |f|
       .main__exhibitionContents__title
-        商品の情報を入力。
+        商品の情報を入力
       .main__exhibitionContents__pictures
         %ul.main__exhibitionContents__information
           %li
-            出品
-            %br
-            画像
-          = f.fields_for :images do |i|
-            = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
-            - @item.images.each do |i|
-              = image_tag i.image.url  
-            = i.file_field :image, class: "imageField"  
+            出品画像
+          %li
+            必須
+        = f.fields_for :images do |i|
+          = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
+          = i.file_field :image, class: "imageField"
+      
       .main__exhibitionContents__itemDescription
         .main__exhibitionContents__itemDescription__details
           商品の詳細

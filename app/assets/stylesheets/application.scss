@@ -4,11 +4,16 @@
 @import "modules/boxes";
 @import "items";
 @import "devise";
-@import "toppages";
+// @import "header";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "side_user";
+@import "user_mypage";
 @import "items/index";
-@import "header";
 @import "buyers";
 @import "side_user";
 @import "user_mypage";
+@import "user_logout";
+@import "bought_history";
 
 

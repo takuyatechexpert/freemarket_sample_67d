@@ -5,8 +5,11 @@
     %title FreemarketSample67d
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' 
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    -# %script{:charset => "UTF-8", :src => "https://ajaxzip3.github.io/ajaxzip3.js"}
+    
   %body
     .content
     = yield
