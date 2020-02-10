@@ -1,6 +1,6 @@
 class PurchaseController < ApplicationController
-
   require 'payjp'
+  before_action :set_card
 
   def index
     card = Card.where(user_id: current_user.id).first
@@ -27,4 +27,11 @@ class PurchaseController < ApplicationController
   )
   redirect_to action: 'done' #完了画面に移動
   end
+
+  private
+
+  def set_card
+    @card = Card.where(user_id: current_user).first
+  end
+
 end

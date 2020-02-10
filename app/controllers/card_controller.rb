@@ -1,6 +1,7 @@
 class CardController < ApplicationController
   require "payjp"
-
+  before_action :set_card
+  
   def new
     @card = Card.new
   end
@@ -43,6 +44,12 @@ class CardController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
+  end
+
+  private
+
+  def set_card
+    @card = Card.where(user_id: current_user).first
   end
 
 end
