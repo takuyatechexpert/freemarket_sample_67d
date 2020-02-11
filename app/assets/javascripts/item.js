@@ -67,6 +67,7 @@ $(function(){
         var input = $("#item_price").val();
         profit = Math.round(input * 0.9)
         $(".main__exhibitionContents__result__profit--js").html(profit);
+        $(".main__exhibitionContents__result__profit--js").prepend('¥');
       });
   });
 });
