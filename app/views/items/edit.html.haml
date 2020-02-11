@@ -5,6 +5,10 @@
     = form_with model: @item, local: true do |f|
       .main__exhibitionContents__title
         商品の情報を入力
+        %br
+        - @item.images.each do |i|
+          = image_tag i.image.url ,class: "images"
+      %br
       .main__exhibitionContents__pictures
         %ul.main__exhibitionContents__information
           %li
