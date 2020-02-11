@@ -27,16 +27,16 @@
         .text{
           width: 800px;
         }
-        &_submit{
-          height: 40px;
-          width: 45px;
-          background-color: aqua;
-          .submit{
-            height: 40px;
-            width: 40px;
-            padding: 10px 10px; 
+          .form__submit{
+            background: $mainColorBlue;
+            height: 100%;
+            width: 50px;
+            background-image: url("search1.png");
+            background-size: 35px;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-left: 5px;
           }
-        }
       }
       &_text{
         display: flex;
@@ -520,14 +520,6 @@
                 text-align: center;
                 justify-content: center;
               }
-              // .fas{
-              //   color: skyblue;
-              //   float: right;
-              //   margin-right: 50px;
-              //   text-decoration: none;
-              //   position: sticky;
-              //   position: -webkit-sticky;
-              // }
             }
           }
         } 

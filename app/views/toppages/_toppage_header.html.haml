@@ -3,10 +3,9 @@
   .pcHeader-headerInner_mainHeader
     = link_to root_path do
       = image_tag "logo.png", class:"image", alt:"ほげ"
-      = form_with local: true, method: :get do |f|
-        = f.text_field :keyword
-        .pcHeader-headerInner_mainHeader_submit
-          = f.submit type: :image, src: "/assets/search1.png",width: "40px"
+    %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
+    .pcHeader-headerInner_mainHeader_submit
+      %input.submit{type: "submit",value:"", class: "form__submit"}
   .pcHeader-headerInner_text
     .pcHeader-headerInner_text_content
       %p.text カテゴリー
