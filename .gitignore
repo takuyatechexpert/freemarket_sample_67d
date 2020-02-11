@@ -31,6 +31,6 @@
 /config/master.key
 config/secrets.yml
 
-# Ignore uploaded files in development
 public/uploads/*
 tmp/cache
+
