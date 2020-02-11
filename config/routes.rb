@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 }
   root 'toppages#index'
   
-
   resources :items do 
     collection do
       get 'category_children' 
