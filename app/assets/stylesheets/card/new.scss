@@ -34,7 +34,7 @@
   }
   .c-submit {
     input{
-    background-color: red;
+    background-color: #3CCACE;
     color: white;
     font-size:14px;
     height:48px;
@@ -46,3 +46,14 @@
   }
  }
 }
+
+.buybotn {
+  background-color: #3CCACE;
+  color: white;
+  font-size:14px;
+  height:48px;
+  text-align: center;
+  margin-top:40px;
+  width:calc(100% + 20px);
+  border: none;
+  }
