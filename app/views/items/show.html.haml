@@ -79,6 +79,9 @@
         %p.box-item-name-price-3
           %a.submit-3 不適切な商品の通報
           %a.submit-4 商品購入画面
+        - if user_signed_in? && current_user.id == @item.seller_id
+          %a.submit-4 
+            = link_to "削除", item_path(@item.id), method: :delete
           %a 
           = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
         %p.box-item-name-price-comment
