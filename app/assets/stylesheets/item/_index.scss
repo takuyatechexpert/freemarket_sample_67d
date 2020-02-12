@@ -43,9 +43,13 @@
       }
 
       .js-file_group{
-        border-top: solid 1px #d6d6d6;
-        display: flex;
+        // border-top: solid 1px #d6d6d6;
+        // display: flex;
         margin-top: 20px;
+      }
+
+      #image-box{
+        display: flex;
       }
     }
 
@@ -118,7 +122,7 @@
 
       .main__exhibitionContents__back__btn{
         color: black;
-        background: #cfcece;
+        background: $btnColorGray;
         display: block;
         height: 50px;
         width: 50%;
