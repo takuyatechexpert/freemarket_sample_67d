@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
       else
         redirect_to item_path
       end
-  end
+
 
   private
 
