@@ -21,26 +21,32 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  private
 
-  def user_params
-    params.require(:user).permit(:nick_name, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday, :password, addresses_attributes: [:postal_code, :municipalities, :address, :home_type, :tel])
-  end
-
-  # GET /resource/edit
   def edit
-    @user = User.find(params[:id])
-    @address = Address.find(params[:id])
+    @user = User.find_by(id: current_user.id)
+   
   end
 
-  # PUT /resource
   def update
     if current_user.update(user_params)
-      redirect_to root_path
+      render :edit
     else
       render :edit
     end
   end
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:nick_name, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday, :password, addresses_attributes: [:postal_code, :municipalities, :address, :home_type, :tel, :id])
+  end
+
+  # GET /resource/edit
+ 
+
+  # PUT /resource
+  
   
   # DELETE /resource
   # def destroy
