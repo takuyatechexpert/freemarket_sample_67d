@@ -8,7 +8,16 @@ class UsersController < ApplicationController
   end
 
   def index
+    @category = Category.all.order("id ASC").limit(9)
   end
+
+  def destroy
+  end
+
+  def show
+    @category = Category.all.order("id ASC").limit(9)
+  end
+
   
   private
   def user_params

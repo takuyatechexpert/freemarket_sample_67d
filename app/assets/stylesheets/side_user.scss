@@ -20,7 +20,7 @@
 .tag{
   height: 50px;
   background-color: #aaa4a4;
-  color: rgb(123, 209, 243);
+  color: $mainColorBlue;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +50,7 @@
       margin-left: auto;
       li{
         .fa-chevron-right{
-          top: 35%;
+          // top: 35%;
           color:rgb(129, 126, 126);
           
         }
