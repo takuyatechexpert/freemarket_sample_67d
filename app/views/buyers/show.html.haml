@@ -15,14 +15,14 @@
               ¥1,500
               %span.mop
                 着払い
-              %button.buyBtn 購入する
-
+              = form_tag(action: :pay, method: :post) do
+                %button.buyBtn 購入する
             %ul.price-table
               %li.price-breakdown
                 .breakdown お買い上げ金額
                 .breakdown
                   %span{"value":"15000"} ¥15,000
-           
+            
       %section.pay-user-info
         .pay-content-info
           %h3.deli お届け先
@@ -35,8 +35,18 @@
       %section.pay-user-info
         .pay-content-info
           %h3.deli クレジット
+          - if @default_card_information.blank?
+            %br /
+          - else
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            = form_tag(action: :pay, method: :post) do
+              %button 購入する
           %p.user-info-text
+            %br
           %figure
             = image_tag ""
           %p.change
-          = link_to "変更する >", root_path, class: "user-info-fix"
+          = link_to "変更する >", delete_card_index_path, class: "user-info-fix"
