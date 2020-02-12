@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 }
   root 'toppages#index'
   
-
   resources :items do 
     collection do
       get 'category_children' 
@@ -18,10 +17,20 @@ Rails.application.routes.draw do
   
   resources :home 
   resources :users
-  
-  get 'cards' => 'cards#index'
-  post 'cards/pay' => 'cards#pay'  
-  resources :buyers
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
 
 end
 

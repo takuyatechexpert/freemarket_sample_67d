@@ -78,7 +78,7 @@
     &_item{
       
       &-content{
-        background-color: gray;
+        background-color: lightslategrey;
         height:1850px;
         width:100vw;
         position: relative;
@@ -94,12 +94,8 @@
           font-weight: bold;
           line-height: 100px;
           .images{
-            height: 300px;
-            width: 600px;
-          }
-          .images2{
-            height:100px;
-            width: 150px; 
+            height: 150px;
+            width: 300px;
           }
         }
         .box-item-name-price{
@@ -164,6 +160,19 @@
             .submit-4:hover{
               opacity: 0.6;
             }
+            .submit-5{
+              font-size: 20px;
+              color:rgb(127, 210, 255);
+              border:solid rgb(127, 253, 255);
+              border-radius: 30px;
+              position: absolute;
+              top:1300px;
+              left:650px;
+              text-decoration: none;
+            }
+            .submit-5:hover{
+              opacity: 0.6;
+            }
           }
           &-comment{
             height:450px;
@@ -191,6 +200,7 @@
               opacity       : 1;           /* 透明度     */
               transition    : .3s;         /* なめらか変化 */
               box-shadow    : 9px 9px 10px #666666;  /* 影の設定 */
+              outline:none;
             }
             .submit:hover {
               box-shadow    : none;        /* カーソル時の影消去 */
@@ -222,5 +232,83 @@
         }
       }
     }
+    .pcContent-contentInner_image3 {
+      height:500px;
+      width:100vw;
+      position:relative;
+      &_main3{
+        .main3{
+          height:500px;
+          width:100vw;
+        }
+      }
+      &_text3{
+        .text1-1{
+          position:absolute;
+          top:170px;
+          font-size: 20px;
+          left:600px;
+          color:white;
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        }
+        .text2-1{
+          position:absolute;
+          top:200px;
+          font-size: 40px;
+          left:520px;
+          color:white;
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        }
+      }
+      &_link3{
+        .button1-1{
+          position:absolute;
+          top:295px;
+          left:500px;
+        }
+        .button2-1{
+          position:absolute;
+          top:280px;
+          left:780px;
+        }
+      }    
+    }
+    .pcContent-contentInner_image3_footer{
+      &-color{
+        background-color: black;
+        height:400px;
+        width:100vw;
+        &_block{
+          background-color: black;
+          height:250px;
+          width: 100vw;
+          color: #fff;
+          display: flex;
+          justify-content: space-evenly;
+          padding: 100px 70px 0 115px;
+        .p{
+          height:250px;
+          width: 500px;
+          color: #fff;
+        }
+          &-icon{
+            margin: 0  620px;
+            .image5{
+              height:80px;
+              width: 180px;
+            }
+          } 
+          &-corp{
+            text-align: center;
+          
+            .c{
+              color:white;
+              text-align: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }       
   }
 }
