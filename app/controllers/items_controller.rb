@@ -26,8 +26,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      # redirect_to item_path(params[:id])
-      render :show
+      redirect_to item_path(@item)
     else
       @item.images.new
       redirect_to new_item_path
