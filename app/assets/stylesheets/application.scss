@@ -5,11 +5,14 @@
 @import "items";
 @import "devise";
 // @import "header";
+@import "toppages/toppage_header.scss";
+@import "toppages/toppage_middle.scss";
+@import "toppages/toppage_footer..scss";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "side_user";
 @import "user_mypage";
-@import "items/index";
+@import "items/show";
 @import "buyers";
 @import "side_user";
 @import "user_mypage";
@@ -17,5 +20,6 @@
 @import "card/show";
 @import "user_logout";
 @import "bought_history";
+
 
 
