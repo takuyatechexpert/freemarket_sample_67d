@@ -12,7 +12,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    
+  end
+
+  def show
+    @category = Category.all.order("id ASC").limit(9)
   end
 
   
