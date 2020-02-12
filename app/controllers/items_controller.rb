@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  t :set_item, only: [:show ,:edit, :destroy]
+  before_action :set_item, only: [:show ,:edit, :destroy]
 
   def index
     @items = Item.all
