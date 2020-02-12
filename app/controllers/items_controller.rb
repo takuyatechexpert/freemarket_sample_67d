@@ -49,13 +49,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     @item = Item.find(params[:id])
-    if @item.destroy
+      @item.destroy
       redirect_to root_path
-    else
-      
-    end
   end
 
   private
