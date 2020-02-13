@@ -6,32 +6,34 @@
       %h2.pay-head 購入内容確認
       %section.pay-item
         .pay-content-info
-          %h2.pay-item__image
-            購入画像
-            -# = image_tag @product.image_url, alt: "画像はあくまでもイメージです", class: "item-gyazo"
-          %p.item-text 
-          %form.pay-form
-            %p.pay-price 
-              ¥1,500
-              %span.mop
-                着払い
-              %button.buyBtn 購入する
+          - @item.images.each_with_index do |item, i|
+            - if i == 0
+              = image_tag item.image.url, class: "itemImage", class: "pay-item__image"
 
-            %ul.price-table
-              %li.price-breakdown
-                .breakdown お買い上げ金額
-                .breakdown
-                  %span{"value":"15000"} ¥15,000
+          .pay-content-info__text
+            %p.pay-price 
+              ￥
+              = @item.price
+              %span.mop
+                = @item.postage.name
            
       %section.pay-user-info
         .pay-content-info
           %h3.deli お届け先
-          %address.user-info-text
-            %br 〒533-0041
-            東京
-          %p.user-info-text
-          = link_to "変更する >", root_path, class: "user-info-fix"
-          .dammy
+          %address.user-info
+            - current_user.addresses.each do |address|
+              .user-info--text
+                〒
+                = address.postal_code
+              .user-info--text
+                = address.municipalities
+                = address.address
+              .user-info--text
+                = address.home_type
+              .user-info--text
+                TEL
+                = address.tel
+
       %section.pay-user-info
         .pay-content-info
           %h3.deli クレジット
@@ -39,4 +41,3 @@
           %figure
             = image_tag ""
           %p.change
-          = link_to "変更する >", root_path, class: "user-info-fix"
