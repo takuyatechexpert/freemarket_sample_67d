@@ -1,7 +1,10 @@
 //ログアウト
 .wapper
   = link_to new_item_path do
-    .fas.fa-ghost.fa-8x
+    .exhibitionIcon
+      .exhibitionIcon__text
+        出品する
+      .fas.fa-camera.fa-6x
   = render 'toppages/toppage_header'
   .logout_main_content
     = render 'side_user'

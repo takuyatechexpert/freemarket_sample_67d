@@ -3,14 +3,14 @@
   .user_main_contents
     = render 'side_user'
     .right_user
-      .user_top 
-        %ul 商品一覧
+      .user_top 商品一覧
       .side_tab
         .tab_contents
-
+          - @item.each do |i|
+            %ul
+              %li
+                = image_tag i.images[0].image.url, class: "pro_pic"
+              %li.pro_name
+                = i.name
+  .footer
   = render 'toppages/toppage_footer'
-
-
-
-
- 
