@@ -79,11 +79,12 @@
         %p.box-item-name-price-3
           %a.submit-3 不適切な商品の通報
           %a.submit-4 商品購入画面
-        - if current_user.id == @item.seller_id
-          %a.submit-4 
-            = link_to "削除", item_path(@item.id), method: :delete
-          %a 
-          = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
+          - if current_user.id == @item.seller_id
+            %a.submit-6 
+              = link_to "削除", item_path(@item.id), method: :delete ,class:"submit-6"
+            
+            %a.submit-5
+              = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
         %p.box-item-name-price-comment
           %input.text-items{:type => "text", :maxlength => "150" , :size => "30"}           
           ※相手のことを考え丁寧なコメントを心がけましょう。

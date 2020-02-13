@@ -154,7 +154,7 @@
               border-radius: 30px;
               position: absolute;
               top:1300px;
-              left:450px;
+              left:500px;
               text-decoration: none;
             }
             .submit-4:hover{
@@ -163,14 +163,28 @@
             .submit-5{
               font-size: 20px;
               color:rgb(127, 210, 255);
-              border:solid rgb(127, 253, 255);
+              
               border-radius: 30px;
               position: absolute;
               top:1300px;
-              left:650px;
+              left:710px;
               text-decoration: none;
+              list-style: none;
             }
             .submit-5:hover{
+              opacity: 0.6;
+            }
+            .submit-6{
+              font-size: 20px;
+              color:pink;
+             
+              border-radius: 30px;
+              position: absolute;
+              top:1250px;
+              left:730px;
+              text-decoration: none;
+            }
+            .submit-6:hover{
               opacity: 0.6;
             }
           }
