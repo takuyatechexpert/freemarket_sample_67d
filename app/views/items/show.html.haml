@@ -12,17 +12,6 @@
       .pcHeader-headerInner_text_login
         %p.text3 ログイン
         %p.text4 新規会員登録
-    .pcHeader-headerInner_bar
-      .pcHeader-headerInner_bar_contents
-        %p FURIMA
-        %p.kigou >
-        %p ベビーキッズ
-        %p.kigou >
-        %p ベビー服（男女兼用）~95センチ
-        %p.kigou >
-        %p アウター
-        %p.kigou >
-        %p product3
     .pcHeader-headerInner_item
       .pcHeader-headerInner_item-content
         %p.box-item-name  
@@ -78,8 +67,9 @@
         %p.box-item-name-price-3
           %a.submit-3 不適切な商品の通報
 
-          - unless current_user.id == @item.seller_id 
-            %a.submit-4 商品購入画面
+          - unless current_user.id == @item.seller_id
+            %a.submit-4 
+              = link_to '商品購入画面', buyer_path(@item.id), method: :get, class:"submit-4"
           - if current_user.id == @item.seller_id
             %a.submit-6 
               = link_to "削除", item_path(@item.id), method: :delete ,class:"submit-6"

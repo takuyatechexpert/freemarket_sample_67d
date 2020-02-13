@@ -63,18 +63,7 @@
     //     }
     //   }
     // }   
-    &_bar{
-      &_contents{
-        display: flex;
-        background-color: white;
-        height:40px;
-        width:100vw;
-        padding: 0 120px;
-        font-size: 10px;
-        border: solid 1px gray;
-        line-height: 40px;
-      }
-    }
+    
     &_item{
       
       &-content{
@@ -150,7 +139,7 @@
               color:orange;
               position: absolute;
               top:1260px;
-              left:660px;
+              left:680px;
               text-decoration: none;
             }
             .submit-4:hover{
