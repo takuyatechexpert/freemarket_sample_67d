@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :buyers, only: :show do
-    collection do
+    member do
       post 'pay', to: 'buyers#pay'
       get 'done', to: 'buyers#done'
     end
