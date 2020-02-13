@@ -32,3 +32,5 @@
 config/secrets.yml
 
 public/uploads/*
+tmp/cache
+

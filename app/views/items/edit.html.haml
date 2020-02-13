@@ -1,5 +1,3 @@
--# データの送り先は暫定で適当な値
-
 .exhibitionHeader
   = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
 .main  
@@ -7,6 +5,10 @@
     = form_with model: @item, local: true do |f|
       .main__exhibitionContents__title
         商品の情報を入力
+        %br
+        - @item.images.each do |i|
+          = image_tag i.image.url ,class: "images"
+      %br
       .main__exhibitionContents__pictures
         %ul.main__exhibitionContents__information
           %li
@@ -16,7 +18,7 @@
         = f.fields_for :images do |i|
           = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
           = i.file_field :image, class: "imageField"
-        
+      
       .main__exhibitionContents__itemDescription
         .main__exhibitionContents__itemDescription__details
           商品の詳細

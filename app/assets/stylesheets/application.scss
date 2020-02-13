@@ -2,16 +2,22 @@
 @import "mixin/mixin";
 @import "index";
 @import "modules/boxes";
-@import "items";
+@import "item/index";
 @import "devise";
 // @import "header";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "side_user";
 @import "user_mypage";
-@import "items/index";
+@import "item/show";
 @import "buyers";
 @import "side_user";
 @import "user_mypage";
+@import "card/new";
+@import "card/show";
 @import "user_logout";
 @import "bought_history"
+@import "bought_history";
+@import "toppages/toppage_header";
+@import "toppages/toppage_footer";
+@import "toppages/_toppage_middle";

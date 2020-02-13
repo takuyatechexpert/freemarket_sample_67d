@@ -36,13 +36,21 @@
             .fas.fa-chevron-right
     .list
       %il 
-        クレジット情報//梅木さんdoing
+        =link_to 'クレジット情報', delete_card_index_path
         %ul
           %li
             .fas.fa-chevron-right
+    .list
+      %il 
+        =link_to 'クレジット登録', new_card_path
+        %ul
+          %li
+            .fas.fa-chevron-right
+            
     .list
       %il 
         = link_to 'ログアウト', '/users/show'
         %ul
           %li
             .fas.fa-chevron-right
+            

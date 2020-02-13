@@ -1,17 +1,39 @@
+.pcHeade
+  .pcHeader-headerInner
+    .pcHeader-headerInner_mainHeader
+      = link_to root_path do
+        = image_tag "logo.png", class:"image", alt:"ほげ"
+      %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
+      .pcHeader-headerInner_mainHeader_submit
+        %input.submit{type: "submit",value:"", class: "form__submit"}
+    .pcHeader-headerInner_text
+      .pcHeader-headerInner_text_content
+        .dropdown-btn1
+          .fas.fa-list
+          カテゴリ-
+          %ul.dropdown1
+            %li
+              - @category.each do |category|
+                %ul
+                  %li
+                    = category.name
+        .dropdown-btn2
 
-.pcHeader-headerInner
-  .pcHeader-headerInner_mainHeader
-    = link_to root_path do
-      = image_tag "logo.png", class:"image", alt:"ほげ"
-    %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
-    .pcHeader-headerInner_mainHeader_submit
-      %input.submit{:type => "image", :src => "/assets/search1.png"}
-  .pcHeader-headerInner_text
-    .pcHeader-headerInner_text_content
-      %p.text カテゴリー
-      %p.text2 ブランド
-    .pcHeader-headerInner_text_login
-      %p.text3 ログイン
-      %p.text4 新規会員登録
-      -# = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-      = link_to "ユーザーページ", '/users', class:"txet"
+          .fas.fa-list
+          ブランド
+          %ul.dropdown2
+            %li ドロップダウンメニュー
+            %li ドロップダウンメニュー
+            %li ドロップダウンメニュー
+            %li ドロップダウンメニュー
+
+      .pcHeader-headerInner_text_login
+        .text3
+          .fas.fa-sign-in-alt
+          ログイン
+        .text4
+          .far.fa-address-card
+          = link_to "新規会員登録", '/users/sign_up'
+        .text5
+          .far.fa-user
+          = link_to "ユーザーページ", '/users'

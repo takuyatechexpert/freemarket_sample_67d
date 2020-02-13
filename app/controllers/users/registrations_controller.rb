@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(user_params)
     if @user.save
       sign_in(@user)
-      redirect_to :root
+      redirect_to root_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def edit
     @user = User.find_by(id: current_user.id)
-   
+
   end
 
   def update
@@ -43,11 +43,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
- 
+
 
   # PUT /resource
-  
-  
+
+
   # DELETE /resource
   # def destroy
   #   super
