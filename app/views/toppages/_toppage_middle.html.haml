@@ -102,11 +102,11 @@
       %p.new-items 新規投稿商品
     .pcContent-contentInner6_items-lists
       - @item.zip(@image) do |o,i|
-          %ul
-            %li
-              = image_tag i.image.url, class:"pro_pic"
-            %li.pro_name
-              = o.name
+        %ul
+          %li
+          = image_tag i.image.url, class:"pro_pic"
+          %li.pro_name
+          = o.name
   .pcContent-contentInner6_image3
     .pcContent-contentInner6_image3_main3
       = image_tag "bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
