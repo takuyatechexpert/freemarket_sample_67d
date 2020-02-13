@@ -3,7 +3,8 @@ class BuyersController < ApplicationController
   def index 
   end
 
-  def show 
+  def show
+    @item = Item.find(params[:id])
   end
 
   def edit
