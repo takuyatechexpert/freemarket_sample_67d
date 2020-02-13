@@ -10,7 +10,7 @@
     .pcHeader-headerInner_text_content
       .dropdown-btn1
         .fas.fa-list
-        カテゴリ-
+        カテゴリー
         %ul.dropdown1
           %li
             - @category.each do |category|
@@ -28,13 +28,15 @@
           %li ドロップダウンメニュー
 
     .pcHeader-headerInner_text_login
-      .text3
-        .fas.fa-sign-in-alt
-        ログイン
-      .text4
-        .far.fa-address-card
-        = link_to "新規会員登録", '/users/sign_up'
+      - if user_signed_in?
+        .text3
+          .fas.fa-sign-in-alt
+          = link_to 'ログアウト', '/users/show'
+      - else
+        .text4
+          .far.fa-address-card
+          = link_to "新規会員登録", '/users/sign_up'
       .text5
         .far.fa-user
-        = link_to "ユーザーページ", '/users'
+        = link_to current_user.nick_name , '/users'
 

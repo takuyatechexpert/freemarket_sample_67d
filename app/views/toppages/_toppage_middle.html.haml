@@ -100,7 +100,8 @@
         - @item.zip(@image) do |o,i|
           %ul
             %li
-              = image_tag i.image.url, class:"pro_pic"
+              = link_to item_path(o.id) do
+                = image_tag i.image.url, class:"pro_pic"
             %li.pro_name
               = o.name
     .pcContent-contentInner_image3
@@ -114,3 +115,4 @@
         = image_tag "google-play-badge.png", class:"button1-1"
         %i
         = image_tag "apple.svg", class:"button2-1"
+
