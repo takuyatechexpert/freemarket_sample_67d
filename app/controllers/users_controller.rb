@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def index
     @category = Category.all.order("id ASC").limit(9)
+    @item = Item.all.order("RAND()").limit(10)
   end
 
   def destroy
