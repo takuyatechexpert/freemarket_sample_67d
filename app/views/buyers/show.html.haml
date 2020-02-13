@@ -1,33 +1,40 @@
 .exhibitionHeader
-  = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
+  = link_to root_path do
+    = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
 .main-content
   %main.pay-main
     %section.pay-item-content
       %h2.pay-head 購入内容確認
       %section.pay-item
         .pay-content-info
-          %h2.pay-item__image
-            購入画像
-            -# = image_tag @product.image_url, alt: "画像はあくまでもイメージです", class: "item-gyazo"
-          %p.item-text 
-          %form.pay-form
+          - @item.images.each_with_index do |item, i|
+            - if i == 0
+              = image_tag item.image.url, class: "itemImage", class: "pay-item__image"
+
+          .pay-content-info__text
             %p.pay-price 
-              ¥1,500
+              ￥
+              = @item.price
               %span.mop
-                着払い
-            %ul.price-table
-              %li.price-breakdown
-                .breakdown お買い上げ金額
-                .breakdown
-                  %span{"value":"15000"} ¥15,000
-            
+                = @item.postage.name
+           
       %section.pay-user-info
         .pay-content-info
           %h3.deli お届け先
-          %address.user-info-text
-            %br 〒533-0041
-            東京
-          .dammy
+          %address.user-info
+            - current_user.addresses.each do |address|
+              .user-info--text
+                〒
+                = address.postal_code
+              .user-info--text
+                = address.municipalities
+                = address.address
+              .user-info--text
+                = address.home_type
+              .user-info--text
+                TEL
+                = address.tel
+
       %section.pay-user-info
         .pay-content-info
           %h3.deli クレジット
@@ -40,8 +47,3 @@
             = exp_month + " / " + exp_year
             = form_tag(action: :pay, method: :post) do
               %button.buybotn 購入する
-          %p.user-info-text
-            %br
-          %figure
-            = image_tag ""
-          %p.change
