@@ -22,7 +22,6 @@
         font-weight: bold;
         text-align: center;
         line-height: 1.5;
-        @include border;
       }
       section.pay-item {
         text-align: center;
@@ -33,10 +32,12 @@
           flex-wrap: wrap;
           max-width: 320px;
           margin: 0 auto;
+          
           .pay-item__image{
             width: 300px;
             margin: 0 auto;
           }
+
           .pay-content-info__text{
             
             p.pay-price {
@@ -45,6 +46,7 @@
               font-size: 1.5rem;
               font-weight: bold;
               letter-spacing: 1px;
+              @include border;
 
               span.mop {
                 font-size: 15px;
@@ -64,6 +66,7 @@
         .pay-content-info {
           max-width: 320px;
           margin: 0 auto;
+          @include border;
           h3.deli {
             font-size: 1.2rem;
             font-weight: bold;
