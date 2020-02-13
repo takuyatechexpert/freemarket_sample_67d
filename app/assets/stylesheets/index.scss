@@ -572,47 +572,7 @@
           left: 460px; 
         }
       }
-      &_footer{
-        height:400px;
-        width:100vw;
-        &-color{
-          background-color: black;
-          height:400px;
-          width:100vw;
-          
-          &_block{
-            background-color: black;
-            height:250px;
-            width: 100vw;
-            color: #fff;
-            display: flex;
-            justify-content: space-evenly;
-            padding: 100px 70px 0 115px;
-            .p{
-              height:250px;
-              width: 500px;
-              color: #fff;
-            }
-          
-            &-icon{
-              margin: 0  620px;
-              .image5{
-                height:80px;
-                width: 180px;
-              }
-            } 
-            &-corp{
-              text-align: center;
-              // display: flex;
-              .c{
-                color:white;
-                text-align: center;
-                justify-content: center;
-              }
-            }
-          }
-        } 
-      }
+      
     }
   }
 
