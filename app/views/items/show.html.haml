@@ -46,7 +46,7 @@
               %tr 
               %th 出品者名
               %td 
-                
+                = @item.seller_id
               %tr 
               %th カテゴリー名
               %td 
@@ -54,7 +54,7 @@
               %tr 
               %th ブランド              
               %td 
-                
+                = @item.status_id
               %tr
               %th 商品サイズ
               %td 
@@ -62,20 +62,19 @@
               %tr 
               %th 商品の状態
               %td 
-                
-
+                未記入
               %tr 
               %th 配送料の負担
               %td 
-                
+                = @item.postage_id
               %tr 
               %th 発送元の地域
               %td 
-                
+                = @item.region_id
               %tr 
               %th 発送日の目安
               %td 
-                
+                = @item.shipping_date_id
         %p.box-item-name-price-3
           %a.submit-3 不適切な商品の通報
 
