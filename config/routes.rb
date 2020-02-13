@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   resources :home 
   resources :users
-
+  resources :buyers
   resources :card, only: [:new, :show] do
     collection do
       post 'pay', to: 'card#pay'

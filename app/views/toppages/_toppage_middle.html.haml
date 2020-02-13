@@ -59,6 +59,7 @@
       = image_tag "apple.svg", class:"button1-1"
       %i
       = image_tag "google-play-badge.png", class:"button2-1"
+
   
 .pcContent-contentInner4_style
   .pcContent-contentInner4_style-main2
@@ -100,15 +101,12 @@
     .pcContent-contentInner6_items-contents 
       %p.new-items 新規投稿商品
     .pcContent-contentInner6_items-lists
-      = link_to '購入詳細へ', "", method: :get, class:"items"
-      = link_to '購入詳細へ', "", method: :get, class:"items"
-      = link_to '購入詳細へ', "", method: :get, class:"items"
-  .pcContent-contentInner6_items2
-    .pcContent-contentInner6_items2-header2 
-      %p.head2 ピックブランド 
-    .pcContent-contentInner6_items2-contents2
-      %p.new-items2 アーカイバ
-    .pcContent-contentInner6_items2-lists2
+      - @item.zip(@image) do |o,i|
+          %ul
+            %li
+              = image_tag i.image.url, class:"pro_pic"
+            %li.pro_name
+              = o.name
   .pcContent-contentInner6_image3
     .pcContent-contentInner6_image3_main3
       = image_tag "bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
