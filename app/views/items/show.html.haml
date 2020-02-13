@@ -54,7 +54,7 @@
               %tr 
               %th ブランド              
               %td 
-                
+                〇〇
               %tr
               %th 商品サイズ
               %td 
@@ -87,11 +87,6 @@
               = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
 
         %p.box-item-name-price-comment
-          %input.text-items{:type => "text", :maxlength => "150" , :size => "30"}           
-          ※相手のことを考え丁寧なコメントを心がけましょう。
-          %br
-          ※不快な言葉遣いなどは利用制限や退会処分となろことがあります。
-          %input.submit{:type => "submit", :value => "コメントする"}
           %a.previous-page ＜ 前の商品
           %a.next-page 次の商品 ＞
         %p.box-item-name-price-list
