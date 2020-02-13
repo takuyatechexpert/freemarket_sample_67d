@@ -23,6 +23,7 @@ class BuyersController < ApplicationController
     :currency => 'jpy',
     )
   redirect_to action: 'done' #完了画面に移動
+
   end
 
   def edit

@@ -63,32 +63,21 @@
     //     }
     //   }
     // }   
-    &_bar{
-      &_contents{
-        display: flex;
-        background-color: white;
-        height:40px;
-        width:100vw;
-        padding: 0 120px;
-        font-size: 10px;
-        border: solid 1px gray;
-        line-height: 40px;
-      }
-    }
+    
     &_item{
       
       &-content{
         background-color: lightslategrey;
-        height:1850px;
+        height:1770px;
         width:100vw;
         position: relative;
         .box-item-name{
-          height:1270px;
+          height:1400px;
           width:700px;
           background-color: antiquewhite;
           position: absolute;
           top:100px;
-          left: 390px;
+          left: 380px;
           text-align: center;
           font-size: 30px;
           font-weight: bold;
@@ -100,8 +89,8 @@
         }
         .box-item-name-price{
           position: absolute;
-          top:650px;
-          left:700px;
+          top:550px;
+          left:670px;
           text-align: center;
           .price_tag{
             height:30px;
@@ -116,8 +105,8 @@
             color: black; 
             background-color: lightsteelblue; 
             position: absolute;
-            top:710px;
-            left: 440px;
+            top:600px;
+            left: 430px;
             .th,td{
               border: solid 1px;
               color: black;
@@ -138,11 +127,9 @@
             .submit-3{
               font-size: 20px;
               color:darkgray;
-              border:solid darkgray;
-              border-radius: 30px;
               position: absolute;
-              top:1300px;
-              left:850px;
+              top:1390px;
+              left:630px;
             }
             .submit-3:hover{
               opacity: 0.6;
@@ -150,11 +137,9 @@
             .submit-4{
               font-size: 20px;
               color:orange;
-              border:solid orange;
-              border-radius: 30px;
               position: absolute;
-              top:1300px;
-              left:500px;
+              top:1360px;
+              left:660px;
               text-decoration: none;
             }
             .submit-4:hover{
@@ -166,8 +151,8 @@
               
               border-radius: 30px;
               position: absolute;
-              top:1300px;
-              left:710px;
+              top:1420px;
+              left:680px;
               text-decoration: none;
               list-style: none;
             }
@@ -180,8 +165,8 @@
              
               border-radius: 30px;
               position: absolute;
-              top:1250px;
-              left:730px;
+              top:1450px;
+              left:700px;
               text-decoration: none;
             }
             .submit-6:hover{
@@ -189,37 +174,18 @@
             }
           }
           &-comment{
-            height:450px;
+            height:70px;
             width:700px;
             background-color: antiquewhite;
             position: absolute;
-            top: 1400px;
-            left: 390px;
+            top: 1700px;
+            left: 380px;
             .text-items{
               height:200px;
               width: 660px;
               margin: 20px 20px;
             }
-            .submit {
-              margin: 20px 250px;
-              display       : inline-block;
-              border-radius : 43%;          /* 角丸       */
-              font-size     : 20pt;        /* 文字サイズ */
-              text-align    : center;      /* 文字位置   */
-              cursor        : pointer;     /* カーソル   */
-              padding       : 12px 12px;   /* 余白       */
-              background    : rgba(102, 102, 255, 0.88);     /* 背景色     */
-              color         : #ffffff;     /* 文字色     */
-              line-height   : 1em;         /* 1行の高さ  */
-              opacity       : 1;           /* 透明度     */
-              transition    : .3s;         /* なめらか変化 */
-              box-shadow    : 9px 9px 10px #666666;  /* 影の設定 */
-              outline:none;
-            }
-            .submit:hover {
-              box-shadow    : none;        /* カーソル時の影消去 */
-              opacity       : 0.8;         /* カーソル時透明度 */
-            }
+            
             .previous-page{
               color:aqua;
               float: left;
@@ -238,8 +204,8 @@
               font-size: 30px;
               color: aqua;
               position: absolute;
-              top: 1800px;
-              left: 660px;
+              top: 1700px;
+              left: 640px;
               font-weight: bold;
             }
           }
@@ -261,7 +227,7 @@
           position:absolute;
           top:170px;
           font-size: 20px;
-          left:600px;
+          left:560px;
           color:white;
           text-shadow: 0 0 5px rgba(0,0,0,0.4);
         }
@@ -269,7 +235,7 @@
           position:absolute;
           top:200px;
           font-size: 40px;
-          left:520px;
+          left:480px;
           color:white;
           text-shadow: 0 0 5px rgba(0,0,0,0.4);
         }
@@ -278,7 +244,7 @@
         .button1-1{
           position:absolute;
           top:295px;
-          left:500px;
+          left:420px;
         }
         .button2-1{
           position:absolute;

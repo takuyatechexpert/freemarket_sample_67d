@@ -1,0 +1,136 @@
+.pcHeader{
+  width: 100%;
+  height: 200px;
+  &-headerInner{
+    &_mainHeader{
+      padding: 30px 0;
+      display: flex;
+      justify-content: center;
+      .image{
+        height: 40px;
+        padding: 0 20px 0 0;
+      }
+      .text{
+        width: 800px;
+      } 
+
+        .form__submit{
+          background: $mainColorBlue;
+          height: 100%;
+          width: 50px;
+          background-image: url("search1.png");
+          background-size: 35px;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin-left: 5px;
+        }
+    }
+
+    &_text{
+      display: flex;
+      width: 100%;
+      height: 30px;
+      &_content{
+        float: left;
+        width: 50%;
+        display: flex;
+        // text-align: center;
+        justify-content: space-around;
+        position: relative;
+        .dropdown-btn1{
+          display:inline-block;
+          cursor:pointer;
+          font-weight: bold;
+          // margin: 0 auto;
+          position: relative;
+          margin-left: 40%;
+          .dropdown1{
+            display: none;
+            position: absolute;
+          }
+
+          &:hover { 
+            color: $mainColorBlue;
+            
+            .fa-list{
+              color: cornflowerblue;
+            }
+            .dropdown1 {
+              z-index:1005;
+              width:250px;
+              display:inherit;
+              li {
+                display:inline-block;
+                z-index: 30;
+                background-color: $mainColorBlue;
+                color: #666;
+                padding: 8px;
+              }
+            }
+          }
+        }
+          .dropdown-btn2{
+            position: absolute;
+            display:inline-block;
+            // margin-left: 70px;
+            cursor:pointer;
+            font-weight: bold;
+            // margin: 0 auto;
+            position: relative;
+            margin-right: 30%;
+
+            .dropdown2{
+              display: none;
+              position: absolute;
+            }
+
+            &:hover { 
+              color: $mainColorBlue;
+              // margin-left: 70px;
+              .fa-list{
+                color: cornflowerblue;
+              }
+              .dropdown2 {
+                z-index:1005;
+                width:200px;
+                display:inherit;
+                li {
+                  display:inline-block;
+                  z-index: 30;
+                  background-color: $mainColorBlue;
+                  color: #666;
+                  padding: 8px;
+                }
+              }
+            }
+        }
+      }
+      &_login{
+        width: 40%;
+        float: right;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        font-weight: bold;
+        .text3{
+          margin-left: 30%;
+          &:hover{
+            color: $mainColorBlue;
+          }
+        } 
+        .text4{
+          &:hover{
+            color: $mainColorBlue;
+          }
+        }
+        .text5{
+          padding-right: 0px;
+          color: black;
+          &:hover{
+            color: $mainColorBlue;
+          }
+        }
+      }
+    } 
+  }
+}
