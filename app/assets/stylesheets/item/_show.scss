@@ -79,7 +79,7 @@
       
       &-content{
         background-color: lightslategrey;
-        height:1850px;
+        height:1570px;
         width:100vw;
         position: relative;
         .box-item-name{
@@ -185,37 +185,18 @@
             }
           }
           &-comment{
-            height:400px;
+            height:70px;
             width:700px;
             background-color: antiquewhite;
             position: absolute;
-            top: 1450px;
+            top: 1500px;
             left: 380px;
             .text-items{
               height:200px;
               width: 660px;
               margin: 20px 20px;
             }
-            .submit {
-              margin: 5px 240px;
-              display       : inline-block;
-              border-radius : 43%;          /* 角丸       */
-              font-size     : 20pt;        /* 文字サイズ */
-              text-align    : center;      /* 文字位置   */
-              cursor        : pointer;     /* カーソル   */
-              padding       : 12px 12px;   /* 余白       */
-              background    : rgba(102, 102, 255, 0.88);     /* 背景色     */
-              color         : #ffffff;     /* 文字色     */
-              line-height   : 1em;         /* 1行の高さ  */
-              opacity       : 1;           /* 透明度     */
-              transition    : .3s;         /* なめらか変化 */
-              box-shadow    : 9px 9px 10px #666666;  /* 影の設定 */
-              outline:none;
-            }
-            .submit:hover {
-              box-shadow    : none;        /* カーソル時の影消去 */
-              opacity       : 0.8;         /* カーソル時透明度 */
-            }
+            
             .previous-page{
               color:aqua;
               float: left;
@@ -234,7 +215,7 @@
               font-size: 30px;
               color: aqua;
               position: absolute;
-              top: 1800px;
+              top: 1500px;
               left: 640px;
               font-weight: bold;
             }
