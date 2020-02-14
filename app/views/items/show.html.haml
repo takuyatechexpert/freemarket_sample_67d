@@ -1,20 +1,12 @@
-.pcHeader
-  .pcHeader-headerInner
-    .pcHeader-headerInner_mainHeader
-      = image_tag "/assets/logo.png", class:"image", alt:"ほげ"
-      %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
-      .pcHeader-headerInner_mainHeader_submit
-        %input.submit{:type => "image", :src => "/assets/search1.png"}
-    .pcHeader-headerInner_text
-      .pcHeader-headerInner_text_content
-        %p.text カテゴリー
-        %p.text2 ブランド
-      .pcHeader-headerInner_text_login
-        %p.text3 ログイン
-        %p.text4 新規会員登録
-.pcHeader-headerInner_item
-  .pcHeader-headerInner_item-content2
-    .pcHeader-headerInner_item-content2-content
+.wapper
+  = link_to new_item_path do
+    .exhibitionIcon
+      .exhibitionIcon__text
+        出品する
+      .fas.fa-camera.fa-6x
+  = render 'toppages/toppage_header'
+  .pcHeader-headerInner_item
+    .pcHeader-headerInner_item-content
       %p.box-item-name  
         = @item.name 
         %br
@@ -22,7 +14,7 @@
           = image_tag i.image.url ,class: "images"
         %p.box-item-name-price 
           %span.price_tag>
-            = @item.price
+            = number_to_currency(@item.price, unit: "￥",precision: 0)
           %table.box-item-name-price-2
             %tr 
             %th 商品名
@@ -62,7 +54,7 @@
               = @item.region_id
             %tr 
             %th 発送日の目安
-            %td 
+            %td
               = @item.shipping_date_id
       %p.box-item-name-price-3
         %a.submit-3 不適切な商品の通報
@@ -91,34 +83,6 @@
         %i.button2-1
           = image_tag "apple.svg",size: "230x150"
 
-.pcContent-contentInner_image3_footer2
-  .pcContent-contentInner_image3_footer2-color2
-    .pcContent-contentInner_image3_footer2-color2_block2
-      %p.text 
-      フリマについて
-      %br
-      会社概要（運営会社）
-      %br
-      プライバシーポリシー
-      %br
-      フリマ利用規約
-      %br
-      ポイントに関する規約
-      %p.text1-1
-      furimaを見る
-      %br
-      カテゴリー一覧
-      %br
-      ブランド一覧
-      %p.text1-2
-      ヘルプ＆ガイド
-      %br
-      フリマガイド
-      %br
-      フリマロゴ利用ガイドライン
-      %br
-      お知らせ
-    .pcContent-contentInner_image3_footer2-color2_block2-icon2
-      = image_tag "/assets/logo-white.png", class:"image5", alt:"ほげ"
-    .pcContent-contentInner_image3_footer2-color2_block2-corp2
-      %small.c ©FURIMA
+  = render 'toppages/toppage_footer'
+
+ 
