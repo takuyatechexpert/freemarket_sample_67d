@@ -4,7 +4,8 @@ class BuyersController < ApplicationController
     @category = Category.all.order("id ASC").limit(9)
   end
 
-  def show 
+  def show
+    @item = Item.find(params[:id])
     @category = Category.all.order("id ASC").limit(9)
   end
 

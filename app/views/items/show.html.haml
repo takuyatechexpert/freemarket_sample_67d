@@ -12,6 +12,7 @@
       .pcHeader-headerInner_text_login
         %p.text3 ログイン
         %p.text4 新規会員登録
+
 .pcHeader-headerInner_item
   .pcHeader-headerInner_item-content2
     .pcHeader-headerInner_item-content2-content
@@ -22,7 +23,7 @@
           = image_tag i.image.url ,class: "images"
         %p.box-item-name-price 
           %span.price_tag>
-            = @item.price
+            = number_to_currency(@item.price, unit: "￥",precision: 0)e
           %table.box-item-name-price-2
             %tr 
             %th 商品名
