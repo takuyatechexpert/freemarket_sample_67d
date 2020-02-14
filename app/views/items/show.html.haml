@@ -5,8 +5,9 @@
         出品する
       .fas.fa-camera.fa-6x
   = render 'toppages/toppage_header'
-  .pcHeader-headerInner_item
-    .pcHeader-headerInner_item-content
+.pcHeader-headerInner_item
+  .pcHeader-headerInner_item-content2
+    .pcHeader-headerInner_item-content2-content
       %p.box-item-name  
         = @item.name 
         %br
@@ -43,19 +44,19 @@
             %tr 
             %th 商品の状態
             %td 
-              = @item.status_id.name
+              = @item.status_id
             %tr 
             %th 配送料の負担
             %td 
-              = @item.postage_id.name
+              = @item.postage_id
             %tr 
             %th 発送元の地域
             %td 
-              = @item.region_id.name
+              = @item.region_id
             %tr 
             %th 発送日の目安
             %td
-              = @item.shipping_date_id.name
+              = @item.shipping_date_id
       %p.box-item-name-price-3
         %a.submit-3 不適切な商品の通報
         %a.submit-4 
@@ -71,17 +72,17 @@
               %a.next-page 次の商品 ＞
             %p.box-item-name-price-list
               %a.list_link 商品一覧へ
-  .pcContent-contentInner_image3
-    .pcContent-contentInner_image3_main3
-      = image_tag "/assets/bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
-      .pcContent-contentInner_image3_text3
-        %p.text1-1 誰でも簡単、人生を変えるアプリ
-        %p.text2-1 今すぐ無料ダウンロード！
-      .pcContent-contentInner_image3_link3
-        %i.button1-1
-          = image_tag "google-play-badge.png",size: "250x120"
-        %i.button2-1
-          = image_tag "apple.svg",size: "230x150"
+.pcContent-contentInner_image3
+  .pcContent-contentInner_image3_main3
+    = image_tag "/assets/bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
+    .pcContent-contentInner_image3_text3
+      %p.text1-1 誰でも簡単、人生を変えるアプリ
+      %p.text2-1 今すぐ無料ダウンロード！
+    .pcContent-contentInner_image3_link3
+      %i.button1-1
+        = image_tag "google-play-badge.png",size: "250x120"
+      %i.button2-1
+        = image_tag "apple.svg",size: "230x150"
 
   = render 'toppages/toppage_footer'
 
