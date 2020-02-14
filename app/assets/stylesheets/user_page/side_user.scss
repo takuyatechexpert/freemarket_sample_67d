@@ -68,7 +68,7 @@
   transform: translateY(-0.1875em);
   il {
     font-size: 17px;
-    color: rgb(41, 36, 36);
+    color: $mainlattercolor;
     float: left;
     align-items: center;
     display: flex;
@@ -80,7 +80,7 @@
       li{
         .fa-chevron-right{
           // top: 35%;
-          color: rgb(41, 36, 36);
+          color: $mainlattercolor;
         }
       }
     }
