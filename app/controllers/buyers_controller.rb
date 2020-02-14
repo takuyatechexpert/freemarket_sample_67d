@@ -2,9 +2,9 @@ class BuyersController < ApplicationController
 
   require 'payjp'
   before_action :set_card, only: [:show, :pay]
+  before_action :set_item, only: [:show, :pay]
 
   def show
-    @item = Item.find(params[:id])
     if @card.blank?
       redirect_to controller: "card", action: :new
     else
@@ -15,15 +15,15 @@ class BuyersController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:id])
+    Item.update(buyer_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-    :amount => @item.price,
-    :customer => @card.customer_id,
-    :currency => 'jpy',
+      :amount => @item.price,
+      :customer => @card.customer_id,
+      :currency => 'jpy',
     )
-  redirect_to action: 'done' #完了画面に移動
-
+    
+    redirect_to root_path #tトップページに遷移
   end
 
   def edit
@@ -36,6 +36,10 @@ class BuyersController < ApplicationController
 
   def set_card
     @card = Card.find_by(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
