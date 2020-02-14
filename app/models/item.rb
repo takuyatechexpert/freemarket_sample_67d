@@ -7,7 +7,7 @@ class Item < ApplicationRecord
 
   belongs_to :user, optional: true
   has_many :images, foreign_key: :item_id, dependent: :destroy
-  belongs_to :category
+  belongs_to :category, optional: true
   accepts_nested_attributes_for :images, allow_destroy: true
 
   validates :name, presence: true
