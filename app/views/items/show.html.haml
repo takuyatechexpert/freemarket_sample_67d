@@ -13,9 +13,9 @@
         %br
         - @item.images.each do |i|
           -if  @item.buyer_id.present? && @item.seller_id.present?
-            .test1
+            .box-itemt__image
               = image_tag i.image.url ,class: "images"
-              .test
+              .box-itemt__image--text
                 SOLD OUT
           -else
             = image_tag i.image.url ,class: "images"
@@ -67,7 +67,8 @@
         %a.submit-3 不適切な商品の通報
         %a.submit-4 
         - if @item.buyer_id.present? && @item.seller_id.present?
-          SOLD OUT
+          .soldOut
+            SOLD OUT
         - elsif current_user.id != @item.seller_id
           = link_to '商品購入画面', buyer_path(@item.id), method: :get, class:"submit-4"
         - else
