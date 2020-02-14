@@ -1,4 +1,5 @@
 $(function(){
+  $(document).on('turbolinks:load', ()=> {
   function appendOption(category){
     var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
     return html;
@@ -15,7 +16,7 @@ $(function(){
   // 孫カテゴリーの表示作成
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
-    grandchildSelectHtml = `<select class="item_category_id" id="child_category" name="category_id">
+    grandchildSelectHtml = `<select class="item_category_id" id="grand_child_category" name="category_id">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>`;
@@ -63,7 +64,7 @@ $(function(){
       })
       .done(function(grandchildren){
         if (grandchildren.length != 0) {
-          $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除するする
+          $('#grand_child_category').remove(); //子が変更された時、孫以下を削除するする
           $('#size_wrapper').remove();
           $('#brand_wrapper').remove();
           var insertHTML = '';
@@ -80,4 +81,5 @@ $(function(){
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
     }
   });
+  })
 });
