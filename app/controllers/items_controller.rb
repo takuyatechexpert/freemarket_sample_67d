@@ -35,7 +35,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+
     @category = Category.all.order("id ASC").limit(13)
+
   end
 
   def edit
