@@ -6,7 +6,7 @@ class BuyersController < ApplicationController
   def show
     @item = Item.find(params[:id])
     if @card.blank?
-      redirect_to action: :new
+      redirect_to controller: "card", action: :new
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
