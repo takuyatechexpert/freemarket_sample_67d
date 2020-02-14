@@ -48,6 +48,7 @@
         width: 200px;
         top:40px;
       }
+
       .box-item-name-price{
         text-align: center;
         .price_tag{
@@ -222,4 +223,23 @@
     }
   }
 }       
- 
+      // 商品が売り切れ時の場合
+      // top:40px;
+      .test1{
+        position: relative;
+        z-index: 1;
+        .test{
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 10;
+          background: rgba(211, 211, 211, 0.5);
+          height: 150px;
+          width: 200px;
+          font-size: 1.3rem;
+          font-weight: bold;
+          color: #4b4848;
+          text-align: center;
+          line-height: 150px;
+        }
+      }
