@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
+  include CommonActions
+  before_action :get_categories, only:[:new, :create, :show]
   before_action :set_item, only: [:show ,:edit, :destroy]
+  
 
   def index
     @items = Item.all
@@ -9,7 +12,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @category = Category.all.order("id ASC").limit(13)
   end
 
 
@@ -28,14 +30,13 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to item_path(@item)
     else
-      @category = Category.all.order("id ASC").limit(13)
+      # @category = Category.all.order("id ASC").limit(13)
       @item.images.new
       render :new
     end
   end
 
   def show
-    @category = Category.all.order("id ASC").limit(13)
   end
 
   def edit

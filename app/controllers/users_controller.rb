@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  include CommonActions
+  before_action :get_categories, only:[:index, :show]
 
   def create
   end
@@ -8,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @category = Category.all.order("id ASC").limit(9)
     @item = Item.all.order("RAND()").limit(9)
     @user = current_user.nick_name
   end
@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @category = Category.all.order("id ASC").limit(9)
   end
 
   
