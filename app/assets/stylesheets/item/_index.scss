@@ -43,14 +43,14 @@
       }
 
       .js-file_group{
-        // border-top: solid 1px #d6d6d6;
-        // display: flex;
+        border-top: solid 1px #d6d6d6;
+        display: flex;
         margin-top: 20px;
       }
 
-      #image-box{
-        display: flex;
-      }
+      // #image-box{
+      //   display: flex;
+      // }
     }
 
     &__itemDescription{
@@ -214,4 +214,9 @@
   border:solid 1px gainsboro;
   padding: 10px;
   }
-
+.item_category_id{
+  background: white;
+  width: 100%;
+  height: 45px;
+  // #price,brandは別枠で指定している
+}

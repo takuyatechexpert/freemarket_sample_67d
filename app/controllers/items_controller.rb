@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show ,:edit]
+  before_action :set_item, only: [:show ,:edit, :destroy]
 
   def index
     @items = Item.all
@@ -9,46 +9,53 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-
-    @category = Category.all.order("id ASC").limit(9)
+    @category = Category.all.order("id ASC").limit(13)
   end
 
-  def category_children
-    @category_children = Category.find(params[:productCategory]).children
+
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
 
-  # def category_grandchildren
-  #   @category_grandchildren = Category.find(params[:productcategory]).children
-  # end
+ def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+ end
+
 
   def create
     @user = User.find(current_user.id)
     @item = Item.new(item_params)
-
     if @item.save
-      redirect_to root_path
+      redirect_to item_path(@item)
     else
+      @category = Category.all.order("id ASC").limit(13)
       @item.images.new
-      redirect_to new_item_path
+      render :new
     end
   end
 
-  def show  
-    @category = Category.all.order("id ASC").limit(9)
-  end 
+  def show
+  end
 
-  def edit 
+  def edit
   end
 
   def update
     @item = Item.find(params[:id])
-    if @item.update(item_params) 
+    if @item.update(item_params)
        redirect_to item_path
     else
        render action: :edit
     end
   end
 
+  def destroy
+      if@item.destroy
+        redirect_to root_path
+      else
+        redirect_to item_path
+      end
+  end
 
   private
 

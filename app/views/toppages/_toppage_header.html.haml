@@ -1,42 +1,41 @@
+.pcHeade
+  .pcHeader-headerInner
+    .pcHeader-headerInner_mainHeader
+      = link_to root_path do
+        = image_tag "logo.png", class:"image", alt:"ほげ"
+      %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
+      .pcHeader-headerInner_mainHeader_submit
+        %input.submit{type: "submit",value:"", class: "form__submit"}
+    .pcHeader-headerInner_text
+      .pcHeader-headerInner_text_content
+        .dropdown-btn1
+          .fas.fa-list
+          カテゴリー
+          %ul.dropdown1
+            %li
+              - @category.each do |category|
+                %ul
+                  %li
+                    = category.name
+        .dropdown-btn2
+          .fas.fa-list
+          ブランド
+          %ul.dropdown2
+            %li ドロップダウンメニュー
+            %li ドロップダウンメニュー
+            %li ドロップダウンメニュー
+            %li ドロップダウンメニュー
 
-.pcHeader-headerInner
-  .pcHeader-headerInner_mainHeader
-    = link_to root_path do
-      = image_tag "logo.png", class:"image", alt:"ほげ"
-    %input.text{:name => "search", :placeholder => "キーワードから探す", :type => "text"}
-    .pcHeader-headerInner_mainHeader_submit
-      %input.submit{type: "submit",value:"", class: "form__submit"}
-  .pcHeader-headerInner_text
-    .pcHeader-headerInner_text_content
-      .dropdown-btn1
-        .fas.fa-list
-        カテゴリー
-        %ul.dropdown1
-          %li
-            - @category.each do |category|
-              %ul
-                %li
-                  = category.name
-      .dropdown-btn2
-
-        .fas.fa-list
-        ブランド
-        %ul.dropdown2
-          %li ドロップダウンメニュー
-          %li ドロップダウンメニュー
-          %li ドロップダウンメニュー
-          %li ドロップダウンメニュー
-
-    .pcHeader-headerInner_text_login
-      - if user_signed_in?
-        .text3
-          .fas.fa-sign-in-alt
-          = link_to 'ログアウト', '/users/show'
-      - else
-        .text4
-          .far.fa-address-card
-          = link_to "新規会員登録", '/users/sign_up'
-      .text5
-        .far.fa-user
-        = link_to current_user.nick_name , '/users'
-
+      .pcHeader-headerInner_text_login
+        - if user_signed_in?
+          .text3
+            .fas.fa-sign-in-alt
+            = link_to 'ログアウト', '/users/show'
+        - else
+          .text4
+            .far.fa-address-card
+            = link_to "新規会員登録", '/users/sign_up'
+        .text5
+          .far.fa-user
+          = link_to current_user.nick_name , '/users'
+            

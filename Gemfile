@@ -88,4 +88,3 @@ gem 'dotenv-rails'
 gem "jquery-rails"
 gem 'ancestry'
 gem 'rails-i18n'
-

@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_date
 
   belongs_to :user, optional: true
-  has_many :images
+  has_many :images, foreign_key: :item_id, dependent: :destroy
   belongs_to :category
   accepts_nested_attributes_for :images, allow_destroy: true
   validates :name, presence: true
