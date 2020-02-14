@@ -35,7 +35,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    ##@profile = User.find_by(user_id: params[:user_id])
+
+    @category = Category.all.order("id ASC").limit(13)
+
   end
 
   def edit
