@@ -5,8 +5,9 @@
         出品する
       .fas.fa-camera.fa-6x
   = render 'toppages/toppage_header'
-  .pcHeader-headerInner_item
-    .pcHeader-headerInner_item-content
+.pcHeader-headerInner_item
+  .pcHeader-headerInner_item-content2
+    .pcHeader-headerInner_item-content2-content
       %p.box-item-name  
         = @item.name 
         %br
@@ -71,17 +72,17 @@
               %a.next-page 次の商品 ＞
             %p.box-item-name-price-list
               %a.list_link 商品一覧へ
-  .pcContent-contentInner_image3
-    .pcContent-contentInner_image3_main3
-      = image_tag "/assets/bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
-      .pcContent-contentInner_image3_text3
-        %p.text1-1 誰でも簡単、人生を変えるアプリ
-        %p.text2-1 今すぐ無料ダウンロード！
-      .pcContent-contentInner_image3_link3
-        %i.button1-1
-          = image_tag "google-play-badge.png",size: "250x120"
-        %i.button2-1
-          = image_tag "apple.svg",size: "230x150"
+.pcContent-contentInner_image3
+  .pcContent-contentInner_image3_main3
+    = image_tag "/assets/bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
+    .pcContent-contentInner_image3_text3
+      %p.text1-1 誰でも簡単、人生を変えるアプリ
+      %p.text2-1 今すぐ無料ダウンロード！
+    .pcContent-contentInner_image3_link3
+      %i.button1-1
+        = image_tag "google-play-badge.png",size: "250x120"
+      %i.button2-1
+        = image_tag "apple.svg",size: "230x150"
 
   = render 'toppages/toppage_footer'
 
