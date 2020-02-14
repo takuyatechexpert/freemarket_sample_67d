@@ -13,9 +13,9 @@
         %br
         - @item.images.each do |i|
           -if  @item.buyer_id.present? && @item.seller_id.present?
-            .test1
+            .box-itemt__image
               = image_tag i.image.url ,class: "images"
-              .test
+              .box-itemt__image--text
                 SOLD OUT
           -else
             = image_tag i.image.url ,class: "images"
