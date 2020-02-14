@@ -14,10 +14,16 @@ Rails.application.routes.draw do
   end
   
   resources :categories, only: [:index, :show, :new, :edit, :destroy]
-  
   resources :home 
   resources :users
-  resources :buyers
+
+  resources :buyers, only: [:show, :edit, :update] do
+    member do
+      post 'pay', to: 'buyers#pay'
+      get 'done', to: 'buyers#done'
+    end
+  end
+  
   resources :card, only: [:new, :show] do
     collection do
       post 'pay', to: 'card#pay'
@@ -25,13 +31,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: [:index] do
-    collection do
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
-    end
-  end
 
-  resources :buyers
 end
 
