@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    ##@profile = User.find_by(user_id: params[:user_id])
   end
 
   def edit
