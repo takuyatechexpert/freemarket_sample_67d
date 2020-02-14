@@ -1,4 +1,4 @@
-document.getElementById("tag_left").onclick = function() {
+// document.getElementById("tag_left").onclick = function() {
 
 
-}
+// }
