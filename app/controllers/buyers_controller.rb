@@ -1,4 +1,6 @@
 class BuyersController < ApplicationController
+  include CommonActions
+  before_action :get_categories, only:[:index]
 
   require 'payjp'
   before_action :set_card, only: [:show, :pay]
@@ -24,6 +26,10 @@ class BuyersController < ApplicationController
     )
     
     redirect_to root_path #tトップページに遷移
+  end
+
+  def index
+    
   end
 
   def edit
