@@ -32,25 +32,65 @@
 
     &__pictures{
       padding: 40px;
-      height: 30%px;
+      height: 30%;
       @include border;
 
-      .imageFieldLabel{
-        @include flexbox($justify-content: center);
-        background: #f1f0f0;
-        height: 159px;
-        border: dashed 1px #c7c5c5;
-      }
-
-      .js-file_group{
-        border-top: solid 1px #d6d6d6;
+      #image-box{
         display: flex;
-        margin-top: 20px;
       }
 
-      // #image-box{
-      //   display: flex;
-      // }
+      .item-image{
+        background: #e6e4e4;
+        padding: 1px;
+        margin: 0 1px;
+      }
+
+      .fa-camera{
+        @include flexbox($justify-content: center);
+        background: #e6e4e4;
+        height: 132px;
+        width: 100%;
+        border: dashed 1px #c7c5c5;
+        margin: 0 2px;
+      }
+
+      .item-image__operetion{
+        text-align: center;
+        line-height: 20px;
+        cursor: pointer;
+      }
+      
+      .item-num-0{
+        width: 100%;
+      }
+      .item-num-1{
+        width: 491px;
+      }
+      .item-num-2{
+        width: 363px;
+      }
+      .item-num-3{
+        width: 234px;
+      }
+      .item-num-4{
+        width: 106px;
+      }
+      //下段のfile_field
+      .item-num-5{
+        width: 100%;
+      }
+      .item-num-6{
+        width: 491px;
+      }
+      .item-num-7{
+        width: 363px;
+      }
+      .item-num-8{
+        width: 234px;
+      }
+      .item-num-9{
+        width: 106px;
+      }
     }
 
     &__itemDescription{
