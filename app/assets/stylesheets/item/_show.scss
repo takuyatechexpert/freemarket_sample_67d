@@ -14,14 +14,15 @@
 }
 .pcHeader-headerInner_item{
   background-color: gray;
-  height: 100%;
+  height: 50%;
   width: 100vw;
   &-content2{
-    height: 20%;
+    height: 50%;
     width: 700px;
     background-color: bisque;
     margin: 0 auto;
     padding: 40px 0px ;
+    overflow: scroll;
     &-content{
       height: 1160PX;
       width: 700px;
@@ -33,8 +34,8 @@
         font-weight: bold;
       }
       .images{
-        height: 300px;
-        width: 450px;
+        height: 150px;
+        width: 150px;
       }
 
       .box-item-name-price{
