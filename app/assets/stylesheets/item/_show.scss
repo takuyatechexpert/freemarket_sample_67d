@@ -22,49 +22,47 @@
     background-color: bisque;
     margin: 0 auto;
     padding: 40px 0px ;
-    .box-item-name{
-      text-align: center;
-      font-size: 30px;
-      font-weight: bold;
-    }
-    .images{
-      height: 150px;
-      width: 200px;
-      top:40px;
-    }
-  }
-  .pcHeader-headerInner_item-content2-content{
-    height: 950PX;
-    width: 700px;
-    background-color: bisque ;
-    padding: 24px 40px ;
-    margin: 0 auto;
-    .box-item-name-price{
-      text-align: center;
-      .price_tag{
-        height:30px;
+    &-content{
+      height: 1160PX;
+      width: 700px;
+      background-color: bisque ;
+      padding: 24px 40px ;
+      .box-item-name{
+        text-align: center;
         font-size: 30px;
+        font-weight: bold;
       }
-      &-2{
-        border: solid 1px; 
-        color: black; 
-        background-color: lightsteelblue; 
-        padding:0px 60px;
-        .th,td{
-          border: solid 1px;
-          color: black;
-          padding:20px 20px;
-          width:500px;
-          background-color: white;
+      .images{
+        height: 300px;
+        width: 450px;
+      }
+
+      .box-item-name-price{
+        text-align: center;
+        .price_tag{
+          height:30px;
+          font-size: 30px;
         }
-        .tr,th{
-          border: solid 1px;
-          color: black;
-          width:100px;
+        &-2{
+          border: solid 1px; 
+          color: black; 
+          background-color: lightsteelblue; 
+          padding:0px 60px;
+          .th,td{
+            border: solid 1px;
+            color: black;
+            padding:20px 20px;
+            width:500px;
+            background-color: white;
+          }
+          .tr,th{
+            border: solid 1px;
+            color: black;
+            width:100px;
+          }
         }
       }
     }
-    
     .box-item-name-price-3{
       display: grid;
       text-align: center;
@@ -143,85 +141,75 @@
     }
   }
 }
-  
-.pcContent-contentInner_image3_footer{
-  height:400px;
-  width:100vw;
-  &_image3{
-    height:400px;
+  .pcContent-contentInner_image3 {
+    height:500px;
     width:100vw;
-    position: relative;
+    position:relative;
     &_main3{
       .main3{
-        height:400px;
+        height:500px;
         width:100vw;
       }
     }
     &_text3{
-      text-align: center;
       .text1-1{
-        position: absolute;
-        color: gainsboro;
-        font-weight: bold;
-        font-size: 30px;
-        top:100px;
-        left:500px;
+        position:absolute;
+        top:170px;
+        font-size: 20px;
+        left:560px;
+        color:white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
       }
       .text2-1{
-        position: absolute;
-        color: gainsboro;
-        font-weight: bold;
-        font-size: 30px;
-        top:150px;
-        left:550px;
+        position:absolute;
+        top:200px;
+        font-size: 40px;
+        left:480px;
+        color:white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
       }
     }
     &_link3{
       .button1-1{
-        height: 105px;
-        width: 220px;
-        position: absolute;
-        top:235px;
-        left: 750px; 
+        position:absolute;
+        top:295px;
+        left:420px;
       }
       .button2-1{
-        height: 80px;
-        width: 200px;
-        position: absolute;
-        top:250px;
-        left: 460px; 
+        position:absolute;
+        top:280px;
+        left:780px;
       }
     }
-  }
-  &-color{
+  }    
+ 
+.pcContent-contentInner_image3_footer2{
+  &-color2{
     background-color: black;
     height:400px;
     width:100vw;
-    
-    &_block{
+    &_block2{
       background-color: black;
       height:250px;
       width: 100vw;
       color: #fff;
       display: flex;
       justify-content: space-evenly;
-      padding: 100px 70px 0 115px;
+      padding: 100px 150px 0 115px;
       .p{
         height:250px;
         width: 500px;
         color: #fff;
       }
-    
-      &-icon{
+      &-icon2{
         margin: 0  620px;
         .image5{
           height:80px;
           width: 180px;
         }
       } 
-      &-corp{
+      &-corp2{
         text-align: center;
-        // display: flex;
         .c{
           color:white;
           text-align: center;
@@ -229,8 +217,8 @@
         }
       }
     }
-  } 
-}      
+  }
+}       
       // 商品が売り切れ時の場合
       // top:40px;
       .box-itemt__image{
