@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   include CommonActions
-  before_action :get_categories, only:[:new, :create, :show]
+  before_action :get_categories, only:[:create, :show]
   before_action :set_item, only: [:show ,:edit, :destroy]
   
 

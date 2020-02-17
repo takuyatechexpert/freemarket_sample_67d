@@ -7,83 +7,84 @@
   = render 'toppages/toppage_header'
 .pcHeader-headerInner_item
   .pcHeader-headerInner_item-content2
-    .pcHeader-headerInner_item-content2-content
-      %p.box-item-name  
-        = @item.name 
-        %br
-        - @item.images.each do |i|
-          -if  @item.buyer_id.present? && @item.seller_id.present?
-            .box-itemt__image
-              = image_tag i.image.url ,class: "images"
-              .box-itemt__image--text
-                SOLD OUT
-          -else
-            = image_tag i.image.url ,class: "images"
-        %p.box-item-name-price 
-          %span.price_tag>
-            = number_to_currency(@item.price, unit: "￥",precision: 0)
-          %table.box-item-name-price-2
-            %tr 
-            %th 商品名
-            %td 
-              = @item.name 
-            %tr 
-            %th 商品説明
-            %td 
-              = @item.description
-            %tr 
-            %th 出品者名
-            %td
-              - @user.each do |user|
-                - if @item.seller_id == user.id
-                  = user.nick_name 
-            %tr 
-            %tr 
-            %th カテゴリー名
-            %td 
-              = @item.category.name
-            %tr 
-            %th ブランド 
-            %td 
-              〇〇
-            %tr
-            %th 商品サイズ
-            %td 
-              = @item.size
-            %tr 
-            %th 商品の状態
-            %td 
-              = @item.status_id
-            %tr 
-            %th 配送料の負担
-            %td 
-              = @item.postage_id
-            %tr 
-            %th 発送元の地域
-            %td 
-              = @item.region_id
-            %tr 
-            %th 発送日の目安
-            %td
-              = @item.shipping_date_id
-      %p.box-item-name-price-3
-        %a.submit-4 
-        - if @item.buyer_id.present? && @item.seller_id.present?
-          .soldOut
-            SOLD OUT
-        - elsif current_user.id != @item.seller_id
-          = link_to '商品購入画面', buyer_path(@item.id), method: :get, class:"submit-4"
-        - else
-          %a.submit-6 
-            = link_to "削除", item_path(@item.id), method: :delete ,class:"submit-6"
-          %a.submit-5
-            = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
-            %p.box-item-name-price-comment
-              %a.previous-page ＜ 前の商品
-              %a.next-page 次の商品 ＞
-            %p.box-item-name-price-list
-              %a.list_link 商品一覧へ
-.pcContent-contentInner_image3
+    %p.box-item-name  
+      = @item.name 
+      %br
+      - @item.images.each do |i|
+        = image_tag i.image.url ,class: "images"
+  .pcHeader-headerInner_item-content2-content
+    %p.box-item-name-price 
+      %span.price_tag>
+        = number_to_currency(@item.price, unit: "￥",precision: 0)
+      %table.box-item-name-price-2
+        %tr 
+        %th 商品名
+        %td 
+          = @item.name 
+        %tr 
+        %th 商品説明
+        %td 
+          = @item.description
+        %tr 
+        %th 出品者名
+        %td 
+          = @item.seller_id
+        %tr 
+        %th カテゴリー名
+        %td 
+          = @item.category.name
+        %tr 
+        %th ブランド              
+        %td 
+          〇〇
+        %tr
+        %th 商品サイズ
+        %td 
+          = @item.size
+        %tr 
+        %th 商品の状態
+        %td 
+          = @item.status.name
+        %tr 
+        %th 配送料の負担
+        %td 
+          = @item.postage.name
+        %tr 
+        %th 発送元の地域
+        %td 
+          = @item.region.name
+        %tr 
+        %th 発送日の目安
+        %td 
+          = @item.shipping_date.name
+    %p.box-item-name-price-3
+      %a.submit-3 不適切な商品の通報
+      %a.submit-4 
+      - unless current_user.id == @item.seller_id
+        = link_to '商品購入画面', buyer_path(@item.id), method: :get, class:"submit-4"
+      - if current_user.id == @item.seller_id
+        %a.submit-6 
+          = link_to "削除", item_path(@item.id), method: :delete ,class:"submit-6"
+        %a.submit-5
+          = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
+          %p.box-item-name-price-comment
+            %a.previous-page ＜ 前の商品
+            %a.next-page 次の商品 ＞
+          %p.box-item-name-price-list
+            %a.list_link 商品一覧へ
+
+  .pcContent-contentInner_image3
+    .pcContent-contentInner_image3_main3
+      = image_tag "/assets/bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
+      .pcContent-contentInner_image3_text3
+        %p.text1-1 誰でも簡単、人生を変えるアプリ
+        %p.text2-1 今すぐ無料ダウンロード！
+      .pcContent-contentInner_image3_link3
+        %i.button1-1
+          = image_tag "google-play-badge.png",size: "250x120"
+        %i.button2-1
+          = image_tag "apple.svg",size: "230x150"
+
   = render 'toppages/toppage_footer'
 
  
