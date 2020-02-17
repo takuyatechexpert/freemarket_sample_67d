@@ -327,52 +327,6 @@
       }
     }
   }
-  &_image3{
-    height:400px;
-    width:100vw;
-    position: relative;
-    &_main3{
-      .main3{
-        height:400px;
-        width:100vw;
-      }
-    }
-    &_text3{
-      text-align: center;
-      .text1-1{
-        position: absolute;
-        color: gainsboro;
-        font-weight: bold;
-        font-size: 30px;
-        top:100px;
-        left:500px;
-      }
-      .text2-1{
-        position: absolute;
-        color: gainsboro;
-        font-weight: bold;
-        font-size: 30px;
-        top:150px;
-        left:550px;
-      }
-    }
-    &_link3{
-      .button1-1{
-        height: 105px;
-        width: 220px;
-        position: absolute;
-        top:235px;
-        left: 750px; 
-      }
-      .button2-1{
-        height: 80px;
-        width: 200px;
-        position: absolute;
-        top:250px;
-        left: 460px; 
-      }
-    }
-  }
 }
 
 
