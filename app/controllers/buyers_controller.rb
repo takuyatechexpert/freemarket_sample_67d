@@ -29,7 +29,8 @@ class BuyersController < ApplicationController
   end
 
   def index
-    
+    @item = Item.all.where(buyer_id: current_user.id)
+    @user = current_user.nick_name
   end
 
   def edit
