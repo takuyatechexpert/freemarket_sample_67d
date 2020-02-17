@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @item = Item.all.order("RAND()").limit(9)
+    # binding.pry
+    @item = Item.all.order("RAND()").limit(9).where.not(seller_id: current_user.id)
     @user = current_user.nick_name
   end
 
