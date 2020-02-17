@@ -25,14 +25,11 @@ class ItemsController < ApplicationController
 
 
   def create
-    @user = User.find(current_user.id)
     @item = Item.new(item_params)
     if @item.save
       redirect_to item_path(@item)
     else
-      # @category = Category.all.order("id ASC").limit(13)
-      @item.images.new
-      render :new
+      redirect_to new_item_path
     end
   end
 
