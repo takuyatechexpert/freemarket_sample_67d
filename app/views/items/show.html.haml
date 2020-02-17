@@ -33,8 +33,11 @@
               = @item.description
             %tr 
             %th 出品者名
-            %td 
-              = @item.seller_id
+            %td
+              - @user.each do |user|
+                - if @item.seller_id == user.id
+                  = user.nick_name 
+            %tr 
             %tr 
             %th カテゴリー名
             %td 

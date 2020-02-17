@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @user = User.all
   end
 
   def edit
