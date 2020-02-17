@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :home 
   resources :users
 
-  resources :buyers, only: [:show, :edit, :update] do
+  resources :buyers, only: [:index, :show, :edit, :update] do
     member do
       post 'pay', to: 'buyers#pay'
       get 'done', to: 'buyers#done'

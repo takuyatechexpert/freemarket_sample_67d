@@ -1,24 +1,27 @@
 .exhibitionHeader
   = image_tag "logo.png", alt: "furima icon", id: "pic1", class: "exhibitionHeader__logo"
-.main  
+.main
   .main__exhibitionContents
     = form_with model: @item, local: true do |f|
       .main__exhibitionContents__title
         商品の情報を入力
-        %br
-        - @item.images.each do |i|
-          = image_tag i.image.url ,class: "images"
-      %br
       .main__exhibitionContents__pictures
         %ul.main__exhibitionContents__information
           %li
             出品画像
           %li
             必須
-        = f.fields_for :images do |i|
-          = i.label :image, "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "imageFieldLabel"
-          = i.file_field :image, class: "imageField"
-      
+        .sell__block__form
+          .sell__block__form__upload
+            #image-box
+              .item-num-0#image-box__container
+                = f.fields_for :images do |i|
+                  .input-area
+                    = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                    %label{for: "img-file"}
+                      %i.fas.fa-camera
+                        最大5枚までアップロードできます
+
       .main__exhibitionContents__itemDescription
         .main__exhibitionContents__itemDescription__details
           商品の詳細
@@ -43,21 +46,23 @@
             %li
               必須
           = f.text_field :size, class: "main__exhibitionContents__itemDescription__details__field"
-          
-        .main__exhibitionContents__details__category
+
+        .main__exhibitionContents__itemDescription__category
           %ul.main__exhibitionContents__information
             %li
               カテゴリー
             %li
               必須
-          = f.select :category, [["--", 0],["レディース", 1],["メンズ", 2],["ベビー・キッズ",3],["本・音楽・ゲーム",4]], class: "fieldPulldown"
+          -# = f.collection_select :category_id, category.all, :name, :name, prompt: "--"
+          -# .child_category_id
+          -# .grandchild_category_id
 
-        .main__exhibitionContents__details__brand
+        .main__exhibitionContents__itemDescription__brand
           %ul.main__exhibitionContents__information
             %li
               ブランド
-            %li
-              必須
+            %li.main__exhibitionContents__information--any
+              任意
           = f.select :brand, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
 
 
@@ -67,7 +72,7 @@
               商品の状態
             %li
               必須
-          = f.select :item_status, [["--", 0],["新品、未使用", 1],["未使用に近い", 2],["目立った傷や汚れなし",3],["やや傷や汚れあり",4],["傷や汚れあり",5],["全体的に状態が悪い",5]]
+          = f.collection_select :status_id, Status.all, :id, :name, prompt: "--"
       .main__exhibitionContents__delivery
         .main__exhibitionContents__details__deliveryCharge
           配送について
@@ -76,21 +81,21 @@
               配送料の負担
             %li
               必須
-          = f.select :delivery_charge, [["--", 0],["送料込み(出品者負担)", 1],["着払い(購入者負担)", 2]]
+          = f.collection_select :postage_id, Postage.all, :id, :name, prompt: "--"
         .main__exhibitionContents__details__area
           %ul.main__exhibitionContents__information
             %li
               配送元の地域
             %li
               必須
-          = f.text_field :delivery_area, class: "main__exhibitionContents__itemDescription__details__field"
+          = f.collection_select :region_id, Region.all, :id, :name, prompt: "--"
           .main__exhibitionContents__details__date
           %ul.main__exhibitionContents__information
             %li
               発送までの日数
             %li
               必須
-          = f.select :shipment, [["--", 0],["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送",3]]
+          = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name, prompt: "--"
 
       .main__exhibitionContents__result
         販売価格
@@ -110,8 +115,8 @@
         .main__exhibitionContents__result__profit
           販売利益
           %ul
-            %li
-              ここに手数料抜きの金額を表示させるjquery使用予定
+            %li.main__exhibitionContents__result__profit--js
+              
             %li
               &ndash;
       .main__exhibitionContents__text
@@ -122,9 +127,9 @@
         %br
         また、出品をもちまして加盟店規約に同意したことになります。
         .main__exhibitionContents__submit
-          = f.submit "編集する", class: "main__exhibitionContents__submit__btn"
+          = f.submit "出品する", class: "main__exhibitionContents__submit__btn"
           = link_to "もどる", :back, class: "main__exhibitionContents__back__btn"
-        
+
 .exhibitionFooter
   %ul
     %li

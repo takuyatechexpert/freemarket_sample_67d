@@ -1,14 +1,30 @@
+.wapper
+  = render 'toppages/toppage_header'
 = form_tag(pay_card_index_path, method: :post, name: "inputForm") do
   .form-card
     .form-card__content
       .c-num.cc
+        .c-num__title
+          カード情報を入力して下さい
+        %br
         .c-num__top
           .label カード番号
           .label-mark 必須
         .c-num__bottom
           = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-          = image_tag "/ロゴ/カード.png"
-      .c-date.cc
+        .c-num__icons
+          .c-num__icon
+            .fab.fa-cc-jcb
+          .c-num__icon
+            .fab.fa-cc-amex
+          .c-num__icon
+            .fab.fa-cc-visa
+          .c-num__icon
+            .fab.fa-cc-mastercard
+          .c-num__icon
+            .fab.fa-cc-diners-club
+          .c-num__icon
+            .fab.fa-cc-discover
         .c-date__top
           .label 有効期限
           .label-mark 必須
@@ -53,3 +69,5 @@
       .c-submit.ss
         #card_token
         = submit_tag "追加する", id: "token_submit"
+.wapper
+  = render 'toppages/toppage_footer'

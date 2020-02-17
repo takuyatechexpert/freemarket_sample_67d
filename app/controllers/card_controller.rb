@@ -4,6 +4,7 @@ class CardController < ApplicationController
 
   def new
     @card = Card.new
+    @category = Category.all.order("id ASC").limit(13)
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
