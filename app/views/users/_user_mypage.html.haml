@@ -9,7 +9,8 @@
           - @item.each do |i|
             %ul
               %li
-                = image_tag i.images[0].image.url, class: "pro_pic"
+                = link_to item_path(i.id) do
+                  = image_tag i.images[0].image.url, class: "pro_pic"
               %li.pro_name
                 = i.name
   .footer
