@@ -15,7 +15,13 @@ Rails.application.routes.draw do
   
   resources :categories, only: [:index, :show, :new, :edit, :destroy]
   resources :home 
+
   resources :users
+  #   collection do
+  #     delete 'user_delete', to: 'users#destroy' 
+  #   end
+  # end
+
 
   resources :buyers, only: [:index, :show, :edit, :update] do
     member do

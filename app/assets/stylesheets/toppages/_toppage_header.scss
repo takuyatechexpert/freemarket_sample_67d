@@ -32,9 +32,10 @@
       width: 100%;
       height: 30px;
       border-bottom: 3px solid #eee;
+
       &_content{
         float: left;
-        width: 50%;
+        // width: 50%;
         display: flex;
         // text-align: center;
         justify-content: space-around;
@@ -50,10 +51,8 @@
             display: none;
             position: absolute;
           }
-
           &:hover { 
             color: $mainColorBlue;
-            
             .fa-list{
               color: cornflowerblue;
             }
@@ -71,44 +70,40 @@
             }
           }
         }
-          .dropdown-btn2{
+        .dropdown-btn2{
+          position: absolute;
+          display:inline-block;
+          cursor:pointer;
+          font-weight: bold;
+          position: relative;
+          margin-right: 30%;
+          .dropdown2{
+            display: none;
             position: absolute;
-            display:inline-block;
+          }
+          &:hover { 
+            color: $mainColorBlue;
             // margin-left: 70px;
-            cursor:pointer;
-            font-weight: bold;
-            // margin: 0 auto;
-            position: relative;
-            margin-right: 30%;
-
-            .dropdown2{
-              display: none;
-              position: absolute;
+            .fa-list{
+              color: cornflowerblue;
             }
-
-            &:hover { 
-              color: $mainColorBlue;
-              // margin-left: 70px;
-              .fa-list{
-                color: cornflowerblue;
-              }
-              .dropdown2 {
-                z-index:1005;
-                width:200px;
-                display:inherit;
-                li {
-                  display:inline-block;
-                  z-index: 30;
-                  background-color: $mainColorBlue;
-                  color: #666;
-                  padding: 8px;
-                }
+            .dropdown2 {
+              z-index:1005;
+              width:200px;
+              display:inherit;
+              li {
+                display:inline-block;
+                z-index: 30;
+                background-color: $mainColorBlue;
+                color: #666;
+                padding: 8px;
               }
             }
+          }
         }
       }
       &_login{
-        width: 40%;
+        // width: 40%;
         float: right;
         display: flex;
         justify-content: space-around;
@@ -116,18 +111,27 @@
         font-weight: bold;
         .text3{
           margin-left: 30%;
+          margin-top: 3px;
           &:hover{
             color: $mainColorBlue;
           }
         } 
         .text4{
+          margin-right: 30%;
           &:hover{
             color: $mainColorBlue;
           }
         }
         .text5{
-          padding-right: 0px;
+          margin-left: 30%;
+          // padding-right: 0px;
           color: black;
+          &:hover{
+            color: $mainColorBlue;
+          }
+        }
+        .text6{
+          margin-right: 20%;
           &:hover{
             color: $mainColorBlue;
           }

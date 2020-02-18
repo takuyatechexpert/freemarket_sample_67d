@@ -1,0 +1,14 @@
+//ログアウト
+.wapper
+  = link_to new_item_path do
+    .exhibitionIcon
+      .exhibitionIcon__text
+        出品する
+      .fas.fa-camera.fa-6x
+  = render 'toppages/toppage_header'
+  .logout_main_content
+    = render 'side_user'
+    .right_log.out 
+      .log_out.content
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: "log_out.button"
+  = render 'toppages/toppage_footer'

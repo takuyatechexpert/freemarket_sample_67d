@@ -2,7 +2,6 @@
   .left_user__action
     %h.tag ユーザー情報
     .list 
-      -# = link_to new_item_path do
       %il 
         = link_to '出品する', '/items/new'
         %ul
@@ -10,7 +9,7 @@
             .fas.fa-chevron-right
     .list
       %il 
-        出品中
+        = link_to '出品中', '/users/show'
         %ul
           %li
             .fas.fa-chevron-right

@@ -10,34 +10,26 @@
     justify-content: space-between;
 
     // サイドの表示
-
     .right_log.out{
-      // float: right;
       width: 100vw;
       height: 500px;
       margin-left: 100px;
-
-
       .log_out.content{
         height: 100px;
         margin-top: 40px;
-        // background-color: springgreen;
         display: flex;
-        // float: left;
         align-items: center;
         justify-content: center;
         
-
-        .log_out.button{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: skyblue;
+        a{
+          background-color: $mainColorBlue;
           width: 70%;
           height: 50px;
           font-size: 25px;
           color: white;
-
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
