@@ -1,6 +1,6 @@
 class BuyersController < ApplicationController
   include CommonActions
-  before_action :get_categories, only:[:index]
+  before_action :get_categories, only:[:index, :update]
 
   require 'payjp'
   before_action :set_card, only: [:show, :pay]

@@ -1,15 +1,23 @@
-//ログアウト
+//出品ページ
 .wapper
+  = render 'toppages/toppage_header'
   = link_to new_item_path do
     .exhibitionIcon
       .exhibitionIcon__text
         出品する
       .fas.fa-camera.fa-6x
-  = render 'toppages/toppage_header'
-  .logout_main_content
+  .user_main_contents
     = render 'side_user'
-    .right_log.out 
-      .log_out.content 
-        .log_out.button
-          = link_to "Logout", destroy_user_session_path, method: :delete
+    .right_user
+      .user_top 出品中
+      .side_tab
+        .tab_contents
+          - @item.each do |i|
+            %ul
+              %li
+                = link_to item_path(i.id) do
+                  = image_tag i.images[0].image.url, class: "pro_pic"
+              %li.pro_name
+                = i.name
+  .footer
   = render 'toppages/toppage_footer'

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include CommonActions
-  before_action :get_categories, only:[:index, :show]
+  before_action :get_categories, only:[:index, :destroy, :show]
 
   def create
   end
@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    # binding.pry
     @item = Item.all.order("RAND()").limit(9).where.not(seller_id: current_user.id)
     @user = current_user.nick_name
   end
@@ -18,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @item = Item.all.order("id DESC").limit(9).where(seller_id: current_user.id).where(buyer_id: nil)
   end
 
   

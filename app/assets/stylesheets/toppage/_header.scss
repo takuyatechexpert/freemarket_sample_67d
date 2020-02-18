@@ -133,24 +133,24 @@
           justify-content: space-around;
           position: relative;
           font-weight: bold;
-          .text3{
-            margin-left: 30%;
-            &:hover{
-              color: $mainColorBlue;
-            }
-          } 
-          .text4{
-            &:hover{
-              color: $mainColorBlue;
-            }
-          }
-          .text5{
-            margin-top: 3px;
-            color: black;
-            &:hover{
-              color: $mainColorBlue;
-            }
-          }
+          // .text3{
+          //   margin-left: 30%;
+          //   &:hover{
+          //     color: $mainColorBlue;
+          //   }
+          // } 
+          // .text4{
+          //   &:hover{
+          //     color: $mainColorBlue;
+          //   }
+          // }
+          // .text5{
+          //   margin-top: 3px;
+          //   color: black;
+          //   &:hover{
+          //     color: $mainColorBlue;
+          //   }
+          // }
         }
       } 
       &_image{

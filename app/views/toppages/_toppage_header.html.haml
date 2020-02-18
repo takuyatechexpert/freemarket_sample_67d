@@ -29,13 +29,15 @@
       .pcHeader-headerInner_text_login
         - if user_signed_in?
           .text3
-            .fas.fa-sign-in-alt
-            = link_to 'ログアウト', '/users/show'
-        - else
+            .far.fa-user
+            = link_to current_user.nick_name , '/users'
           .text4
+            .fas.fa-sign-in-alt
+            = link_to 'ログアウト', '/users/destroy', method: :DELETE
+        - else
+          .text5
             .far.fa-address-card
             = link_to "新規会員登録", '/users/sign_up'
-        .text5
-          .far.fa-user
-          = link_to current_user.nick_name , '/users'
-            
+          .text6
+            .far.fa-address-card
+            = link_to "ログイン", '/users/sign_in'
