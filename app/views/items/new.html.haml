@@ -60,15 +60,6 @@
           .child_category_id
           .grandchild_category_id
 
-        .main__exhibitionContents__itemDescription__brand
-          %ul.main__exhibitionContents__information
-            %li
-              ブランド
-            %li.main__exhibitionContents__information--any
-              任意
-          = f.select :brand, [["--", 0],["ロレックス", 1],["IWC", 2],["オーデマピゲ",3],["パテックフィリップ",4]], class: "fieldPulldown"
-
-
         .main__exhibitionContents__details__itemStatus
           %ul.main__exhibitionContents__information
             %li
