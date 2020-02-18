@@ -16,7 +16,7 @@
         .post__drop__box__container
           .prev-content
 
-            //JSで挿入したhtmlと同じ形　each文でのプレビュー表示
+            //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
             - @item.images.each do |image|
               .preview-box
                 .upper-box
@@ -71,9 +71,13 @@
               カテゴリー
             %li
               必須
-          = f.collection_select :category_id, @category, :name, :name, prompt: "--"
+        
+          = select_tag :category, options_for_select(@category_parents_array.map{|c|[c[:name], c[:name], {'data-category'=>c[:id]}]}, @selected_parent_category.name), {class: 'listing-select-wrapper__box--select', id: 'item_category_id'}
           .child_category_id
+            = select_tag :category, options_for_select(@category_children_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id]}]}, @selected_child_category.id), {class: 'item_category_id', id: 'child_category'}
           .grandchild_category_id
+            = select_tag :category_id, options_for_select(@category_grandchildren_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id]}]}, @selected_grandchild_category.id), {class: 'item_category_id', id: 'grand_child_category'}
+
 
         .main__exhibitionContents__details__itemStatus
           %ul.main__exhibitionContents__information
