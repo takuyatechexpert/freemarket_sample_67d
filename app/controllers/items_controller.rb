@@ -10,8 +10,12 @@ class ItemsController < ApplicationController
 
 
   def new
-    @item = Item.new
-    @item.images.new
+    if user_signed_in?
+      @item = Item.new
+      @item.images.new
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
   def create

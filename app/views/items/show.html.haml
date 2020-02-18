@@ -66,21 +66,22 @@
             %th 発送日の目安
             %td
               = @item.shipping_date_id
-      %p.box-item-name-price-3
-        %a.submit-4 
-        - if @item.buyer_id.present? && @item.seller_id.present?
-          .soldOut
-            SOLD OUT
-        - elsif current_user.id != @item.seller_id
-          = link_to '商品購入画面', buyer_path(@item.id), method: :get, class:"submit-4"
-        - else
-          %a.submit-6 
-            = link_to "削除", item_path(@item.id), method: :delete ,class:"submit-6"
-          %a.submit-5
-            = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
-            %p.box-item-name-price-comment
-              %a.previous-page ＜ 前の商品
-              %a.next-page 次の商品 ＞
-            %p.box-item-name-price-list
-              %a.list_link 商品一覧へ
+      - if user_signed_in?
+        %p.box-item-name-price-3
+          %a.submit-4 
+          - if @item.buyer_id.present? && @item.seller_id.present?
+            .soldOut
+              SOLD OUT
+          - elsif current_user.id != @item.seller_id
+            = link_to '商品購入画面', buyer_path(@item.id), method: :get, class:"submit-4"
+          - else
+            %a.submit-6 
+              = link_to "削除", item_path(@item.id), method: :delete ,class:"submit-6"
+            %a.submit-5
+              = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
+      - else
+        %a.submit-5
+          = link_to "新規会員登録", new_user_registration_path
+      %p.box-item-name-price-list
+        %a.list_link 商品一覧へ
   = render 'toppages/toppage_footer'
