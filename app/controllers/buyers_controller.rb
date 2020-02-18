@@ -7,6 +7,7 @@ class BuyersController < ApplicationController
   before_action :set_item, only: [:show, :pay]
 
   def show
+    redirect_to root_path if @item.seller_id == current_user.id
     if @card.blank?
       redirect_to controller: "card", action: :new
     else
