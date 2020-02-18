@@ -71,9 +71,9 @@
               カテゴリー
             %li
               必須
-          -# = f.collection_select :category_id, @category, :name, :name, prompt: "--"
-          -# .child_category_id
-          -# .grandchild_category_id
+          = f.collection_select :category_id, @category, :name, :name, prompt: "--"
+          .child_category_id
+          .grandchild_category_id
 
         .main__exhibitionContents__details__itemStatus
           %ul.main__exhibitionContents__information
