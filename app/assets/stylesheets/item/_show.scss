@@ -23,21 +23,43 @@
     margin: 0 auto;
     padding: 40px 0px ;
     overflow: scroll;
+    white-space:nowrap;
+    
     &-content{
-      height: 1160PX;
+      height: 100%;
       width: 700px;
       background-color: bisque ;
       padding: 24px 40px ;
+      position: relative;
+
+      &__nextInformation{
+        position: absolute;
+        font-size: 1.2rem;
+        color: #5c5959;
+        top: 220px;
+        right: 70px;
+      }
+
       .box-item-name{
         text-align: center;
         font-size: 30px;
         font-weight: bold;
       }
-      .images{
-        height: 150px;
-        width: 150px;
-      }
+      &__pictures{
+        height: 365px;
+        width: 500px;
+        overflow: scroll;
+        text-align: center;
+        margin: 0 auto;
 
+        .images{
+          height: 300px;
+          width: 450px;
+          margin: 20px 25px;
+        object-fit: cover;
+        }
+
+      }
       .box-item-name-price{
         text-align: center;
         .price_tag{
@@ -49,6 +71,7 @@
           color: black; 
           background-color: lightsteelblue; 
           padding:0px 60px;
+          margin: 0 auto;
           .th,td{
             border: solid 1px;
             color: black;
@@ -135,7 +158,7 @@
       text-align: center;
       .list_link{
         font-size: 30px;
-        color: aqua;
+        color: $mainColorBlue;
         font-weight: bold;
         padding: 0 125px;
       }
@@ -182,44 +205,25 @@
         left:780px;
       }
     }
-  }    
- 
-.pcContent-contentInner_image3_footer2{
-  &-color2{
-    background-color: black;
-    height:400px;
-    width:100vw;
-    &_block2{
-      background-color: black;
-      height:250px;
-      width: 100vw;
-      color: #fff;
-      display: flex;
-      justify-content: space-evenly;
-      padding: 100px 150px 0 115px;
-      .p{
-        height:250px;
-        width: 500px;
-        color: #fff;
-      }
-      &-icon2{
-        margin: 0  620px;
-        .image5{
-          height:80px;
-          width: 180px;
-        }
-      } 
-      &-corp2{
-        text-align: center;
-        .c{
-          color:white;
-          text-align: center;
-          justify-content: center;
-        }
+  }
+  .pcHeader-headerInner_item-content2-content__bottom{
+    text-align: center;
+
+    .submit-7{
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 30px 0;
+      background: $mainColorBlue;
+      height: 40px;
+      
+      .submit-7--btn{
+        color: white;
+        letter-spacing: 2px;
+        line-height: 40px;
       }
     }
   }
-}       
+  
       // 商品が売り切れ時の場合
       // top:40px;
       .box-itemt__image{
@@ -228,8 +232,8 @@
         text-align: center;
         .box-itemt__image--text{
           position: absolute;
-          top: 0;
-          left: 85px;
+          top: 20px;
+          left: 25px;
           z-index: 10;
           background: rgba(211, 211, 211, 0.5);
           height: 300px;
