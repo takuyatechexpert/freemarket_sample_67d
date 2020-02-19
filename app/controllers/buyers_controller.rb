@@ -7,10 +7,8 @@ class BuyersController < ApplicationController
   before_action :set_item, only: [:show, :pay]
 
   def show
-    # redirect_to root_path if @item.seller_id == current_user.id || @item.buyer_id.nil?
     if @item.seller_id == current_user.id || @item.buyer_id != nil
       redirect_to root_path
-
     elsif @card.blank?
       redirect_to controller: "card", action: :new
     else
@@ -21,15 +19,15 @@ class BuyersController < ApplicationController
   end
 
   def pay
-    Item.update(buyer_id: current_user.id)
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp::Charge.create(
-      :amount => @item.price,
-      :customer => @card.customer_id,
-      :currency => 'jpy',
-    )
-    
-    redirect_to root_path #tトップページに遷移
+    redirect_to root_path if @item.seller_id == current_user.id || @item.buyer_id != nil
+      Item.update(buyer_id: current_user.id)
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+      Payjp::Charge.create(
+        :amount => @item.price,
+        :customer => @card.customer_id,
+        :currency => 'jpy',
+      )
+      redirect_to root_path #tトップページに遷移
   end
 
   def index
