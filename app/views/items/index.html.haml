@@ -1,10 +1,23 @@
 //出品履歴
 .wapper
   = render 'toppages/toppage_header'
-  .sold_main_content
+  = link_to new_item_path do
+    .exhibitionIcon
+      .exhibitionIcon__text
+        出品する
+      .fas.fa-camera.fa-6x
+  .user_main_contents
     = render 'users/side_user'
-    .right_sold 
-      .right_sold__content 
-        .sold.history_list
-          
+    .right_user
+      .user_top 出品履歴
+      .side_tab
+        .tab_contents
+          - @item.each do |i|
+            %ul
+              %li
+                = link_to item_path(i.id) do
+                  = image_tag i.images[0].image.url, class: "pro_pic"
+              %li.pro_name
+                = i.name
+  .footer
   = render 'toppages/toppage_footer'
