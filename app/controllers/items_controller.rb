@@ -67,10 +67,14 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if @item.update(item_params)
-       redirect_to item_path
+    if user_signed_in? && @item.seller_id == current_user.id
+      if @item.update(item_params)
+        redirect_to item_path
+      else
+        redirect_to edit_item_path
+      end
     else
-       render action: :edit
+      redirect_to root_path 
     end
   end
 
