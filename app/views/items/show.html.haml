@@ -8,17 +8,21 @@
 .pcHeader-headerInner_item
   .pcHeader-headerInner_item-content2
     .pcHeader-headerInner_item-content2-content
+      - if @item.images.length >= 2
+        .pcHeader-headerInner_item-content2-content__nextInformation
+          .fas.fa-chevron-right.fa-2x
       %p.box-item-name  
         = @item.name 
-        %br
-        - @item.images.each do |i|
-          -if  @item.buyer_id.present? && @item.seller_id.present?
-            .box-itemt__image
+        .pcHeader-headerInner_item-content2-content__pictures
+          - @item.images.each do |i|
+            -if  @item.buyer_id.present? && @item.seller_id.present?
+              .box-itemt__image
+                = image_tag i.image.url ,class: "images"
+                .box-itemt__image--text
+                  SOLD OUT
+            -else
               = image_tag i.image.url ,class: "images"
-              .box-itemt__image--text
-                SOLD OUT
-          -else
-            = image_tag i.image.url ,class: "images"
+
         %p.box-item-name-price 
           %span.price_tag>
             = number_to_currency(@item.price, unit: "￥",precision: 0)
@@ -38,14 +42,9 @@
                 - if @item.seller_id == user.id
                   = user.nick_name 
             %tr 
-            %tr 
             %th カテゴリー名
             %td 
               = @item.category.name
-            %tr 
-            %th ブランド 
-            %td 
-              〇〇
             %tr
             %th 商品サイズ
             %td 
@@ -53,35 +52,36 @@
             %tr 
             %th 商品の状態
             %td 
-              = @item.status_id
+              = @item.status.name
             %tr 
             %th 配送料の負担
             %td 
-              = @item.postage_id
+              = @item.postage.name
             %tr 
             %th 発送元の地域
             %td 
-              = @item.region_id
+              = @item.region.name
             %tr 
             %th 発送日の目安
             %td
-              = @item.shipping_date_id
-      - if user_signed_in?
-        %p.box-item-name-price-3
-          %a.submit-4 
-          - if @item.buyer_id.present? && @item.seller_id.present?
-            .soldOut
-              SOLD OUT
-          - elsif current_user.id != @item.seller_id
-            = link_to '商品購入画面', buyer_path(@item.id), method: :get, class:"submit-4"
-          - else
-            %a.submit-6 
-              = link_to "削除", item_path(@item.id), method: :delete ,class:"submit-6"
-            %a.submit-5
-              = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
-      - else
-        %a.submit-5
-          = link_to "新規会員登録", new_user_registration_path
-      %p.box-item-name-price-list
-        %a.list_link 商品一覧へ
+              = @item.shipping_date.name
+      .pcHeader-headerInner_item-content2-content__bottom
+        - if user_signed_in?
+          %p.box-item-name-price-3
+            %a.submit-4 
+            - if @item.buyer_id.present? && @item.seller_id.present?
+              .soldOut
+                SOLD OUT
+            - elsif current_user.id != @item.seller_id
+              = link_to '商品購入画面', buyer_path(@item.id), method: :get, class:"submit-4"
+            - else
+              %a.submit-6 
+                = link_to "削除", item_path(@item.id), method: :delete ,class:"submit-6"
+              %a.submit-5
+                = link_to '商品編集', "#{@item.id}/edit", class:"submit-5"
+        - else
+          .submit-7
+            = link_to "新規会員登録", new_user_registration_path, class: "submit-7--btn"
+        %p.box-item-name-price-list
+          %a.list_link 商品一覧へ
   = render 'toppages/toppage_footer'
