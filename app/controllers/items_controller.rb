@@ -3,11 +3,9 @@ class ItemsController < ApplicationController
   before_action :get_categories, only:[:index, :new,:create, :show]
   before_action :set_item, only: [:show ,:edit, :destroy]
   
-
   def index
     @item = Item.all.order("id ASC").where(seller_id: current_user.id)
   end
-
 
   def new
     if user_signed_in?
@@ -79,13 +77,16 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    if user_signed_in? && @item.seller_id == current_user.id
       if@item.destroy
         redirect_to root_path
       else
         redirect_to item_path
       end
+    else
+      redirect_to root_path 
+    end
   end
-
 
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
