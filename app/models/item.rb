@@ -19,6 +19,7 @@ class Item < ApplicationRecord
   validates :region_id, presence: true
   validates :shipping_date_id, presence: true
   validates :price, presence: true
+  validates :images, presence: true
 
 
   
