@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   include CommonActions
-  before_action :get_categories, only:[:new,:create, :show]
+  before_action :get_categories, only:[:index, :new,:create, :show]
   before_action :set_item, only: [:show ,:edit, :destroy]
   
 
   def index
-    @items = Item.all
+    @item = Item.all.order("id ASC").where(seller_id: current_user.id)
   end
 
 
