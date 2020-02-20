@@ -20,7 +20,7 @@ class BuyersController < ApplicationController
 
   def pay
     redirect_to root_path if @item.seller_id == current_user.id || @item.buyer_id != nil
-      Item.update(buyer_id: current_user.id)
+      @item.update(buyer_id: current_user.id)
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       Payjp::Charge.create(
         :amount => @item.price,
@@ -32,7 +32,6 @@ class BuyersController < ApplicationController
 
   def index
     @item = Item.all.where(buyer_id: current_user.id)
-    @user = current_user.nick_name
   end
 
   def edit
