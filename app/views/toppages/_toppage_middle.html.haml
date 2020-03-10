@@ -95,13 +95,13 @@
       .pcContent-contentInner_items-contents 
         %p.new-items 新規投稿商品
       .pcContent-contentInner_items-lists
-        - @item.zip(@image) do |o,i|
-          %ul
-            %li
-              = link_to item_path(o.id) do
-                = image_tag i.image.url, class:"pro_pic"
-            %li.pro_name
-              = o.name
+        - @items.each do |item|
+          = link_to item_path(item.id) do
+            %ul
+              %li
+                = image_tag item.images[0].image.url, class:"pro_pic"
+              %li.pro_name
+                = item.name
   .pcContent-contentInner_image3_footer_image3
     .pcContent-contentInner_image3_footer_image3_main3
       = image_tag "bg-appBanner-pict.jpg", class:"main3", alt:"ほげ"
