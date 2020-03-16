@@ -29,7 +29,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update
     if current_user.update(user_params)
-      render :edit
+      sign_in(current_user, bypass: true)
+      redirect_to root_path
     else
       render :edit
     end
